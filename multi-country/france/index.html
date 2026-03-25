@@ -3,292 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>France Packages</title>
+    <title>France</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
-            background: #f5f5f5;
-            color: #212121;
-            line-height: 1.6;
-            padding-top: 80px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            background: #f5f5f5; color: #212121; line-height: 1.6; padding-top: 80px;
         }
-        
-        /* Fixed Top Navigation */
         .top-nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: white;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
-            z-index: 1000;
-            padding: 16px 0;
+            position: fixed; top: 0; left: 0; right: 0;
+            background: white; box-shadow: 0 1px 3px rgba(0,0,0,0.08); z-index: 1000; padding: 16px 0;
         }
-        
         .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
-            display: flex;
-            align-items: center;
-            gap: 32px;
+            max-width: 1200px; margin: 0 auto; padding: 0 24px;
+            display: flex; align-items: center; gap: 32px;
         }
-        
-        .logo {
-            height: 48px;
-            width: auto;
-        }
-        
-        .logo:hover {
-            opacity: 0.8;
-        }
-        
-        .header-right {
-            display: flex;
-            align-items: center;
-            gap: 32px;
-            flex: 1;
-            justify-content: flex-end;
-        }
-        
-        .site-title-group {
-            text-align: right;
-        }
-        
-        .site-title-main {
-            font-size: 1.1em;
-            font-weight: 600;
-            color: #212121;
-            line-height: 1.3;
-        }
-        
-        .site-title-sub {
-            font-size: 0.9em;
-            font-weight: 400;
-            color: #757575;
-        }
-        
-        .contact-info {
-            text-align: right;
-            padding-left: 32px;
-            border-left: 1px solid #e0e0e0;
-        }
-        
-        .contact-prompt {
-            font-size: 0.85em;
-            color: #757575;
-            margin-bottom: 4px;
-        }
-        
-        .contact-email {
-            font-size: 0.9em;
-            color: #2196F3;
-            text-decoration: none;
-            font-weight: 500;
-        }
-        
-        .contact-email:hover {
-            text-decoration: underline;
-        }
-        
+        .logo { height: 48px; width: auto; }
+        .logo:hover { opacity: 0.8; }
+        .header-right { display: flex; align-items: center; gap: 32px; flex: 1; justify-content: flex-end; }
+        .site-title-group { text-align: right; }
+        .site-title-main { font-size: 1.1em; font-weight: 600; color: #212121; line-height: 1.3; }
+        .site-title-sub { font-size: 0.9em; font-weight: 400; color: #757575; }
+        .contact-info { text-align: right; padding-left: 32px; border-left: 1px solid #e0e0e0; }
+        .contact-prompt { font-size: 0.85em; color: #757575; margin-bottom: 4px; }
+        .contact-email { font-size: 0.9em; color: #2196F3; text-decoration: none; font-weight: 500; }
+        .contact-email:hover { text-decoration: underline; }
         .search-box {
-            width: 100%;
-            max-width: 350px;
-            padding: 10px 18px;
-            font-size: 0.95em;
-            border: 1px solid #e0e0e0;
-            border-radius: 24px;
-            transition: all 0.2s;
-            background: #fafafa;
+            width: 100%; max-width: 350px; padding: 10px 18px; font-size: 0.95em;
+            border: 1px solid #e0e0e0; border-radius: 24px; transition: all 0.2s; background: #fafafa;
         }
-        
-        .search-box::placeholder {
-            text-align: center;
-        }
-        
+        .search-box::placeholder { text-align: center; }
         .search-box:focus {
-            outline: none;
-            border-color: #2196F3;
-            background: white;
+            outline: none; border-color: #2196F3; background: white;
             box-shadow: 0 2px 8px rgba(33,150,243,0.15);
         }
-        
-        /* Breadcrumb */
         .breadcrumb {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 24px 24px 0;
-            font-size: 0.9em;
-            color: #757575;
+            max-width: 1200px; margin: 0 auto; padding: 24px 24px 0;
+            font-size: 0.9em; color: #757575;
         }
-        
-        .breadcrumb a {
-            color: #2196F3;
-            text-decoration: none;
-        }
-        
-        .breadcrumb a:hover {
-            text-decoration: underline;
-        }
-        
-        /* Main Content */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 32px 24px 48px;
-        }
-        
-        h1 {
-            font-size: 2.2em;
-            font-weight: 600;
-            color: #212121;
-            margin-bottom: 40px;
-            letter-spacing: -0.5px;
-        }
-        
-        /* Brochure Cards */
-        .brochures {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-        }
-        
+        .breadcrumb a { color: #2196F3; text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 32px 24px 48px; }
+        h1 { font-size: 2.2em; font-weight: 600; color: #212121; margin-bottom: 40px; letter-spacing: -0.5px; }
+        .brochures { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
         .brochure-card {
-            background: white;
-            padding: 28px;
-            border-radius: 12px;
+            background: white; padding: 28px; border-radius: 12px;
             box-shadow: 0 1px 3px rgba(0,0,0,0.08);
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            text-decoration: none;
-            color: inherit;
-            display: block;
+            text-decoration: none; color: inherit; display: block;
             border: 1px solid #f5f5f5;
         }
-        
         .brochure-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+            transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.12);
             border-color: #e0e0e0;
         }
-        
-        .brochure-card h3 {
-            font-size: 1.15em;
-            color: #212121;
-            margin-bottom: 8px;
-            font-weight: 600;
+        .brochure-card h3 { font-size: 1.15em; color: #212121; margin-bottom: 10px; font-weight: 600; }
+        .tour-type {
+            color: #c62828; font-size: 0.8em; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 12px;
         }
-        
+        .card-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
+        .meta-tag {
+            background: #f0f4ff; color: #1565c0; font-size: 0.78em;
+            padding: 3px 10px; border-radius: 12px; font-weight: 500;
+        }
+        .meta-tag.duration { background: #f3f3f3; color: #555; }
+        .meta-tag.stars { background: #fff8e1; color: #f57f17; }
+        .cities-list { font-size: 0.85em; color: #757575; margin-bottom: 10px; }
+        .price-tag { font-size: 0.9em; color: #2e7d32; font-weight: 600; margin-top: 8px; }
         .pdf-icon {
-            color: #d32f2f;
-            font-size: 0.85em;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+            color: #d32f2f; font-size: 0.78em; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 0.5px; float: right;
         }
-        
-        /* Responsive */
+        footer {
+            text-align: center; margin-top: 60px; padding: 32px 0;
+            color: #9e9e9e; font-size: 0.9em; border-top: 1px solid #f0f0f0;
+        }
         @media (max-width: 768px) {
-            body {
-                padding-top: 180px;
-            }
-            
-            .nav-container {
-                flex-wrap: wrap;
-                gap: 16px;
-            }
-            
-            .header-right {
-                width: 100%;
-                flex-direction: column;
-                align-items: center;
-                order: 3;
-                gap: 16px;
-            }
-            
-            .site-title-group {
-                text-align: center;
-            }
-            
-            .contact-info {
-                text-align: center;
-                border-left: none;
-                border-top: 1px solid #e0e0e0;
-                padding-left: 0;
-                padding-top: 16px;
-            }
-            
-            .search-box {
-                max-width: 100%;
-            }
-            
-            .brochures {
-                grid-template-columns: 1fr;
-            }
+            body { padding-top: 180px; }
+            .nav-container { flex-wrap: wrap; gap: 16px; }
+            .header-right { width: 100%; flex-direction: column; align-items: center; order: 3; gap: 16px; }
+            .site-title-group { text-align: center; }
+            .contact-info { text-align: center; border-left: none; border-top: 1px solid #e0e0e0; padding-left: 0; padding-top: 16px; }
+            .search-box { max-width: 100%; }
+            .brochures { grid-template-columns: 1fr; }
         }
     </style>
-<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-04BZKH6574"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-04BZKH6574');
 </script>
 </head>
 <body>
-<!-- Geo-blocking Script - Blocks USA, Canada, Australia, New Zealand -->
 <script>
 (async function() {
     try {
         const response = await fetch('https://api.country.is/');
         const data = await response.json();
-        
-        // Block these countries
         const blockedCountries = ['US', 'CA', 'AU', 'NZ'];
-        
         if (blockedCountries.includes(data.country)) {
             document.body.innerHTML = `
-                <div style="
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    justify-content: center;
-                    height: 100vh;
-                    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-                    background: #f5f5f5;
-                    color: #212121;
-                    text-align: center;
-                    padding: 20px;
-                ">
-                    <h1 style="font-size: 48px; margin-bottom: 16px;">🌍</h1>
-                    <h2 style="font-size: 32px; font-weight: 600; margin-bottom: 12px;">
-                        Service Not Available
-                    </h2>
-                    <p style="font-size: 18px; color: #757575;">
-                        This site is not available in your region.
-                    </p>
-                </div>
-            `;
+                <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;
+                height:100vh;font-family:-apple-system,sans-serif;background:#f5f5f5;text-align:center;padding:20px;">
+                    <h1 style="font-size:48px;margin-bottom:16px;">🌍</h1>
+                    <h2 style="font-size:32px;font-weight:600;margin-bottom:12px;">Service Not Available</h2>
+                    <p style="font-size:18px;color:#757575;">This site is not available in your region.</p>
+                </div>`;
         }
-    } catch (error) {
-        console.log('Geolocation check failed, allowing access');
-    }
+    } catch (e) { console.log('Geolocation check failed, allowing access'); }
 })();
 </script>
-    <!-- Fixed Top Navigation -->
     <nav class="top-nav">
         <div class="nav-container">
             <a href="../../">
                 <img src="../../logo.png" alt="Europe Incoming" class="logo">
             </a>
-            <input type="text" class="search-box" placeholder="Search packages - type city & country" id="searchBox">
+            <input type="text" class="search-box" placeholder="Search packages - type city or country" id="searchBox">
             <div class="header-right">
                 <div class="site-title-group">
                     <div class="site-title-main">Europe Incoming</div>
@@ -301,56 +134,69 @@
             </div>
         </div>
     </nav>
-    
-    <!-- Breadcrumb -->
-    <div class="breadcrumb">
-        <a href="../../">Home</a> > <a href="../">Multi-Country</a> > France
-    </div>
-    
-    <!-- Main Content -->
+    <div class="breadcrumb"><a href="../../">Home</a> > <a href="../">Multi-Country</a> > France</div>
     <div class="container">
         <h1>France</h1>
-        
         <div class="brochures" id="brochuresList">
-            <!-- Your PDF links will go here -->
-            <a href="7 nights, 8 days France_Private.pdf" class="brochure-card" target="_blank">
-        <h3>7 nights, 8 days France Normandy & Loire Valley</h3>
-        <span class="pdf-icon">Private Touring</span>
+    <a href="7 nights, 8 days France_Private.pdf" class="brochure-card" target="_blank">
+        <span class="pdf-icon">PDF</span>
+        <h3>7 nights, 8 days France Private</h3>
+        <div class="tour-type">Private</div>
+        <div class="card-meta"><span class="meta-tag duration">🕐 8 days</span></div>
+        <div class="cities-list">📍 Paris · Bayeux · Tours</div>
+        
     </a>
-    
     <a href="7 nights, 8 days France_Regular.pdf" class="brochure-card" target="_blank">
-        <h3>7 nights, 8 days France Normandy & Loire Valley</h3>
-        <span class="pdf-icon">Private transfers, shared tours & trains</span>
+        <span class="pdf-icon">PDF</span>
+        <h3>7 nights, 8 days France Regular</h3>
+        <div class="tour-type">Regular</div>
+        <div class="card-meta"><span class="meta-tag duration">🕐 8 days</span><span class="meta-tag stars">⭐⭐⭐ 3 Star</span></div>
+        <div class="cities-list">📍 Paris · Bayeux · Tours</div>
+        <div class="price-tag">From €938 pp (twin)</div>
     </a>
-    
     <a href="7 nights, 8 days France_Self-drive.pdf" class="brochure-card" target="_blank">
-        <h3>7 nights, 8 days France Normandy & Loire Valley</h3>
-        <span class="pdf-icon">Self-drive</span>
+        <span class="pdf-icon">PDF</span>
+        <h3>7 nights, 8 days France Self-drive</h3>
+        <div class="tour-type">Self Drive</div>
+        <div class="card-meta"><span class="meta-tag duration">🕐 8 days</span><span class="meta-tag stars">⭐⭐⭐ 3 Star</span></div>
+        <div class="cities-list">📍 Paris · Bayeux · Tours</div>
+        <div class="price-tag">From €933 pp (twin)</div>
     </a>
-    
-    <a href="8 nights, 9 days France_Private.pdf" class="brochure-card" target="_blank">
-        <h3>8 nights, 9 days France Provence & French Riviera</h3>
-        <span class="pdf-icon">Private Touring</span>
-    </a>
-    
-    <a href="8 nights, 9 days France_Regular.pdf" class="brochure-card" target="_blank">
-        <h3>8 nights, 9 days France Provence & French Riviera</h3>
-        <span class="pdf-icon">Private transfers, shared tours & trains</span>
-    </a>
-    
-    <a href="8 nights, 9 days France_Self drive.pdf" class="brochure-card" target="_blank">
-        <h3>8 nights, 9 days France Provence & French Riviera</h3>
-        <span class="pdf-icon">Self-drive</span>
-    </a>
-
     <a href="8 nights, 9 days Corsica_Self-drive.pdf" class="brochure-card" target="_blank">
-        <h3>8 nights, 9 days Corsica</h3>
-        <span class="pdf-icon">Self-drive</span>
+        <span class="pdf-icon">PDF</span>
+        <h3>8 nights, 9 days Corsica Self-drive</h3>
+        <div class="tour-type">Self Drive</div>
+        <div class="card-meta"><span class="meta-tag duration">🕐 9 days</span><span class="meta-tag stars">⭐⭐⭐ 3 Star</span></div>
+        <div class="cities-list">📍 Ajaccio · Corte · Bonifacio</div>
+        <div class="price-tag">From €1,084 pp (twin)</div>
     </a>
-            
+    <a href="8 nights, 9 days France_Private.pdf" class="brochure-card" target="_blank">
+        <span class="pdf-icon">PDF</span>
+        <h3>8 nights, 9 days France Private</h3>
+        <div class="tour-type">Private</div>
+        <div class="card-meta"><span class="meta-tag duration">🕐 9 days</span></div>
+        <div class="cities-list">📍 Paris · Avignon · Aix en Provence · Nice</div>
+        
+    </a>
+    <a href="8 nights, 9 days France_Regular.pdf" class="brochure-card" target="_blank">
+        <span class="pdf-icon">PDF</span>
+        <h3>8 nights, 9 days France Regular</h3>
+        <div class="tour-type">Regular</div>
+        <div class="card-meta"><span class="meta-tag duration">🕐 9 days</span><span class="meta-tag stars">⭐⭐⭐ 3 Star</span></div>
+        <div class="cities-list">📍 Paris · Avignon · Aix en Provence · Nice</div>
+        <div class="price-tag">From €1,098 pp (twin)</div>
+    </a>
+    <a href="8 nights, 9 days France_Self drive.pdf" class="brochure-card" target="_blank">
+        <span class="pdf-icon">PDF</span>
+        <h3>8 nights, 9 days France Self drive</h3>
+        <div class="tour-type">Self Drive</div>
+        <div class="card-meta"><span class="meta-tag duration">🕐 9 days</span><span class="meta-tag stars">⭐⭐⭐ 3 Star</span></div>
+        <div class="cities-list">📍 Paris · Avignon · Aix en Provence · Nice</div>
+        <div class="price-tag">From €1,301 pp (twin)</div>
+    </a>
         </div>
+        <footer><p>All packages are available for download in PDF format</p></footer>
     </div>
-    
     <script src="../../global-search.js"></script>
 </body>
 </html>
