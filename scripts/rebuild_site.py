@@ -1,15 +1,18 @@
 """
-rebuild_site.py — v3
-Scans PDF brochures, extracts data, generates AI descriptions via GitHub Models,
-rebuilds all index.html with Leaflet maps + improved cards.
+rebuild_site.py — v4
+- Brochure cards: Leaflet maps, AI descriptions, valid-till date, expired warning
+- Region cards: package count + tour types, auto-generated from folders
+- Auto-generates multi-country/index.html from folder structure
 """
 
-import os, re, json, urllib.request, urllib.error
+import os, re, json, urllib.request
 from datetime import datetime
 import fitz
 
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN", "")
+
+# ── FOLDER CONFIG ─────────────────────────────────────────────────────────────
 
 FOLDER_CONFIG = {
     "city-break": {"title": "City Breaks Packages", "breadcrumb": "City Breaks", "region": "City Break", "depth": 1},
@@ -22,6 +25,20 @@ FOLDER_CONFIG = {
     "multi-country/uk-ireland": {"title": "UK & Ireland", "breadcrumb": "UK & Ireland", "region": "UK & Ireland", "depth": 2},
     "multi-country/western-central-europe": {"title": "Western & Central Europe", "breadcrumb": "Western & Central Europe", "region": "Western & Central Europe", "depth": 2},
 }
+
+# Region cards config for multi-country index (folder slug → display info)
+REGION_DISPLAY = {
+    "italy": "Italy",
+    "eastern-europe": "Eastern Europe",
+    "france": "France",
+    "scandinavia-iceland": "Scandinavia & Iceland",
+    "spain-portugal": "Spain & Portugal",
+    "switzerland": "Switzerland",
+    "uk-ireland": "UK & Ireland",
+    "western-central-europe": "Western & Central Europe",
+}
+
+# ── CITY COORDS ───────────────────────────────────────────────────────────────
 
 CITY_COORDS = {
     "Amsterdam": [52.3676, 4.9041], "Athens": [37.9838, 23.7275], "Barcelona": [41.3851, 2.1734],
@@ -47,10 +64,10 @@ CITY_COORDS = {
     "Olbia": [40.9167, 9.5000], "Villasimius": [39.1333, 9.5167], "Bosa": [40.2981, 8.4983],
     "Nuoro": [40.3212, 9.3300], "Sassari": [40.7259, 8.5556],
     "Ajaccio": [41.9192, 8.7386], "Corte": [42.3069, 9.1497], "Bonifacio": [41.3871, 9.1597],
-    "Bastia": [42.7003, 9.4500], "Porto-Vecchio": [41.5917, 9.2797],
+    "Bastia": [42.7003, 9.4500],
     "Seville": [37.3891, -5.9845], "Granada": [37.1773, -3.5986], "Valencia": [39.4699, -0.3763],
-    "Bilbao": [43.2627, -2.9253], "San Sebastian": [43.3183, -1.9812],
-    "Porto": [41.1579, -8.6291], "Sintra": [38.7977, -9.3877], "Coimbra": [40.2033, -8.4103],
+    "Bilbao": [43.2627, -2.9253], "Porto": [41.1579, -8.6291], "Sintra": [38.7977, -9.3877],
+    "Coimbra": [40.2033, -8.4103],
     "Cologne": [50.9333, 6.9500], "Hamburg": [53.5753, 10.0153], "Dresden": [51.0504, 13.7373],
     "Dusseldorf": [51.2217, 6.7762], "Nuremberg": [49.4521, 11.0767],
     "Krakow": [50.0647, 19.9450], "Warsaw": [52.2297, 21.0122], "Bratislava": [48.1486, 17.1077],
@@ -65,10 +82,11 @@ CITY_COORDS = {
 }
 
 COMPOUND_NAMES = {
-    'East Europe', 'Eastern Europe', 'Western Europe', 'Central Europe',
-    'Western Central Europe', 'Costa Smeralda', 'Cala Gonone', 'Fort William',
-    'San Sebastian', 'Czech Republic', 'Porto Vecchio', 'Venice Mestre',
+    'East Europe','Eastern Europe','Western Europe','Central Europe','Western Central Europe',
+    'Costa Smeralda','Cala Gonone','Fort William','San Sebastian','Czech Republic','Venice Mestre',
 }
+
+# ── STATIC HTML SNIPPETS ──────────────────────────────────────────────────────
 
 GEO_BLOCK = """<script>
 (async function(){try{const r=await fetch('https://api.country.is/');const d=await r.json();
@@ -78,7 +96,10 @@ if(['US','CA','AU','NZ'].includes(d.country)){document.body.innerHTML='<div styl
 GA = """<script async src="https://www.googletagmanager.com/gtag/js?id=G-04BZKH6574"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-04BZKH6574');</script>"""
 
-CSS = """
+LEAFLET_HEAD = """<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>"""
+
+BASE_CSS = """
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;background:#f0f2f5;color:#212121;line-height:1.6;padding-top:80px;}
 .top-nav{position:fixed;top:0;left:0;right:0;background:white;box-shadow:0 1px 3px rgba(0,0,0,0.08);z-index:1000;padding:16px 0;}
@@ -100,9 +121,15 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;ba
 .breadcrumb a:hover{text-decoration:underline;}
 .container{max-width:1200px;margin:0 auto;padding:32px 24px 48px;}
 h1{font-size:2.2em;font-weight:600;color:#212121;margin-bottom:32px;letter-spacing:-0.5px;}
+footer{text-align:center;margin-top:60px;padding:32px 0;color:#9e9e9e;font-size:0.9em;border-top:1px solid #e8e8e8;}
+@media(max-width:768px){body{padding-top:180px;}.nav-container{flex-wrap:wrap;gap:16px;}.header-right{width:100%;flex-direction:column;align-items:center;order:3;gap:16px;}.site-title-group{text-align:center;}.contact-info{text-align:center;border-left:none;border-top:1px solid #e0e0e0;padding-left:0;padding-top:16px;}.search-box{max-width:100%;}}
+"""
+
+BROCHURE_CSS = """
 .brochures{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
 .brochure-card{background:white;border-radius:14px;box-shadow:0 1px 4px rgba(0,0,0,0.07);transition:all 0.3s cubic-bezier(0.4,0,0.2,1);text-decoration:none;color:inherit;display:flex;flex-direction:row;border:1px solid #ebebeb;overflow:hidden;min-height:210px;}
 .brochure-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,0.11);border-color:#d0d0d0;}
+.brochure-card.expired{opacity:0.75;border-color:#ffcc80;}
 .card-info{flex:1;padding:20px 20px 16px;display:flex;flex-direction:column;gap:5px;min-width:0;}
 .card-title{font-size:1.0em;font-weight:700;color:#1a1a1a;line-height:1.3;}
 .tour-type{font-size:0.72em;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:#c62828;}
@@ -112,7 +139,9 @@ h1{font-size:2.2em;font-weight:600;color:#212121;margin-bottom:32px;letter-spaci
 .pill-summer{background:#fff8e1;color:#e65100;}
 .pill-winter{background:#e8f4fd;color:#0277bd;}
 .pill-allyear{background:#e8f5e9;color:#2e7d32;}
-.card-description{font-size:0.81em;color:#666;font-style:italic;line-height:1.4;margin-top:1px;}
+.pill-valid{background:#e8f5e9;color:#2e7d32;}
+.pill-expired{background:#fff3e0;color:#e65100;}
+.card-description{font-size:0.81em;color:#666;font-style:italic;line-height:1.4;}
 .cities-list{font-size:0.79em;color:#555;}
 .price-tag{font-size:0.88em;color:#2e7d32;font-weight:700;margin-top:auto;padding-top:6px;}
 .pdf-badge{display:inline-block;font-size:0.65em;font-weight:700;color:#d32f2f;border:1.5px solid #d32f2f;padding:1px 6px;border-radius:4px;margin-left:6px;vertical-align:middle;}
@@ -120,9 +149,21 @@ h1{font-size:2.2em;font-weight:600;color:#212121;margin-bottom:32px;letter-spaci
 .map-inner{width:100%;height:100%;min-height:210px;}
 .leaflet-tooltip.city-tip{background:transparent!important;border:none!important;box-shadow:none!important;font-size:9px;font-weight:700;color:#1a1a2e;white-space:nowrap;padding:0;text-shadow:-1px -1px 0 white,1px -1px 0 white,-1px 1px 0 white,1px 1px 0 white;}
 .leaflet-tooltip.city-tip::before{display:none!important;}
-footer{text-align:center;margin-top:60px;padding:32px 0;color:#9e9e9e;font-size:0.9em;border-top:1px solid #e8e8e8;}
 @media(max-width:900px){.brochures{grid-template-columns:1fr;}.card-map{width:160px;min-width:160px;}}
-@media(max-width:768px){body{padding-top:180px;}.nav-container{flex-wrap:wrap;gap:16px;}.header-right{width:100%;flex-direction:column;align-items:center;order:3;gap:16px;}.site-title-group{text-align:center;}.contact-info{text-align:center;border-left:none;border-top:1px solid #e0e0e0;padding-left:0;padding-top:16px;}.search-box{max-width:100%;}.brochure-card{flex-direction:column;}.card-map{width:100%;min-width:100%;height:180px;border-left:none;border-top:1px solid #ebebeb;}.map-inner{min-height:180px;}}
+@media(max-width:768px){.brochure-card{flex-direction:column;}.card-map{width:100%;min-width:100%;height:180px;border-left:none;border-top:1px solid #ebebeb;}.map-inner{min-height:180px;}}
+"""
+
+REGION_CSS = """
+.categories{display:grid;grid-template-columns:repeat(auto-fit,minmax(440px,1fr));gap:24px;max-width:1000px;margin:0 auto;}
+.category-card{background:white;padding:32px;border-radius:14px;box-shadow:0 1px 3px rgba(0,0,0,0.08);transition:all 0.3s cubic-bezier(0.4,0,0.2,1);text-decoration:none;color:inherit;display:block;border:1px solid #f5f5f5;}
+.category-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,0.12);border-color:#e0e0e0;}
+.category-card h2{font-size:1.4em;color:#212121;margin-bottom:10px;font-weight:600;}
+.category-meta{font-size:0.82em;color:#757575;margin-bottom:6px;}
+.category-types{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px;}
+.type-tag{font-size:0.72em;font-weight:600;padding:2px 9px;border-radius:12px;background:#f0f4ff;color:#1565c0;}
+.arrow{float:right;color:#2196F3;font-size:1.4em;transition:transform 0.2s;}
+.category-card:hover .arrow{transform:translateX(4px);}
+@media(max-width:768px){.categories{grid-template-columns:1fr;}}
 """
 
 NAV = """<nav class="top-nav"><div class="nav-container">
@@ -133,9 +174,6 @@ NAV = """<nav class="top-nav"><div class="nav-container">
   <div class="contact-info"><div class="contact-prompt">Can't find what you're looking for? Email us at:</div>
   <a href="mailto:fitsales@europeincoming.com" class="contact-email">fitsales@europeincoming.com</a></div>
 </div></div></nav>"""
-
-LEAFLET_HEAD = """<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>"""
 
 # ── TITLE ─────────────────────────────────────────────────────────────────────
 
@@ -181,7 +219,8 @@ def detect_seasons(date_pairs):
     return "all-year"
 
 def extract_pdf_data(pdf_path, filename):
-    r={"duration":None,"tour_type":None,"cities":[],"price_twin":None,"season":"all-year","includes":[]}
+    r={"duration":None,"tour_type":None,"cities":[],"price_twin":None,
+       "season":"all-year","valid_till":None,"is_expired":False,"includes":[]}
     name=filename.replace('_',' ')
     dur=re.search(r'(\d+)\s*nights?\s*/?,?\s*(\d+)\s*days?',name,re.IGNORECASE)
     if dur: r["duration"]=f"{dur.group(1)} nights / {dur.group(2)} days"
@@ -197,7 +236,17 @@ def extract_pdf_data(pdf_path, filename):
         oc=re.findall(r'Overnight in ([A-Z][a-zA-Z\s]+?)[\.\n,]',txt)
         r["cities"]=list(dict.fromkeys([c.strip() for c in oc]))[:6]
         dp=re.findall(r'(\d{2}\.\d{2}\.\d{2})\s*\n?\s*(\d{2}\.\d{2}\.\d{2})',txt)
-        if dp: r["season"]=detect_seasons(dp)
+        if dp:
+            r["season"]=detect_seasons(dp)
+            # Find latest end date for valid-till
+            end_dates=[]
+            for s,e in dp:
+                try: end_dates.append(datetime.strptime(e,'%d.%m.%y'))
+                except: pass
+            if end_dates:
+                latest=max(end_dates)
+                r["valid_till"]=latest.strftime("%b %Y")
+                r["is_expired"]=latest < datetime.now()
         ti=next((i for i,l in enumerate(lines) if 'Twin' in l and 'Do' in l),None)
         if ti:
             ep=[]
@@ -214,130 +263,186 @@ def extract_pdf_data(pdf_path, filename):
         print(f"  WARNING {filename}: {e}")
     return r
 
+# ── ITINERARY EXTRACTION ──────────────────────────────────────────────────────
+
+def extract_itinerary(pdf_path):
+    """Pull the day-by-day text from the PDF, cleaned up."""
+    try:
+        doc = fitz.open(pdf_path)
+        txt = "\n".join(p.get_text() for p in doc)
+        m = re.search(r'(Day 1:.*?)(?:This package price includes|Sample Tours|Terms)', txt, re.DOTALL)
+        if m:
+            raw = m.group(1).strip()
+            raw = re.sub(r'Optional:.*?\n', '', raw)   # strip optional excursion lines
+            raw = re.sub(r'\s+', ' ', raw).strip()
+            return raw[:1500]  # cap at 1500 chars — enough context, not too many tokens
+    except:
+        pass
+    return ""
+
+
 # ── AI DESCRIPTION ────────────────────────────────────────────────────────────
 
-def generate_description(cities, region, tour_type, title):
-    """Call GitHub Models (GPT-4o mini) for a punchy description. Falls back to template."""
-    if not GITHUB_TOKEN:
-        return _fallback_description(cities, region, tour_type)
-    city_str = ', '.join(cities) if cities else region
-    prompt = (f"Cities visited: {city_str}. Region: {region}. Tour: {tour_type or 'guided'}. "
-              f"Write ONE punchy 8-10 word travel tagline. No 'journey through', no 'explore'. "
-              f"Be evocative and specific to this destination. Just the tagline, no quotes.")
+def generate_description(cities, region, tour_type, season, pdf_path):
+    itinerary = extract_itinerary(pdf_path)
+
+    if not GITHUB_TOKEN or not itinerary:
+        return _fallback_desc(cities, region, tour_type)
+
+    season_hint = ""
+    if season == "winter":
+        season_hint = "This is a winter package. "
+    elif season == "summer":
+        season_hint = "This is a summer / warm season package. "
+
+    prompt = (
+        f"Tour itinerary:\n{itinerary}\n\n"
+        f"Tour type: {tour_type or 'guided'}. {season_hint}"
+        f"Write ONE punchy sentence (max 12 words) capturing the ESSENCE and VIBE of this specific tour. "
+        f"Don't list cities. Don't say 'explore' or 'journey through'. "
+        f"Be vivid, specific to what actually happens on this tour — the landscapes, culture, experiences. "
+        f"Just the sentence, no quotes."
+    )
+
     payload = json.dumps({
         "model": "gpt-4o-mini",
         "messages": [
-            {"role": "system", "content": "You write punchy, evocative 8-10 word travel taglines. Sensory, specific, no generic phrases. Examples: 'Wild coastlines, ancient nuraghi and crystal-clear Sardinian coves.' or 'Imperial palaces, thermal baths and Danube sunset cruises.'"},
+            {
+                "role": "system",
+                "content": (
+                    "You write punchy one-sentence travel vibes that capture the soul of a tour. "
+                    "Specific, sensory, evocative. Never generic. Never list city names. "
+                    "Examples of good output: "
+                    "'Cliffside drives, Bronze Age towers and Neptune's hidden sea caves.' "
+                    "'Loch Ness mist, Highland whisky trails and ancient castle ruins.' "
+                    "'Normandy beaches, Loire châteaux and Parisian rooftop sunsets.'"
+                )
+            },
             {"role": "user", "content": prompt}
         ],
-        "max_tokens": 60,
-        "temperature": 0.85
+        "max_tokens": 80,
+        "temperature": 0.9
     }).encode()
+
     try:
         req = urllib.request.Request(
             "https://models.inference.ai.azure.com/chat/completions",
             data=payload,
             headers={"Content-Type": "application/json", "Authorization": f"Bearer {GITHUB_TOKEN}"}
         )
-        with urllib.request.urlopen(req, timeout=15) as resp:
-            data = json.loads(resp.read())
-            desc = data["choices"][0]["message"]["content"].strip().strip('"').strip("'")
+        with urllib.request.urlopen(req, timeout=20) as resp:
+            desc = json.loads(resp.read())["choices"][0]["message"]["content"].strip().strip('"').strip("'")
             print(f"    AI: {desc}")
             return desc
     except Exception as e:
-        print(f"    AI failed ({e}), using fallback")
-        return _fallback_description(cities, region, tour_type)
+        print(f"    AI failed ({e}), fallback")
+        return _fallback_desc(cities, region, tour_type)
 
-def _fallback_description(cities, region, tour_type):
+
+def _fallback_desc(cities, region, tour_type):
     if not cities:
         return f"Curated {region} package with handpicked experiences."
     if len(cities) == 1:
         return f"The best of {cities[0]}, curated and ready to explore."
     elif len(cities) == 2:
-        return f"{cities[0]} elegance meets {cities[1]} charm on this {(tour_type or 'guided').lower()} tour."
+        return f"{cities[0]} elegance meets {cities[1]} charm."
     else:
-        return f"{cities[0]}, {cities[1]} and beyond — {len(cities)} unforgettable stops."
-
+        return f"{cities[0]}, {cities[1]} and {len(cities)-2} more unmissable stops."
+        
 # ── MAP JS ────────────────────────────────────────────────────────────────────
 
 def make_map_js(map_id, cities):
-    """Generate JS to initialise one Leaflet map for a card."""
-    known = [(c, CITY_COORDS[c]) for c in cities if c in CITY_COORDS]
-    if not known:
-        return ""
-    coords_js = json.dumps([[lat, lng, name] for name, (lat, lng) in known])
-    return f"""
-(function(){{
+    known=[(c,CITY_COORDS[c]) for c in cities if c in CITY_COORDS]
+    if not known: return ""
+    coords_js=json.dumps([[lat,lng,name] for name,(lat,lng) in known])
+    return f"""(function(){{
   var pts={coords_js};
   if(!pts.length) return;
   var lats=pts.map(function(p){{return p[0];}});
   var lngs=pts.map(function(p){{return p[1];}});
   var pad=0.4;
-  var bounds=[[Math.min.apply(null,lats)-pad,Math.min.apply(null,lngs)-pad],
-              [Math.max.apply(null,lats)+pad,Math.max.apply(null,lngs)+pad]];
-  var map=L.map('{map_id}',{{zoomControl:false,scrollWheelZoom:false,dragging:false,
-    touchZoom:false,doubleClickZoom:false,boxZoom:false,keyboard:false,attributionControl:false}});
+  var bounds=[[Math.min.apply(null,lats)-pad,Math.min.apply(null,lngs)-pad],[Math.max.apply(null,lats)+pad,Math.max.apply(null,lngs)+pad]];
+  var map=L.map('{map_id}',{{zoomControl:false,scrollWheelZoom:false,dragging:false,touchZoom:false,doubleClickZoom:false,boxZoom:false,keyboard:false,attributionControl:false}});
   L.tileLayer('https://{{s}}.tile.openstreetmap.org/{{z}}/{{x}}/{{y}}.png',{{maxZoom:13}}).addTo(map);
   map.fitBounds(bounds,{{padding:[10,10]}});
-  if(pts.length>1){{
-    var ll=pts.map(function(p){{return[p[0],p[1]];}});
-    L.polyline(ll,{{color:'#2196F3',weight:2.5,dashArray:'6,4',opacity:0.85}}).addTo(map);
-  }}
+  if(pts.length>1){{var ll=pts.map(function(p){{return[p[0],p[1]];}});L.polyline(ll,{{color:'#2196F3',weight:2.5,dashArray:'6,4',opacity:0.85}}).addTo(map);}}
   pts.forEach(function(p,i){{
     var color=i===0?'#e53935':(i===pts.length-1?'#43a047':'#1565c0');
-    L.circleMarker([p[0],p[1]],{{radius:5,fillColor:color,color:'white',weight:2,fillOpacity:1}})
-      .addTo(map)
-      .bindTooltip(p[2],{{permanent:true,direction:'top',className:'city-tip',offset:[0,-5]}});
+    L.circleMarker([p[0],p[1]],{{radius:5,fillColor:color,color:'white',weight:2,fillOpacity:1}}).addTo(map).bindTooltip(p[2],{{permanent:true,direction:'top',className:'city-tip',offset:[0,-5]}});
   }});
 }})();"""
 
-# ── CARD ──────────────────────────────────────────────────────────────────────
+# ── BROCHURE CARD ─────────────────────────────────────────────────────────────
 
-def make_card(pdf_filename, pdf_data, title, description, map_id):
-    tt = pdf_data.get("tour_type","")
-    dur = pdf_data.get("duration","")
-    cities = pdf_data.get("cities",[])
-    price = pdf_data.get("price_twin")
-    season = pdf_data.get("season","all-year")
+def make_brochure_card(pdf_filename, pdf_data, title, description, map_id):
+    tt=pdf_data.get("tour_type","")
+    dur=pdf_data.get("duration","")
+    cities=pdf_data.get("cities",[])
+    price=pdf_data.get("price_twin")
+    season=pdf_data.get("season","all-year")
+    valid_till=pdf_data.get("valid_till")
+    is_expired=pdf_data.get("is_expired",False)
 
-    pills = ""
-    if dur: pills += f'<span class="pill pill-duration">🕐 {dur}</span>'
-    if season=="summer": pills += '<span class="pill pill-summer">☀️ Summer</span>'
-    elif season=="winter": pills += '<span class="pill pill-winter">❄️ Winter</span>'
-    else: pills += '<span class="pill pill-allyear">🌍 All Year Round</span>'
+    pills=""
+    if dur: pills+=f'<span class="pill pill-duration">🕐 {dur}</span>'
+    if season=="summer": pills+='<span class="pill pill-summer">☀️ Summer</span>'
+    elif season=="winter": pills+='<span class="pill pill-winter">❄️ Winter</span>'
+    else: pills+='<span class="pill pill-allyear">🌍 All Year Round</span>'
+    if valid_till:
+        if is_expired:
+            pills+=f'<span class="pill pill-expired">⚠️ Expired {valid_till}</span>'
+        else:
+            pills+=f'<span class="pill pill-valid">✓ Valid till {valid_till}</span>'
 
-    has_map = any(c in CITY_COORDS for c in cities)
-    map_html = f'<div class="card-map"><div id="{map_id}" class="map-inner"></div></div>' if has_map else ''
+    has_map=any(c in CITY_COORDS for c in cities)
+    map_html=f'<div class="card-map"><div id="{map_id}" class="map-inner"></div></div>' if has_map else ''
+    expired_class=" expired" if is_expired else ""
 
-    return f"""<a href="{pdf_filename}" class="brochure-card" target="_blank">
+    price_html=""
+    if price:
+        if is_expired:
+            price_html='<div class="price-tag" style="color:#e65100;">Check availability</div>'
+        else:
+            price_html=f'<div class="price-tag">From €{price:,} pp (twin)</div>'
+
+    return f"""<a href="{pdf_filename}" class="brochure-card{expired_class}" target="_blank">
   <div class="card-info">
     <div class="card-title">{title} <span class="pdf-badge">PDF</span></div>
     {'<div class="tour-type">'+tt+'</div>' if tt else ''}
     <div class="card-pills">{pills}</div>
     {'<div class="card-description">'+description+'</div>' if description else ''}
     {'<div class="cities-list">📍 '+' · '.join(cities)+'</div>' if cities else ''}
-    {'<div class="price-tag">From €'+f"{price:,}"+' pp (twin)</div>' if price else ''}
+    {price_html}
   </div>
   {map_html}
 </a>"""
 
-# ── INDEX HTML ────────────────────────────────────────────────────────────────
+# ── REGION CARD (for multi-country index) ────────────────────────────────────
 
-def build_index_html(title, breadcrumb, cards_html, maps_js, logo_src, logo_href, search_js):
-    nav = NAV.format(lh=logo_href, ls=logo_src)
+def make_region_card(slug, display_name, pkg_count, tour_types):
+    types_html=''.join(f'<span class="type-tag">{t}</span>' for t in tour_types)
+    pkg_label=f"{pkg_count} package{'s' if pkg_count!=1 else ''}"
+    return f"""<a href="{slug}/" class="category-card">
+  <span class="arrow">→</span>
+  <h2>{display_name}</h2>
+  <div class="category-meta">{pkg_label}</div>
+  <div class="category-types">{types_html}</div>
+</a>"""
+
+# ── INDEX BUILDERS ────────────────────────────────────────────────────────────
+
+def build_brochure_index(title, breadcrumb, cards_html, maps_js, logo_src, logo_href, search_js):
+    nav=NAV.format(lh=logo_href,ls=logo_src)
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{title} | Europe Incoming</title>
-<style>{CSS}</style>
-{LEAFLET_HEAD}
-{GA}
+<style>{BASE_CSS}{BROCHURE_CSS}</style>
+{LEAFLET_HEAD}{GA}
 </head>
 <body>
-{GEO_BLOCK}
-{nav}
+{GEO_BLOCK}{nav}
 <div class="breadcrumb">{breadcrumb}</div>
 <div class="container">
 <h1>{title}</h1>
@@ -347,35 +452,54 @@ def build_index_html(title, breadcrumb, cards_html, maps_js, logo_src, logo_href
 <footer><p>All packages are available for download in PDF format</p></footer>
 </div>
 <script src="{search_js}"></script>
-<script>
-window.addEventListener('load', function() {{
-{maps_js}
-}});
-</script>
-</body>
-</html>"""
+<script>window.addEventListener('load',function(){{{maps_js}}});</script>
+</body></html>"""
+
+def build_multicountry_index(region_cards_html, logo_src, logo_href, search_js):
+    nav=NAV.format(lh=logo_href,ls=logo_src)
+    breadcrumb=f'<a href="{logo_href}">Home</a> › Multi-City & Country Packages'
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Multi-City & Country Packages | Europe Incoming</title>
+<style>{BASE_CSS}{REGION_CSS}</style>
+{GA}
+</head>
+<body>
+{GEO_BLOCK}{nav}
+<div class="breadcrumb">{breadcrumb}</div>
+<div class="container">
+<h1>Multi-City & Country Packages</h1>
+<div class="categories" id="categoriesList">
+{region_cards_html}
+</div>
+<footer><p>All packages are available for download in PDF format</p></footer>
+</div>
+<script src="{search_js}"></script>
+</body></html>"""
 
 # ── PACKAGES JSON ─────────────────────────────────────────────────────────────
 
 def update_packages_json(packages_path, all_found):
-    existing = {}
+    existing={}
     if os.path.exists(packages_path):
         with open(packages_path,'r') as f:
             for pkg in json.load(f).get("packages",[]):
-                existing[pkg.get("folder","")+"/"+pkg.get("filename","")] = pkg
-    new_pkgs = []
+                existing[pkg.get("folder","")+"/"+pkg.get("filename","")]=pkg
+    new_pkgs=[]
     for item in all_found:
-        key = item["folder"]+"/"+item["filename"]
+        key=item["folder"]+"/"+item["filename"]
         if key in existing:
             new_pkgs.append(existing[key])
         else:
-            pid = re.sub(r'[^a-z0-9]','-',item["filename"].lower().replace('.pdf',''))[:30]
-            pd = item["pdf_data"]
+            pid=re.sub(r'[^a-z0-9]','-',item["filename"].lower().replace('.pdf',''))[:30]
+            pd=item["pdf_data"]
             new_pkgs.append({"id":pid,"name":item["title"],"filename":item["filename"],
                 "region":item["region"],"folder":item["folder"],"cities":pd.get("cities",[]),
                 "duration":pd.get("duration",""),"type":pd.get("tour_type",""),
                 "season":pd.get("season","all-year"),"price_twin":pd.get("price_twin"),
-                "tags":pd.get("cities",[])})
+                "valid_till":pd.get("valid_till"),"tags":pd.get("cities",[])})
     with open(packages_path,'w') as f:
         json.dump({"packages":new_pkgs},f,indent=2)
     print(f"  packages.json: {len(new_pkgs)} entries")
@@ -383,49 +507,67 @@ def update_packages_json(packages_path, all_found):
 # ── MAIN ──────────────────────────────────────────────────────────────────────
 
 def main():
-    packages_path = os.path.join(REPO_ROOT,"packages.json")
-    all_found = []
+    packages_path=os.path.join(REPO_ROOT,"packages.json")
+    all_found=[]
+    # Collect per-region stats for multi-country index
+    region_stats={}  # slug → {count, tour_types}
 
     for folder_rel, config in FOLDER_CONFIG.items():
-        folder_abs = os.path.join(REPO_ROOT, folder_rel)
+        folder_abs=os.path.join(REPO_ROOT,folder_rel)
         if not os.path.isdir(folder_abs): continue
-        pdfs = sorted([f for f in os.listdir(folder_abs) if f.lower().endswith('.pdf')])
+        pdfs=sorted([f for f in os.listdir(folder_abs) if f.lower().endswith('.pdf')])
         if not pdfs: continue
         print(f"\n{folder_rel} — {len(pdfs)} PDFs")
 
-        depth = config["depth"]
-        logo_src = "../"*depth+"logo.png"
-        logo_href = "../"*depth
-        search_js = "../"*depth+"global-search.js"
+        depth=config["depth"]
+        logo_src="../"*depth+"logo.png"
+        logo_href="../"*depth
+        search_js="../"*depth+"global-search.js"
         if depth==1:
-            breadcrumb = f'<a href="../">Home</a> › {config["breadcrumb"]}'
+            breadcrumb=f'<a href="../">Home</a> › {config["breadcrumb"]}'
         else:
-            breadcrumb = f'<a href="../../">Home</a> › <a href="../">Multi-Country</a> › {config["breadcrumb"]}'
+            breadcrumb=f'<a href="../../">Home</a> › <a href="../">Multi-Country</a> › {config["breadcrumb"]}'
 
-        cards = []; maps_js_parts = []
-        for idx, pdf in enumerate(pdfs):
+        cards=[]; maps_js_parts=[]; tour_types_seen=[]
+        for idx,pdf in enumerate(pdfs):
             print(f"  {pdf}")
-            pdf_data = extract_pdf_data(os.path.join(folder_abs,pdf), pdf)
-            title = make_title(pdf)
-            desc = generate_description(pdf_data.get("cities",[]), config["region"], pdf_data.get("tour_type",""), title)
-            map_id = f"map_{re.sub(r'[^a-z0-9]','_',pdf.lower()[:20])}_{idx}"
+            pdf_data=extract_pdf_data(os.path.join(folder_abs,pdf),pdf)
+            title=make_title(pdf)
+            desc=generate_description(pdf_data.get("cities",[]),config["region"],pdf_data.get("tour_type",""),pdf_data.get("season","all-year"),os.path.join(folder_abs,pdf))            map_id=f"map_{re.sub(r'[^a-z0-9]','_',pdf.lower()[:18])}_{idx}"
             all_found.append({"filename":pdf,"title":title,"folder":folder_rel,"region":config["region"],"pdf_data":pdf_data})
-            cards.append(make_card(pdf, pdf_data, title, desc, map_id))
-            js = make_map_js(map_id, pdf_data.get("cities",[]))
+            cards.append(make_brochure_card(pdf,pdf_data,title,desc,map_id))
+            js=make_map_js(map_id,pdf_data.get("cities",[]))
             if js: maps_js_parts.append(js)
+            tt=pdf_data.get("tour_type","")
+            if tt and tt not in tour_types_seen: tour_types_seen.append(tt)
 
-        html = build_index_html(
-            config["title"], breadcrumb,
-            "\n".join(cards), "\n".join(maps_js_parts),
-            logo_src, logo_href, search_js
-        )
+        html=build_brochure_index(config["title"],breadcrumb,"\n".join(cards),"\n".join(maps_js_parts),logo_src,logo_href,search_js)
         with open(os.path.join(folder_abs,"index.html"),'w',encoding='utf-8') as f:
             f.write(html)
         print(f"  Rebuilt {folder_rel}/index.html")
 
+        # Track region stats for multi-country index
+        if depth==2:
+            slug=folder_rel.replace("multi-country/","")
+            region_stats[slug]={"count":len(pdfs),"tour_types":tour_types_seen,"display":config["title"]}
+
+    # Build multi-country index
+    print("\nRebuilding multi-country/index.html...")
+    mc_folder=os.path.join(REPO_ROOT,"multi-country")
+    if os.path.isdir(mc_folder):
+        region_cards=[]
+        for slug,display in REGION_DISPLAY.items():
+            stats=region_stats.get(slug,{"count":0,"tour_types":[]})
+            if stats["count"]>0:
+                region_cards.append(make_region_card(slug,display,stats["count"],stats["tour_types"]))
+        mc_html=build_multicountry_index("\n".join(region_cards),"../logo.png","../","../global-search.js")
+        with open(os.path.join(mc_folder,"index.html"),'w',encoding='utf-8') as f:
+            f.write(mc_html)
+        print("  Rebuilt multi-country/index.html")
+
     print(f"\nUpdating packages.json...")
-    update_packages_json(packages_path, all_found)
+    update_packages_json(packages_path,all_found)
     print("\nDone!")
 
-if __name__ == "__main__":
+if __name__=="__main__":
     main()
