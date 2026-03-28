@@ -16,7 +16,7 @@
         "Canals",
         "Museums"
       ],
-      "description": "The best of Amsterdam, curated and ready to explore."
+      "description": "Two nights in Amsterdam with sightseeing, canal cruise and transfers."
     },
     {
       "id": "city-002",
@@ -34,7 +34,7 @@
         "Ancient History",
         "Acropolis"
       ],
-      "description": "The best of Athens, curated and ready to explore."
+      "description": "Two nights in Athens with sightseeing, canal cruise and transfers."
     },
     {
       "id": "city-003",
@@ -52,7 +52,7 @@
         "Mediterranean",
         "Gaudi"
       ],
-      "description": "The best of Barcelona, curated and ready to explore."
+      "description": "Two nights in Barcelona with sightseeing, canal cruise and transfers."
     },
     {
       "id": "city-004",
@@ -69,7 +69,7 @@
         "Norway",
         "Fjords"
       ],
-      "description": "The best of Bergen, curated and ready to explore."
+      "description": "Two nights in Bergen with sightseeing, canal cruise and transfers."
     },
     {
       "id": "city-005",
@@ -86,7 +86,7 @@
         "Germany",
         "History"
       ],
-      "description": "The best of Berlin, curated and ready to explore."
+      "description": "Two nights in Berlin with sightseeing, canal cruise and transfers."
     },
     {
       "id": "city-006",
@@ -103,7 +103,7 @@
         "Belgium",
         "Grand Place"
       ],
-      "description": "The best of Brussels, curated and ready to explore."
+      "description": "Two nights in Brussels with sightseeing, canal cruise and transfers."
     },
     {
       "id": "city-007",
@@ -121,7 +121,7 @@
         "Danube",
         "Thermal Baths"
       ],
-      "description": "The best of Budapest, curated and ready to explore."
+      "description": "Two nights in Budapest with sightseeing, canal cruise and transfers."
     },
     {
       "id": "city-008",
@@ -138,7 +138,7 @@
         "Denmark",
         "Nordic"
       ],
-      "description": "The best of Copenhagen, curated and ready to explore."
+      "description": "Two nights in Copenhagen with sightseeing, canal cruise and transfers."
     },
     {
       "id": "city-009",
@@ -154,7 +154,7 @@
       "tags": [
         "Ireland"
       ],
-      "description": "The best of Dublin, curated and ready to explore."
+      "description": "Two nights in Dublin with sightseeing, canal cruise and transfers."
     },
     {
       "id": "city-010",
@@ -171,7 +171,7 @@
         "Germany",
         "Rhine"
       ],
-      "description": "The best of Dusseldorf, curated and ready to explore."
+      "description": "Two nights in Dusseldorf with sightseeing, canal cruise and transfers."
     },
     {
       "id": "city-011",
@@ -188,7 +188,7 @@
         "Scotland",
         "Castle"
       ],
-      "description": "The best of Edinburgh, curated and ready to explore."
+      "description": "Two nights in Edinburgh with sightseeing, canal cruise and transfers."
     },
     {
       "id": "city-012",
@@ -206,7 +206,7 @@
         "Tuscany",
         "Renaissance"
       ],
-      "description": "The best of Florence, curated and ready to explore."
+      "description": "Two nights in Florence with sightseeing, canal cruise and transfers."
     },
     {
       "id": "city-013",
@@ -223,7 +223,7 @@
         "Germany",
         "Financial Hub"
       ],
-      "description": "The best of Frankfurt, curated and ready to explore."
+      "description": "Two nights in Frankfurt with sightseeing, canal cruise and transfers."
     },
     {
       "id": "city-014",
@@ -240,7 +240,7 @@
         "Switzerland",
         "Lake Geneva"
       ],
-      "description": "The best of Geneva, curated and ready to explore."
+      "description": "Two nights in Geneva with sightseeing, canal cruise and transfers."
     },
     {
       "id": "city-015",
@@ -256,7 +256,7 @@
       "tags": [
         "Scotland"
       ],
-      "description": "The best of Glasgow, curated and ready to explore."
+      "description": "Two nights in Glasgow with sightseeing, canal cruise and transfers."
     },
     {
       "id": "city-016",
@@ -273,7 +273,7 @@
         "Finland",
         "Nordic"
       ],
-      "description": "The best of Helsinki, curated and ready to explore."
+      "description": "Two nights in Helsinki with sightseeing, canal cruise and transfers."
     },
     {
       "id": "city-017",
@@ -290,7 +290,7 @@
         "Austria",
         "Alps"
       ],
-      "description": "The best of Innsbruck, curated and ready to explore."
+      "description": "Two nights in Innsbruck with sightseeing, canal cruise and transfers."
     },
     {
       "id": "city-018",
@@ -308,7 +308,7 @@
         "Alps",
         "Jungfrau"
       ],
-      "description": "The best of Interlaken, curated and ready to explore."
+      "description": "Two nights in Interlaken with sightseeing, canal cruise and transfers."
     },
     {
       "id": "city-019",
@@ -326,7 +326,7 @@
         "Scottish Highlands",
         "Loch Ness"
       ],
-      "description": "The best of Inverness, curated and ready to explore."
+      "description": "Two nights in Inverness with sightseeing, canal cruise and transfers."
     },
     {
       "id": "city-020",
@@ -343,7 +343,7 @@
         "Portugal",
         "Atlantic"
       ],
-      "description": "The best of Lisbon, curated and ready to explore."
+      "description": "Two nights in Lisbon with sightseeing, canal cruise and transfers."
     },
     {
       "id": "city-021",
@@ -361,7 +361,7 @@
         "Thames",
         "Royal"
       ],
-      "description": "The best of London, curated and ready to explore."
+      "description": "Two nights in London with sightseeing, canal cruise and transfers."
     },
     {
       "id": "city-022",
@@ -379,7 +379,7 @@
         "Alps",
         "Lake"
       ],
-      "description": "The best of Lucerne, curated and ready to explore."
+      "description": "Two nights in Lucerne with sightseeing, canal cruise and transfers."
     },
     {
       "id": "city-023",
@@ -396,7 +396,7 @@
         "Spain",
         "Museums"
       ],
-      "description": "The best of Madrid, curated and ready to explore."
+      "description": "Two nights in Madrid with sightseeing, canal cruise and transfers."
     },
     {
       "id": "city-024",
@@ -414,7 +414,7 @@
         "Fashion",
         "Duomo"
       ],
-      "description": "The best of Milan, curated and ready to explore."
+      "description": "Two nights in Milan with sightseeing, canal cruise and transfers."
     },
     {
       "id": "city-025",
@@ -432,7 +432,7 @@
         "Bavaria",
         "Beer"
       ],
-      "description": "The best of Munich, curated and ready to explore."
+      "description": "Two nights in Munich with sightseeing, canal cruise and transfers."
     },
     {
       "id": "city-026",
@@ -450,7 +450,7 @@
         "Islands",
         "Beaches"
       ],
-      "description": "The best of Mykonos, curated and ready to explore."
+      "description": "Two nights in Mykonos with sightseeing, canal cruise and transfers."
     },
     {
       "id": "city-027",
@@ -468,7 +468,7 @@
         "French Riviera",
         "Mediterranean"
       ],
-      "description": "The best of Nice, curated and ready to explore."
+      "description": "Two nights in Nice with sightseeing, canal cruise and transfers."
     },
     {
       "id": "city-028",
@@ -486,7 +486,7 @@
         "Nordic",
         "Fjords"
       ],
-      "description": "The best of Oslo, curated and ready to explore."
+      "description": "Two nights in Oslo with sightseeing, canal cruise and transfers."
     },
     {
       "id": "city-029",
@@ -504,7 +504,7 @@
         "Seine",
         "Eiffel Tower"
       ],
-      "description": "The best of Paris, curated and ready to explore."
+      "description": "Two nights in Paris with sightseeing, canal cruise and transfers."
     },
     {
       "id": "city-030",
@@ -521,7 +521,7 @@
         "Czech Republic",
         "Historic"
       ],
-      "description": "The best of Prague, curated and ready to explore."
+      "description": "Two nights in Prague with sightseeing, canal cruise and transfers."
     },
     {
       "id": "city-031",
@@ -540,7 +540,7 @@
         "Colosseum",
         "Vatican"
       ],
-      "description": "The best of Rome, curated and ready to explore."
+      "description": "Two nights in Rome with sightseeing, canal cruise and transfers."
     },
     {
       "id": "city-032",
@@ -558,7 +558,7 @@
         "Mozart",
         "Alps"
       ],
-      "description": "The best of Salzburg, curated and ready to explore."
+      "description": "Two nights in Salzburg with sightseeing, canal cruise and transfers."
     },
     {
       "id": "city-033",
@@ -577,7 +577,7 @@
         "Beaches",
         "Sunset"
       ],
-      "description": "The best of Santorini, curated and ready to explore."
+      "description": "Two nights in Santorini with sightseeing, canal cruise and transfers."
     },
     {
       "id": "city-034",
@@ -594,7 +594,7 @@
         "Sweden",
         "Nordic"
       ],
-      "description": "The best of Stockholm, curated and ready to explore."
+      "description": "Two nights in Stockholm with sightseeing, canal cruise and transfers."
     },
     {
       "id": "city-035",
@@ -612,7 +612,7 @@
         "Canals",
         "Gondola"
       ],
-      "description": "The best of Venice, curated and ready to explore."
+      "description": "Two nights in Venice with sightseeing, canal cruise and transfers."
     },
     {
       "id": "city-036",
@@ -630,7 +630,7 @@
         "Classical Music",
         "Danube"
       ],
-      "description": "The best of Vienna, curated and ready to explore."
+      "description": "Two nights in Vienna with sightseeing, canal cruise and transfers."
     },
     {
       "id": "city-037",
@@ -648,7 +648,7 @@
         "Lake",
         "Banking"
       ],
-      "description": "The best of Zurich, curated and ready to explore."
+      "description": "Two nights in Zurich with sightseeing, canal cruise and transfers."
     },
     {
       "id": "italy-003",
@@ -671,7 +671,7 @@
         "Amalfi Coast",
         "Canals"
       ],
-      "description": "Naples, Rome and 4 more unmissable stops."
+      "description": "Private guided tour through Naples, Rome, Florence, Venice Mestre, Venice and Milan."
     },
     {
       "id": "italy-004",
@@ -694,7 +694,7 @@
         "Amalfi Coast",
         "Canals"
       ],
-      "description": "Rome, Naples and 2 more unmissable stops."
+      "description": "Trains, landmarks and local character through Rome, Naples, Venice and Milan."
     },
     {
       "id": "italy-001",
@@ -713,7 +713,7 @@
         "Tuscany",
         "Canals"
       ],
-      "description": "Venice Mestre, Venice and 1 more unmissable stops."
+      "description": "Private guided tour through Venice Mestre, Venice and Florence."
     },
     {
       "id": "italy-002",
@@ -732,7 +732,7 @@
         "Tuscany",
         "Canals"
       ],
-      "description": "Venice Mestre, Florence and 1 more unmissable stops."
+      "description": "Trains, landmarks and local character through Venice Mestre, Florence and Rome."
     },
     {
       "id": "7-nights--8-days-sardinia-self",
@@ -754,7 +754,7 @@
         "Alghero",
         "Olbia"
       ],
-      "description": "Cagliari, Cala Gonone and 2 more unmissable stops."
+      "description": "Self-drive through Cagliari, Cala Gonone, Alghero and Olbia \u2014 your route, your pace."
     },
     {
       "id": "ee-001",
@@ -775,7 +775,7 @@
         "Hungary",
         "Danube"
       ],
-      "description": "Prague, Vienna and 1 more unmissable stops."
+      "description": "Private guided tour through Prague, Vienna and Budapest."
     },
     {
       "id": "ee-002",
@@ -796,7 +796,7 @@
         "Hungary",
         "Danube"
       ],
-      "description": "Prague, Vienna and 1 more unmissable stops."
+      "description": "Trains, landmarks and local character through Prague, Vienna and Budapest."
     },
     {
       "id": "7-nights--8-days-france-privat",
@@ -816,7 +816,7 @@
         "Bayeux",
         "Tours"
       ],
-      "description": "Paris, Bayeux and 1 more unmissable stops."
+      "description": "Private guided tour through Paris, Bayeux and Tours."
     },
     {
       "id": "7-nights--8-days-france-regula",
@@ -836,7 +836,7 @@
         "Bayeux",
         "Tours"
       ],
-      "description": "Paris, Bayeux and 1 more unmissable stops."
+      "description": "Trains, landmarks and local character through Paris, Bayeux and Tours."
     },
     {
       "id": "7-nights--8-days-france-self-d",
@@ -856,7 +856,7 @@
         "Bayeux",
         "Tours"
       ],
-      "description": "Paris, Bayeux and 1 more unmissable stops."
+      "description": "Self-drive through Paris, Bayeux and Tours \u2014 your route, your pace."
     },
     {
       "id": "8-nights--9-days-corsica-self-",
@@ -876,7 +876,7 @@
         "Corte",
         "Bonifacio"
       ],
-      "description": "Ajaccio, Corte and 1 more unmissable stops."
+      "description": "Self-drive through Ajaccio, Corte and Bonifacio \u2014 your route, your pace."
     },
     {
       "id": "8-nights--9-days-france-privat",
@@ -898,7 +898,7 @@
         "Aix en Provence",
         "Nice"
       ],
-      "description": "Paris, Avignon and 2 more unmissable stops."
+      "description": "Private guided tour through Paris, Avignon, Aix en Provence and Nice."
     },
     {
       "id": "8-nights--9-days-france-regula",
@@ -920,7 +920,7 @@
         "Aix en Provence",
         "Nice"
       ],
-      "description": "Paris, Avignon and 2 more unmissable stops."
+      "description": "Trains, landmarks and local character through Paris, Avignon, Aix en Provence and Nice."
     },
     {
       "id": "8-nights--9-days-france-self-d",
@@ -942,7 +942,7 @@
         "Aix en Provence",
         "Nice"
       ],
-      "description": "Paris, Avignon and 2 more unmissable stops."
+      "description": "Self-drive through Paris, Avignon, Aix en Provence and Nice \u2014 your route, your pace."
     },
     {
       "id": "6-nights--7-days-nordic-capita",
@@ -964,7 +964,7 @@
         "Stockholm",
         "Helsinki"
       ],
-      "description": "Copenhagen, Oslo and 2 more unmissable stops."
+      "description": "Trains, landmarks and local character through Copenhagen, Oslo, Stockholm and Helsinki."
     },
     {
       "id": "iceland-self-drive-7-nights--8",
@@ -986,7 +986,7 @@
         "Hofn",
         "Vik"
       ],
-      "description": "Reykjavik, Akureyri and 2 more unmissable stops."
+      "description": "Self-drive through Reykjavik, Akureyri, Hofn and Vik \u2014 your route, your pace."
     },
     {
       "id": "kiruna-regular-4-nights--5-day",
@@ -1002,7 +1002,7 @@
       "tags": [
         "Kiruna"
       ],
-      "description": "The best of Kiruna, curated and ready to explore."
+      "description": "Two nights in Kiruna with sightseeing, canal cruise and transfers."
     },
     {
       "id": "norway-nutshell-regular-5-nigh",
@@ -1020,7 +1020,7 @@
         "Oslo",
         "Bergen"
       ],
-      "description": "Oslo elegance meets Bergen charm."
+      "description": "From Oslo to Bergen \u2014 history, culture and local highlights."
     },
     {
       "id": "swedish-lapland-regular-7-nigh",
@@ -1038,7 +1038,7 @@
         "Kiruna",
         "Abisko"
       ],
-      "description": "Kiruna elegance meets Abisko charm."
+      "description": "From Kiruna to Abisko \u2014 history, culture and local highlights."
     },
     {
       "id": "tromso--regular-4-nights--5-da",
@@ -1080,7 +1080,7 @@
         "Madrid",
         "Barcelona"
       ],
-      "description": "Madrid elegance meets Barcelona charm."
+      "description": "Private tour: Madrid to Barcelona with dedicated transport."
     },
     {
       "id": "8-nights--9-days-spain-private",
@@ -1102,7 +1102,7 @@
         "Seville",
         "Barcelona"
       ],
-      "description": "Madrid, Granada and 2 more unmissable stops."
+      "description": "Private guided tour through Madrid, Granada, Seville and Barcelona."
     },
     {
       "id": "8-nights--9-days-spain-regular",
@@ -1124,7 +1124,7 @@
         "Seville",
         "Barcelona"
       ],
-      "description": "Madrid, Granada and 2 more unmissable stops."
+      "description": "Trains, landmarks and local character through Madrid, Granada, Seville and Barcelona."
     },
     {
       "id": "switz-001",
@@ -1144,7 +1144,7 @@
         "Alps",
         "Jungfrau"
       ],
-      "description": "Lucerne elegance meets Interlaken charm."
+      "description": "From Lucerne to Interlaken \u2014 history, culture and local highlights."
     },
     {
       "id": "switz-002",
@@ -1166,7 +1166,7 @@
         "Jungfrau",
         "Lake Geneva"
       ],
-      "description": "Lucerne, Interlaken and 2 more unmissable stops."
+      "description": "Private guided tour through Lucerne, Interlaken, Montreux and Zurich."
     },
     {
       "id": "switz-003",
@@ -1188,7 +1188,7 @@
         "Jungfrau",
         "Lake Geneva"
       ],
-      "description": "Lucerne, Interlaken and 2 more unmissable stops."
+      "description": "Trains, landmarks and local character through Lucerne, Interlaken, Montreux and Zurich."
     },
     {
       "id": "uk-002",
@@ -1211,7 +1211,7 @@
         "Scottish Highlands",
         "Multi-city"
       ],
-      "description": "London, Manchester and 2 more unmissable stops."
+      "description": "Trains, landmarks and local character through London, Manchester, Edinburgh and Inverness."
     },
     {
       "id": "uk-001",
@@ -1229,7 +1229,7 @@
         "City Break",
         "Thames"
       ],
-      "description": "The best of London, curated and ready to explore."
+      "description": "Private London experience with dedicated guide and transfers."
     },
     {
       "id": "uk-010",
@@ -1246,7 +1246,7 @@
       "tags": [
         "Ireland"
       ],
-      "description": "Dublin elegance meets Limerick charm."
+      "description": "Private tour: Dublin to Limerick with dedicated transport."
     },
     {
       "id": "uk-009",
@@ -1263,7 +1263,7 @@
       "tags": [
         "Ireland"
       ],
-      "description": "Dublin elegance meets Limerick charm."
+      "description": "From Dublin to Limerick \u2014 history, culture and local highlights."
     },
     {
       "id": "uk-008",
@@ -1281,7 +1281,7 @@
         "Ireland",
         "Self Drive"
       ],
-      "description": "Dublin elegance meets Limerick charm."
+      "description": "Self-drive from Dublin to Limerick \u2014 roads, views, freedom."
     },
     {
       "id": "uk-007",
@@ -1300,7 +1300,7 @@
         "Scotland",
         "Scottish Highlands"
       ],
-      "description": "Edinburgh, Inverness and 2 more unmissable stops."
+      "description": "Private guided tour through Edinburgh, Inverness, Fort William and Glasgow."
     },
     {
       "id": "uk-006",
@@ -1319,7 +1319,7 @@
         "Scotland",
         "Scottish Highlands"
       ],
-      "description": "Edinburgh, Invernes s and 2 more unmissable stops."
+      "description": "Trains, landmarks and local character through Edinburgh, Invernes s, Inverness and Glasgow."
     },
     {
       "id": "uk-005",
@@ -1339,7 +1339,7 @@
         "Scottish Highlands",
         "Self Drive"
       ],
-      "description": "Edinburgh, Inverness and 2 more unmissable stops."
+      "description": "Self-drive through Edinburgh, Inverness, Fort William and Glasgow \u2014 your route, your pace."
     },
     {
       "id": "uk-004",
@@ -1360,7 +1360,7 @@
         "Scotland",
         "Scottish Highlands"
       ],
-      "description": "London, Glasgow and 2 more unmissable stops."
+      "description": "Trains, landmarks and local character through London, Glasgow, Inverness and Edinburgh."
     },
     {
       "id": "uk-003",
@@ -1383,7 +1383,7 @@
         "Scottish Highlands",
         "Multi-city"
       ],
-      "description": "London, Manchester and 3 more unmissable stops."
+      "description": "Private guided tour through London, Manchester, Edinburgh, Inverness and Glasgow."
     },
     {
       "id": "9-nights--10-days-cotswolds-de",
@@ -1409,7 +1409,7 @@
         "Exeter",
         "Bournemouth"
       ],
-      "description": "Cheltenham, Barnstaple and 4 more unmissable stops."
+      "description": "Self-drive through Cheltenham, Barnstaple, Truro, Plymouth, Exeter and Bournemouth \u2014 your route, your pace."
     },
     {
       "id": "wce-005",
@@ -1433,7 +1433,7 @@
         "Alps",
         "Tuscany"
       ],
-      "description": "Paris, Lucerne and 4 more unmissable stops."
+      "description": "Private guided tour through Paris, Lucerne, Mestre, Venice, Florence and Rome."
     },
     {
       "id": "wce-006",
@@ -1457,7 +1457,7 @@
         "Alps",
         "Tuscany"
       ],
-      "description": "Paris, Lucerne and 1 more unmissable stops."
+      "description": "Trains, landmarks and local character through Paris, Lucerne and Rome."
     },
     {
       "id": "wce-001",
@@ -1478,7 +1478,7 @@
         "Alps",
         "Seine"
       ],
-      "description": "Paris, Lucerne and 1 more unmissable stops."
+      "description": "Private guided tour through Paris, Lucerne and Zurich."
     },
     {
       "id": "wce-002",
@@ -1499,7 +1499,7 @@
         "Alps",
         "Seine"
       ],
-      "description": "Paris elegance meets Lucerne charm."
+      "description": "From Paris to Lucerne \u2014 history, culture and local highlights."
     },
     {
       "id": "wce-008",
@@ -1522,7 +1522,7 @@
         "Alps",
         "Canals"
       ],
-      "description": "Amsterdam, Paris and 2 more unmissable stops."
+      "description": "Private guided tour through Amsterdam, Paris, Lucerne and Zurich."
     },
     {
       "id": "wce-007",
@@ -1545,7 +1545,7 @@
         "Alps",
         "Canals"
       ],
-      "description": "Amsterdam, Paris and 1 more unmissable stops."
+      "description": "Trains, landmarks and local character through Amsterdam, Paris and Lucerne."
     },
     {
       "id": "wce-003",
@@ -1568,7 +1568,7 @@
         "Alps",
         "Danube"
       ],
-      "description": "Paris, Lucerne and 2 more unmissable stops."
+      "description": "Private guided tour through Paris, Lucerne, Innsbruck and Vienna."
     },
     {
       "id": "wce-004",
@@ -1591,7 +1591,7 @@
         "Alps",
         "Danube"
       ],
-      "description": "Paris, Lucerne and 2 more unmissable stops."
+      "description": "Trains, landmarks and local character through Paris, Lucerne, Innsbruck and Vienna."
     }
   ]
 }
