@@ -333,21 +333,17 @@ def extract_pdf_data(pdf_path, filename):
                                   if int(a.replace(',','')) > 500]
                 if package_prices:
                     r["price_twin"] = min(package_prices)
-        else:
-            # Regular/Self Drive: Twin/Double column
-            twin_m = re.search(r'(?:Twin|Double).{0,50}?€\s*([\d,]+)', txt, re.IGNORECASE|re.DOTALL)
-            if twin_m:
-                r["price_twin"] = int(twin_m.group(1).replace(',',''))
-            else:
-                ti=next((i for i,l in enumerate(lines) if 'Twin' in l and 'Do' in l),None)
-                if ti:
-                    ep=[]
-                    for l in lines[ti:ti+30]:
-                        m=re.match(r'€\s*([\d,]+)',l)
-                        if m: ep.append(int(m.group(1).replace(',','')))
-                    tw=ep[1::3] if len(ep)>=3 else ep[1:2] if len(ep)>=2 else []
-                    if tw: r["price_twin"]=min(tw)
-
+else:
+            # Regular/Self Drive: column-based Twin extraction (Single, Twin, Child order)
+            ti = next((i for i,l in enumerate(lines) if 'Twin' in l and 'Do' in l), None)
+            if ti:
+                ep = []
+                for l in lines[ti:ti+30]:
+                    m = re.match(r'€\s*([\d,]+)', l)
+                    if m: ep.append(int(m.group(1).replace(',','')))
+                twins = ep[1::3] if len(ep) >= 3 else ep[1:2] if len(ep) >= 2 else []
+                if twins: r["price_twin"] = min(twins)
+                    
         # Includes
         im=re.search(r'price includes:(.*?)(?:Sample Tours|Terms|Sample Hotels)',txt,re.DOTALL|re.IGNORECASE)
         if im:
