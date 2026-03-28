@@ -333,7 +333,7 @@ def extract_pdf_data(pdf_path, filename):
                                   if int(a.replace(',','')) > 500]
                 if package_prices:
                     r["price_twin"] = min(package_prices)
-else:
+                else:
             # Regular/Self Drive: column-based Twin extraction (Single, Twin, Child order)
             ti = next((i for i,l in enumerate(lines) if 'Twin' in l and 'Do' in l), None)
             if ti:
