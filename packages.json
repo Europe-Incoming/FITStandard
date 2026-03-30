@@ -1007,60 +1007,6 @@
       "description": "From Oslo to Bergen \u2014 history, culture and local highlights."
     },
     {
-      "id": "swedish-lapland-7n-regular-win",
-      "name": "Swedish Lapland 7N Regular Winter",
-      "filename": "Swedish Lapland 7N_Regular Winter.pdf",
-      "region": "Scandinavia & Iceland",
-      "folder": "multi-country/scandinavia-iceland",
-      "cities": [
-        "Kiruna",
-        "Abisko"
-      ],
-      "duration": null,
-      "type": "Regular",
-      "season": "winter",
-      "price_twin": 2087,
-      "currency": "\u20ac",
-      "valid_till": "Mar 2027",
-      "description": "From Kiruna to Abisko \u2014 history, culture and local highlights.",
-      "tags": [
-        "Kiruna",
-        "Abisko"
-      ]
-    },
-    {
-      "id": "tromso-4n-regular-winter",
-      "name": "Tromso 4N Regular Winter",
-      "filename": "Tromso 4N_Regular Winter.pdf",
-      "region": "Scandinavia & Iceland",
-      "folder": "multi-country/scandinavia-iceland",
-      "cities": [],
-      "duration": null,
-      "type": "Regular",
-      "season": "winter",
-      "price_twin": 1726,
-      "currency": "\u20ac",
-      "valid_till": "Mar 2027",
-      "description": "Handpicked Scandinavia & Iceland itinerary with accommodation and transfers.",
-      "tags": []
-    },
-    {
-      "id": "tromso-7n-regular-winter",
-      "name": "Tromso 7N Regular Winter",
-      "filename": "Tromso 7N_Regular Winter.pdf",
-      "region": "Scandinavia & Iceland",
-      "folder": "multi-country/scandinavia-iceland",
-      "cities": [],
-      "duration": null,
-      "type": "Regular",
-      "season": "winter",
-      "price_twin": 2599,
-      "currency": "\u20ac",
-      "valid_till": "Mar 2027",
-      "description": "Handpicked Scandinavia & Iceland itinerary with accommodation and transfers.",
-      "tags": []
-    },
-    {
       "id": "6-nights--7-days-madbcn-privat",
       "name": "6 nights, 7 days MADBCN Private",
       "filename": "6 nights, 7 days MADBCN_Private.pdf",
