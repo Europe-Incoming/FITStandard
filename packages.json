@@ -52,7 +52,7 @@
         "Mediterranean",
         "Gaudi"
       ],
-      "description": "Gaudí's unfinished cathedral, Gothic Quarter labyrinth and Barceloneta seafood evenings."
+      "description": "Gaud\u00ed's unfinished cathedral, Gothic Quarter labyrinth and Barceloneta seafood evenings."
     },
     {
       "id": "city-004",
@@ -69,7 +69,7 @@
         "Norway",
         "Fjords"
       ],
-      "description": "Bryggen's painted warehouses, the Fløibanen funicular and fresh fish on the harbour quay."
+      "description": "Bryggen's painted warehouses, the Fl\u00f8ibanen funicular and fresh fish on the harbour quay."
     },
     {
       "id": "city-005",
@@ -223,7 +223,7 @@
         "Germany",
         "Financial Hub"
       ],
-      "description": "Medieval Römerberg, modern skyline and apple wine in a Sachsenhausen cider tavern."
+      "description": "Medieval R\u00f6merberg, modern skyline and apple wine in a Sachsenhausen cider tavern."
     },
     {
       "id": "city-014",
@@ -594,7 +594,7 @@
         "Sweden",
         "Nordic"
       ],
-      "description": "Gamla Stan medieval island, the Vasa warship museum and archipelago views from Djurgården."
+      "description": "Gamla Stan medieval island, the Vasa warship museum and archipelago views from Djurg\u00e5rden."
     },
     {
       "id": "city-035",
@@ -630,7 +630,7 @@
         "Classical Music",
         "Danube"
       ],
-      "description": "Schönbrunn Palace, coffeehouse culture and Strauss waltzes in a city frozen in imperial grandeur."
+      "description": "Sch\u00f6nbrunn Palace, coffeehouse culture and Strauss waltzes in a city frozen in imperial grandeur."
     },
     {
       "id": "city-037",
@@ -817,7 +817,7 @@
         "Normandy",
         "Loire Valley"
       ],
-      "description": "D-Day beaches, Mont Saint-Michel and Loire Valley châteaux on a private Normandy and Loire circuit."
+      "description": "D-Day beaches, Mont Saint-Michel and Loire Valley ch\u00e2teaux on a private Normandy and Loire circuit."
     },
     {
       "id": "7-nights--8-days-france-regula",
@@ -837,7 +837,7 @@
         "Normandy",
         "Loire Valley"
       ],
-      "description": "D-Day beaches, Mont Saint-Michel and Loire Valley châteaux by train from Paris."
+      "description": "D-Day beaches, Mont Saint-Michel and Loire Valley ch\u00e2teaux by train from Paris."
     },
     {
       "id": "7-nights--8-days-france-self-d",
@@ -858,7 +858,7 @@
         "Loire Valley",
         "Self Drive"
       ],
-      "description": "D-Day beaches, Étretat cliffs and Loire Valley châteaux on a self-drive from Paris."
+      "description": "D-Day beaches, \u00c9tretat cliffs and Loire Valley ch\u00e2teaux on a self-drive from Paris."
     },
     {
       "id": "8-nights--9-days-corsica-self-",
@@ -878,7 +878,7 @@
         "France",
         "Self Drive"
       ],
-      "description": "Corsica's dramatic interior — the Calanques de Piana, Spelunca gorge and the white limestone cliffs of Bonifacio."
+      "description": "Corsica's dramatic interior \u2014 the Calanques de Piana, Spelunca gorge and the white limestone cliffs of Bonifacio."
     },
     {
       "id": "8-nights--9-days-france-privat",
@@ -920,7 +920,7 @@
         "Provence",
         "French Riviera"
       ],
-      "description": "Paris to the Riviera — papal Avignon, Provence hilltowns and Monaco by train."
+      "description": "Paris to the Riviera \u2014 papal Avignon, Provence hilltowns and Monaco by train."
     },
     {
       "id": "8-nights--9-days-france-self-d",
@@ -942,7 +942,7 @@
         "Riviera",
         "Self Drive"
       ],
-      "description": "Paris to Nice by self-drive — Pont du Gard, Luberon villages, St Tropez and Monaco at your own pace."
+      "description": "Paris to Nice by self-drive \u2014 Pont du Gard, Luberon villages, St Tropez and Monaco at your own pace."
     },
     {
       "id": "6-nights--7-days-nordic-capita",
@@ -965,7 +965,7 @@
         "Helsinki",
         "Nordic"
       ],
-      "description": "Four Nordic capitals by ferry and train — design, open-faced sandwiches and the Vigeland sculpture park."
+      "description": "Four Nordic capitals by ferry and train \u2014 design, open-faced sandwiches and the Vigeland sculpture park."
     },
     {
       "id": "iceland-self-drive-7-nights--8",
@@ -986,7 +986,7 @@
         "Self Drive",
         "Ring Road"
       ],
-      "description": "Iceland's complete ring road — geysers, glacier lagoons, black beaches and the midnight sun."
+      "description": "Iceland's complete ring road \u2014 geysers, glacier lagoons, black beaches and the midnight sun."
     },
     {
       "id": "kiruna-4n-regular-winter",
@@ -1001,10 +1001,10 @@
       "type": "Regular",
       "season": "winter",
       "price_twin": 1351,
-      "currency": "€",
+      "currency": "\u20ac",
       "valid_till": "Mar 2027",
       "is_expired": false,
-      "description": "Dog sledding, the ICEHOTEL at Jukkasjärvi, a snowmobile wildlife safari and a Northern Lights chase in the deep Arctic.",
+      "description": "Dog sledding, the ICEHOTEL at Jukkasj\u00e4rvi, a snowmobile wildlife safari and a Northern Lights chase in the deep Arctic.",
       "tags": [
         "Kiruna",
         "Sweden",
@@ -1030,7 +1030,7 @@
         "Norway",
         "Fjords"
       ],
-      "description": "Oslo's fjord waterfront, the Flåm Railway and Bergen's colourful Bryggen wharf."
+      "description": "Oslo's fjord waterfront, the Fl\u00e5m Railway and Bergen's colourful Bryggen wharf."
     },
     {
       "id": "rovaniemi-4n-regular-winter",
@@ -1045,7 +1045,7 @@
       "type": "Regular",
       "season": "winter",
       "price_twin": 1188,
-      "currency": "€",
+      "currency": "\u20ac",
       "valid_till": "Mar 2027",
       "is_expired": false,
       "description": "Reindeer farm safari, husky experience and a guaranteed Northern Lights excursion from Santa's Arctic hometown.",
@@ -1071,10 +1071,10 @@
       "type": "Regular",
       "season": "winter",
       "price_twin": 2087,
-      "currency": "€",
+      "currency": "\u20ac",
       "valid_till": "Mar 2027",
       "is_expired": false,
-      "description": "Four days in Kiruna — dog sleds, ICEHOTEL, snowmobiles — then three nights at Abisko's Aurora Sky Station.",
+      "description": "Four days in Kiruna \u2014 dog sleds, ICEHOTEL, snowmobiles \u2014 then three nights at Abisko's Aurora Sky Station.",
       "tags": [
         "Kiruna",
         "Abisko",
@@ -1085,23 +1085,23 @@
     },
     {
       "id": "tromso-4n-regular-winter",
-      "name": "Tromsø Winter 4 nights / 5 days",
+      "name": "Troms\u00f8 Winter 4 nights / 5 days",
       "filename": "Tromso 4N_Regular Winter.pdf",
       "region": "Scandinavia & Iceland",
       "folder": "multi-country/scandinavia-iceland",
       "cities": [
-        "Tromsø"
+        "Troms\u00f8"
       ],
       "duration": "4 nights / 5 days",
       "type": "Regular",
       "season": "winter",
       "price_twin": 1726,
-      "currency": "€",
+      "currency": "\u20ac",
       "valid_till": "Mar 2027",
       "is_expired": false,
-      "description": "Northern Lights cruise, Sámi reindeer camp dinner, Lyngen Alps snowmobile safari and a polar whale watching expedition.",
+      "description": "Northern Lights cruise, S\u00e1mi reindeer camp dinner, Lyngen Alps snowmobile safari and a polar whale watching expedition.",
       "tags": [
-        "Tromsø",
+        "Troms\u00f8",
         "Norway",
         "Northern Lights",
         "Winter",
@@ -1110,28 +1110,28 @@
     },
     {
       "id": "tromso-7n-regular-winter",
-      "name": "Tromsø Winter 7 nights / 8 days",
+      "name": "Troms\u00f8 Winter 7 nights / 8 days",
       "filename": "Tromso 7N_Regular Winter.pdf",
       "region": "Scandinavia & Iceland",
       "folder": "multi-country/scandinavia-iceland",
       "cities": [
-        "Tromsø"
+        "Troms\u00f8"
       ],
       "duration": "7 nights / 8 days",
       "type": "Regular",
       "season": "winter",
       "price_twin": 2599,
-      "currency": "€",
+      "currency": "\u20ac",
       "valid_till": "Mar 2027",
       "is_expired": false,
-      "description": "Seven nights of Arctic immersion — whale watching, snowmobiles, reindeer sledding, Aurora cruises and a coastal fjord safari.",
+      "description": "Seven nights of Arctic immersion \u2014 whale watching, snowmobiles, reindeer sledding, Aurora cruises and a coastal fjord safari.",
       "tags": [
-        "Tromsø",
+        "Troms\u00f8",
         "Norway",
         "Northern Lights",
         "Winter",
         "Whale Watching",
-        "Sámi Culture"
+        "S\u00e1mi Culture"
       ]
     },
     {
@@ -1151,7 +1151,7 @@
         "Barcelona",
         "Spain"
       ],
-      "description": "Royal palaces, Sagrada Família and Montserrat on a private Madrid to Barcelona circuit."
+      "description": "Royal palaces, Sagrada Fam\u00edlia and Montserrat on a private Madrid to Barcelona circuit."
     },
     {
       "id": "8-nights--9-days-spain-private",
@@ -1173,7 +1173,7 @@
         "Seville",
         "Barcelona"
       ],
-      "description": "Private guided Spain: Alhambra gardens, Seville flamenco, Toledo detour and Gaudí in Barcelona."
+      "description": "Private guided Spain: Alhambra gardens, Seville flamenco, Toledo detour and Gaud\u00ed in Barcelona."
     },
     {
       "id": "8-nights--9-days-spain-regular",
@@ -1195,7 +1195,7 @@
         "Seville",
         "Barcelona"
       ],
-      "description": "Alhambra gardens, Seville's Royal Alcázar and Gaudí's Barcelona by high-speed train."
+      "description": "Alhambra gardens, Seville's Royal Alc\u00e1zar and Gaud\u00ed's Barcelona by high-speed train."
     },
     {
       "id": "switz-001",
@@ -1259,7 +1259,7 @@
         "Jungfrau",
         "Lake Geneva"
       ],
-      "description": "Seven nights on the Swiss Travel Pass — Titlis, Jungfrau, Lake Geneva and Broc chocolate factory."
+      "description": "Seven nights on the Swiss Travel Pass \u2014 Titlis, Jungfrau, Lake Geneva and Broc chocolate factory."
     },
     {
       "id": "uk-002",
@@ -1299,7 +1299,7 @@
         "City Break",
         "Thames"
       ],
-      "description": "Private London — panoramic city tour, Thames cruise, Stonehenge and Bath with a dedicated vehicle."
+      "description": "Private London \u2014 panoramic city tour, Thames cruise, Stonehenge and Bath with a dedicated vehicle."
     },
     {
       "id": "uk-010",
@@ -1480,7 +1480,7 @@
         "Devon",
         "Self Drive"
       ],
-      "description": "England's secret southwest — Tintagel, Land's End, the Jurassic Coast, Stonehenge and Windsor on one circuit."
+      "description": "England's secret southwest \u2014 Tintagel, Land's End, the Jurassic Coast, Stonehenge and Windsor on one circuit."
     },
     {
       "id": "wce-005",
@@ -1639,7 +1639,7 @@
         "Alps",
         "Danube"
       ],
-      "description": "Paris, Swiss Alps, Swarovski Crystal Worlds and Vienna's Schönbrunn on a private nine-night arc."
+      "description": "Paris, Swiss Alps, Swarovski Crystal Worlds and Vienna's Sch\u00f6nbrunn on a private nine-night arc."
     },
     {
       "id": "wce-004",
@@ -1662,7 +1662,7 @@
         "Alps",
         "Danube"
       ],
-      "description": "Paris to Vienna by rail — Titlis, Swarovski crystal worlds and a Schönbrunn Palace city tour."
+      "description": "Paris to Vienna by rail \u2014 Titlis, Swarovski crystal worlds and a Sch\u00f6nbrunn Palace city tour."
     }
   ]
 }
