@@ -16,7 +16,7 @@
         "Canals",
         "Museums"
       ],
-      "description": "Two nights in Amsterdam with sightseeing, canal cruise and transfers."
+      "description": "Canal cruises, Rijksmuseum masterpieces and golden-hour cycling through the Jordaan."
     },
     {
       "id": "city-002",
@@ -34,7 +34,7 @@
         "Ancient History",
         "Acropolis"
       ],
-      "description": "Two nights in Athens with sightseeing, canal cruise and transfers."
+      "description": "Acropolis at dawn, ancient agora and rooftop taverna nights above the city lights."
     },
     {
       "id": "city-003",
@@ -52,7 +52,7 @@
         "Mediterranean",
         "Gaudi"
       ],
-      "description": "Two nights in Barcelona with sightseeing, canal cruise and transfers."
+      "description": "Gaudí's unfinished cathedral, Gothic Quarter labyrinth and Barceloneta seafood evenings."
     },
     {
       "id": "city-004",
@@ -69,7 +69,7 @@
         "Norway",
         "Fjords"
       ],
-      "description": "Two nights in Bergen with sightseeing, canal cruise and transfers."
+      "description": "Bryggen's painted warehouses, the Fløibanen funicular and fresh fish on the harbour quay."
     },
     {
       "id": "city-005",
@@ -86,7 +86,7 @@
         "Germany",
         "History"
       ],
-      "description": "Two nights in Berlin with sightseeing, canal cruise and transfers."
+      "description": "Cold War checkpoints, world-class museum island and a nightlife scene that never really ends."
     },
     {
       "id": "city-006",
@@ -103,7 +103,7 @@
         "Belgium",
         "Grand Place"
       ],
-      "description": "Two nights in Brussels with sightseeing, canal cruise and transfers."
+      "description": "Art Nouveau architecture, the Grand Place at midnight and Belgium's finest chocolate and beer."
     },
     {
       "id": "city-007",
@@ -121,7 +121,7 @@
         "Danube",
         "Thermal Baths"
       ],
-      "description": "Two nights in Budapest with sightseeing, canal cruise and transfers."
+      "description": "Baroque thermal baths, Danube bridge views and a ruin bar scene unlike anywhere in Europe."
     },
     {
       "id": "city-008",
@@ -138,7 +138,7 @@
         "Denmark",
         "Nordic"
       ],
-      "description": "Two nights in Copenhagen with sightseeing, canal cruise and transfers."
+      "description": "Nyhavn's coloured townhouses, new Nordic food and a cycle-friendly city built for wandering."
     },
     {
       "id": "city-009",
@@ -154,7 +154,7 @@
       "tags": [
         "Ireland"
       ],
-      "description": "Two nights in Dublin with sightseeing, canal cruise and transfers."
+      "description": "Georgian squares, the Book of Kells and a pub session that turns into an accidental late night."
     },
     {
       "id": "city-010",
@@ -171,7 +171,7 @@
         "Germany",
         "Rhine"
       ],
-      "description": "Two nights in Dusseldorf with sightseeing, canal cruise and transfers."
+      "description": "Rhine promenades, the Altstadt old town and one of Germany's most underrated food scenes."
     },
     {
       "id": "city-011",
@@ -188,7 +188,7 @@
         "Scotland",
         "Castle"
       ],
-      "description": "Two nights in Edinburgh with sightseeing, canal cruise and transfers."
+      "description": "Castle ramparts, the Royal Mile's medieval closes and whisky tastings in a city built on volcanic rock."
     },
     {
       "id": "city-012",
@@ -206,7 +206,7 @@
         "Tuscany",
         "Renaissance"
       ],
-      "description": "Two nights in Florence with sightseeing, canal cruise and transfers."
+      "description": "Michelangelo's David, Renaissance frescoes and bistecca Fiorentina on the Arno riverbanks."
     },
     {
       "id": "city-013",
@@ -223,7 +223,7 @@
         "Germany",
         "Financial Hub"
       ],
-      "description": "Two nights in Frankfurt with sightseeing, canal cruise and transfers."
+      "description": "Medieval Römerberg, modern skyline and apple wine in a Sachsenhausen cider tavern."
     },
     {
       "id": "city-014",
@@ -240,7 +240,7 @@
         "Switzerland",
         "Lake Geneva"
       ],
-      "description": "Two nights in Geneva with sightseeing, canal cruise and transfers."
+      "description": "The Jet d'Eau, Lake Geneva promenades and Swiss watchmaking in an unexpectedly compact city."
     },
     {
       "id": "city-015",
@@ -256,7 +256,7 @@
       "tags": [
         "Scotland"
       ],
-      "description": "Two nights in Glasgow with sightseeing, canal cruise and transfers."
+      "description": "Mackintosh architecture, the Kelvingrove museum and the warmest welcome in any British city."
     },
     {
       "id": "city-016",
@@ -273,7 +273,7 @@
         "Finland",
         "Nordic"
       ],
-      "description": "Two nights in Helsinki with sightseeing, canal cruise and transfers."
+      "description": "Market Square herring, island fortress views and a public sauna ritual on the harbour edge."
     },
     {
       "id": "city-017",
@@ -290,7 +290,7 @@
         "Austria",
         "Alps"
       ],
-      "description": "Two nights in Innsbruck with sightseeing, canal cruise and transfers."
+      "description": "Habsburg Golden Roof, Swarovski crystal worlds and Alpine panoramas from the Nordkette cable car."
     },
     {
       "id": "city-018",
@@ -308,7 +308,7 @@
         "Alps",
         "Jungfrau"
       ],
-      "description": "Two nights in Interlaken with sightseeing, canal cruise and transfers."
+      "description": "Two lakes, the Jungfrau railway and an Eiger north face that fills the entire horizon."
     },
     {
       "id": "city-019",
@@ -326,7 +326,7 @@
         "Scottish Highlands",
         "Loch Ness"
       ],
-      "description": "Two nights in Inverness with sightseeing, canal cruise and transfers."
+      "description": "Loch Ness monster hunts, Highland castle ruins and whisky distillery visits in the northern capital."
     },
     {
       "id": "city-020",
@@ -343,7 +343,7 @@
         "Portugal",
         "Atlantic"
       ],
-      "description": "Two nights in Lisbon with sightseeing, canal cruise and transfers."
+      "description": "Fado in the Alfama, vintage tram rattles and pastel de nata with Atlantic views."
     },
     {
       "id": "city-021",
@@ -361,7 +361,7 @@
         "Thames",
         "Royal"
       ],
-      "description": "Two nights in London with sightseeing, canal cruise and transfers."
+      "description": "Tower of London, Thames cruise, Borough Market and the sheer scale of a city that never runs out."
     },
     {
       "id": "city-022",
@@ -379,7 +379,7 @@
         "Alps",
         "Lake"
       ],
-      "description": "Two nights in Lucerne with sightseeing, canal cruise and transfers."
+      "description": "Chapel Bridge reflections, Mount Titlis snow and a lake framed by peaks on every side."
     },
     {
       "id": "city-023",
@@ -396,7 +396,7 @@
         "Spain",
         "Museums"
       ],
-      "description": "Two nights in Madrid with sightseeing, canal cruise and transfers."
+      "description": "Prado masterpieces, Retiro Park Sunday mornings and a tapas crawl through La Latina."
     },
     {
       "id": "city-024",
@@ -414,7 +414,7 @@
         "Fashion",
         "Duomo"
       ],
-      "description": "Two nights in Milan with sightseeing, canal cruise and transfers."
+      "description": "The Duomo rooftop, Da Vinci's Last Supper and aperitivo hour in the Navigli canal district."
     },
     {
       "id": "city-025",
@@ -432,7 +432,7 @@
         "Bavaria",
         "Beer"
       ],
-      "description": "Two nights in Munich with sightseeing, canal cruise and transfers."
+      "description": "Marienplatz glockenspiel, BMW museum and a Biergarten under the chestnut trees."
     },
     {
       "id": "city-026",
@@ -450,7 +450,7 @@
         "Islands",
         "Beaches"
       ],
-      "description": "Two nights in Mykonos with sightseeing, canal cruise and transfers."
+      "description": "Whitewashed windmills, Aegean beach clubs and the Little Venice waterfront at sunset."
     },
     {
       "id": "city-027",
@@ -468,7 +468,7 @@
         "French Riviera",
         "Mediterranean"
       ],
-      "description": "Two nights in Nice with sightseeing, canal cruise and transfers."
+      "description": "Promenade des Anglais, Cours Saleya flower market and a day trip to Monaco's casino square."
     },
     {
       "id": "city-028",
@@ -486,7 +486,7 @@
         "Nordic",
         "Fjords"
       ],
-      "description": "Two nights in Oslo with sightseeing, canal cruise and transfers."
+      "description": "Viking ships, the Vigeland sculpture park and Aker Brygge waterfront with fjord views."
     },
     {
       "id": "city-029",
@@ -504,7 +504,7 @@
         "Seine",
         "Eiffel Tower"
       ],
-      "description": "Two nights in Paris with sightseeing, canal cruise and transfers."
+      "description": "Eiffel Tower second floor, Seine cruise past Notre-Dame and Montmartre at golden hour."
     },
     {
       "id": "city-030",
@@ -521,7 +521,7 @@
         "Czech Republic",
         "Historic"
       ],
-      "description": "Two nights in Prague with sightseeing, canal cruise and transfers."
+      "description": "Charles Bridge at dawn, Bohemian crystal cellars and the best beer in Central Europe."
     },
     {
       "id": "city-031",
@@ -540,7 +540,7 @@
         "Colosseum",
         "Vatican"
       ],
-      "description": "Two nights in Rome with sightseeing, canal cruise and transfers."
+      "description": "Colosseum, Vatican Museums, Trevi Fountain and gelato in a city where every cobblestone has history."
     },
     {
       "id": "city-032",
@@ -558,7 +558,7 @@
         "Mozart",
         "Alps"
       ],
-      "description": "Two nights in Salzburg with sightseeing, canal cruise and transfers."
+      "description": "Mozart's birthplace, Hohensalzburg fortress and Sound of Music locations in a baroque Alpine city."
     },
     {
       "id": "city-033",
@@ -577,7 +577,7 @@
         "Beaches",
         "Sunset"
       ],
-      "description": "Two nights in Santorini with sightseeing, canal cruise and transfers."
+      "description": "Blue-domed churches, caldera sunsets and volcanic black sand beaches on Greece's most dramatic island."
     },
     {
       "id": "city-034",
@@ -594,7 +594,7 @@
         "Sweden",
         "Nordic"
       ],
-      "description": "Two nights in Stockholm with sightseeing, canal cruise and transfers."
+      "description": "Gamla Stan medieval island, the Vasa warship museum and archipelago views from Djurgården."
     },
     {
       "id": "city-035",
@@ -612,7 +612,7 @@
         "Canals",
         "Gondola"
       ],
-      "description": "Two nights in Venice with sightseeing, canal cruise and transfers."
+      "description": "Grand Canal vaporetto rides, St Mark's mosaics and a gondola through the back canals at dusk."
     },
     {
       "id": "city-036",
@@ -630,7 +630,7 @@
         "Classical Music",
         "Danube"
       ],
-      "description": "Two nights in Vienna with sightseeing, canal cruise and transfers."
+      "description": "Schönbrunn Palace, coffeehouse culture and Strauss waltzes in a city frozen in imperial grandeur."
     },
     {
       "id": "city-037",
@@ -648,7 +648,7 @@
         "Lake",
         "Banking"
       ],
-      "description": "Two nights in Zurich with sightseeing, canal cruise and transfers."
+      "description": "Lake Zurich promenades, Bahnhofstrasse shopping and a day trip to the Rhine Falls."
     },
     {
       "id": "italy-003",
@@ -704,7 +704,8 @@
       "folder": "multi-country/italy",
       "cities": [
         "Venice",
-        "Florence"
+        "Florence",
+        "Rome"
       ],
       "duration": "6 nights, 7 days",
       "type": "Private",
@@ -713,7 +714,7 @@
         "Tuscany",
         "Canals"
       ],
-      "description": "Private guided tour through Venice Mestre, Venice and Florence."
+      "description": "Private guided tour: Venice canals, Florentine frescoes and Roman ruins with a dedicated vehicle."
     },
     {
       "id": "italy-002",
@@ -723,7 +724,8 @@
       "folder": "multi-country/italy",
       "cities": [
         "Venice",
-        "Florence"
+        "Florence",
+        "Rome"
       ],
       "duration": "6 nights, 7 days",
       "type": "Regular",
@@ -732,7 +734,7 @@
         "Tuscany",
         "Canals"
       ],
-      "description": "Trains, landmarks and local character through Venice Mestre, Florence and Rome."
+      "description": "Venice walking tour, a full-day Tuscany excursion and the Colosseum by train."
     },
     {
       "id": "7-nights--8-days-sardinia-self",
@@ -746,15 +748,14 @@
         "Alghero",
         "Olbia"
       ],
-      "duration": "8 days",
+      "duration": "7 nights / 8 days",
       "type": "Self Drive",
       "tags": [
-        "Cagliari",
-        "Cala Gonone",
-        "Alghero",
-        "Olbia"
+        "Sardinia",
+        "Italy",
+        "Self Drive"
       ],
-      "description": "Self-drive through Cagliari, Cala Gonone, Alghero and Olbia \u2014 your route, your pace."
+      "description": "Sardinia's wild east coast, the Gulf of Orosei's sea caves, Alghero's Spanish old town and the Costa Smeralda."
     },
     {
       "id": "ee-001",
@@ -796,7 +797,7 @@
         "Hungary",
         "Danube"
       ],
-      "description": "Trains, landmarks and local character through Prague, Vienna and Budapest."
+      "description": "Gothic Prague, imperial Vienna and thermal Budapest by train in six nights."
     },
     {
       "id": "7-nights--8-days-france-privat",
@@ -809,14 +810,14 @@
         "Bayeux",
         "Tours"
       ],
-      "duration": "8 days",
+      "duration": "7 nights / 8 days",
       "type": "Private",
       "tags": [
         "Paris",
-        "Bayeux",
-        "Tours"
+        "Normandy",
+        "Loire Valley"
       ],
-      "description": "Private guided tour through Paris, Bayeux and Tours."
+      "description": "D-Day beaches, Mont Saint-Michel and Loire Valley châteaux on a private Normandy and Loire circuit."
     },
     {
       "id": "7-nights--8-days-france-regula",
@@ -829,14 +830,14 @@
         "Bayeux",
         "Tours"
       ],
-      "duration": "8 days",
+      "duration": "7 nights / 8 days",
       "type": "Regular",
       "tags": [
         "Paris",
-        "Bayeux",
-        "Tours"
+        "Normandy",
+        "Loire Valley"
       ],
-      "description": "Trains, landmarks and local character through Paris, Bayeux and Tours."
+      "description": "D-Day beaches, Mont Saint-Michel and Loire Valley châteaux by train from Paris."
     },
     {
       "id": "7-nights--8-days-france-self-d",
@@ -849,14 +850,15 @@
         "Bayeux",
         "Tours"
       ],
-      "duration": "8 days",
+      "duration": "7 nights / 8 days",
       "type": "Self Drive",
       "tags": [
         "Paris",
-        "Bayeux",
-        "Tours"
+        "Normandy",
+        "Loire Valley",
+        "Self Drive"
       ],
-      "description": "Self-drive through Paris, Bayeux and Tours \u2014 your route, your pace."
+      "description": "D-Day beaches, Étretat cliffs and Loire Valley châteaux on a self-drive from Paris."
     },
     {
       "id": "8-nights--9-days-corsica-self-",
@@ -869,14 +871,14 @@
         "Corte",
         "Bonifacio"
       ],
-      "duration": "9 days",
+      "duration": "8 nights / 9 days",
       "type": "Self Drive",
       "tags": [
-        "Ajaccio",
-        "Corte",
-        "Bonifacio"
+        "Corsica",
+        "France",
+        "Self Drive"
       ],
-      "description": "Self-drive through Ajaccio, Corte and Bonifacio \u2014 your route, your pace."
+      "description": "Corsica's dramatic interior — the Calanques de Piana, Spelunca gorge and the white limestone cliffs of Bonifacio."
     },
     {
       "id": "8-nights--9-days-france-privat",
@@ -890,15 +892,14 @@
         "Aix en Provence",
         "Nice"
       ],
-      "duration": "9 days",
+      "duration": "8 nights / 9 days",
       "type": "Private",
       "tags": [
         "Paris",
-        "Avignon",
-        "Aix en Provence",
-        "Nice"
+        "Provence",
+        "French Riviera"
       ],
-      "description": "Private guided tour through Paris, Avignon, Aix en Provence and Nice."
+      "description": "Paris, papal Avignon, Luberon lavender villages and Monaco on a private Provence and Riviera circuit."
     },
     {
       "id": "8-nights--9-days-france-regula",
@@ -912,15 +913,14 @@
         "Aix en Provence",
         "Nice"
       ],
-      "duration": "9 days",
+      "duration": "8 nights / 9 days",
       "type": "Regular",
       "tags": [
         "Paris",
-        "Avignon",
-        "Aix en Provence",
-        "Nice"
+        "Provence",
+        "French Riviera"
       ],
-      "description": "Trains, landmarks and local character through Paris, Avignon, Aix en Provence and Nice."
+      "description": "Paris to the Riviera — papal Avignon, Provence hilltowns and Monaco by train."
     },
     {
       "id": "8-nights--9-days-france-self-d",
@@ -934,15 +934,15 @@
         "Aix en Provence",
         "Nice"
       ],
-      "duration": "9 days",
+      "duration": "8 nights / 9 days",
       "type": "Self Drive",
       "tags": [
         "Paris",
-        "Avignon",
-        "Aix en Provence",
-        "Nice"
+        "Provence",
+        "Riviera",
+        "Self Drive"
       ],
-      "description": "Self-drive through Paris, Avignon, Aix en Provence and Nice \u2014 your route, your pace."
+      "description": "Paris to Nice by self-drive — Pont du Gard, Luberon villages, St Tropez and Monaco at your own pace."
     },
     {
       "id": "6-nights--7-days-nordic-capita",
@@ -956,15 +956,16 @@
         "Stockholm",
         "Helsinki"
       ],
-      "duration": "7 days",
+      "duration": "6 nights / 7 days",
       "type": "Regular",
       "tags": [
         "Copenhagen",
         "Oslo",
         "Stockholm",
-        "Helsinki"
+        "Helsinki",
+        "Nordic"
       ],
-      "description": "Trains, landmarks and local character through Copenhagen, Oslo, Stockholm and Helsinki."
+      "description": "Four Nordic capitals by ferry and train — design, open-faced sandwiches and the Vigeland sculpture park."
     },
     {
       "id": "iceland-self-drive-7-nights--8",
@@ -978,34 +979,37 @@
         "Hofn",
         "Vik"
       ],
-      "duration": "8 days",
+      "duration": "7 nights / 8 days",
       "type": "Self Drive",
       "tags": [
-        "Reykjavik",
-        "Akureyri",
-        "Hofn",
-        "Vik"
+        "Iceland",
+        "Self Drive",
+        "Ring Road"
       ],
-      "description": "Self-drive through Reykjavik, Akureyri, Hofn and Vik \u2014 your route, your pace."
+      "description": "Iceland's complete ring road — geysers, glacier lagoons, black beaches and the midnight sun."
     },
     {
       "id": "kiruna-4n-regular-winter",
-      "name": "Kiruna 4N Regular Winter",
+      "name": "Kiruna Winter 4 nights / 5 days",
       "filename": "Kiruna 4N_Regular Winter.pdf",
       "region": "Scandinavia & Iceland",
       "folder": "multi-country/scandinavia-iceland",
       "cities": [
         "Kiruna"
       ],
-      "duration": null,
+      "duration": "4 nights / 5 days",
       "type": "Regular",
       "season": "winter",
       "price_twin": 1351,
-      "currency": "\u20ac",
+      "currency": "€",
       "valid_till": "Mar 2027",
-      "description": "Two nights in Kiruna with sightseeing, canal cruise and transfers.",
+      "is_expired": false,
+      "description": "Dog sledding, the ICEHOTEL at Jukkasjärvi, a snowmobile wildlife safari and a Northern Lights chase in the deep Arctic.",
       "tags": [
-        "Kiruna"
+        "Kiruna",
+        "Sweden",
+        "Northern Lights",
+        "Winter"
       ]
     },
     {
@@ -1018,37 +1022,44 @@
         "Oslo",
         "Bergen"
       ],
-      "duration": "6 days",
+      "duration": "5 nights / 6 days",
       "type": "Regular",
       "tags": [
         "Oslo",
-        "Bergen"
+        "Bergen",
+        "Norway",
+        "Fjords"
       ],
-      "description": "From Oslo to Bergen \u2014 history, culture and local highlights."
+      "description": "Oslo's fjord waterfront, the Flåm Railway and Bergen's colourful Bryggen wharf."
     },
     {
       "id": "rovaniemi-4n-regular-winter",
-      "name": "Rovaniemi 4N Regular Winter",
+      "name": "Rovaniemi Winter 4 nights / 5 days",
       "filename": "Rovaniemi 4N_Regular Winter.pdf",
       "region": "Scandinavia & Iceland",
       "folder": "multi-country/scandinavia-iceland",
       "cities": [
         "Rovaniemi"
       ],
-      "duration": null,
+      "duration": "4 nights / 5 days",
       "type": "Regular",
       "season": "winter",
       "price_twin": 1188,
-      "currency": "\u20ac",
+      "currency": "€",
       "valid_till": "Mar 2027",
-      "description": "Two nights in Rovaniemi with sightseeing, canal cruise and transfers.",
+      "is_expired": false,
+      "description": "Reindeer farm safari, husky experience and a guaranteed Northern Lights excursion from Santa's Arctic hometown.",
       "tags": [
-        "Rovaniemi"
+        "Rovaniemi",
+        "Finland",
+        "Northern Lights",
+        "Winter",
+        "Lapland"
       ]
     },
     {
       "id": "swedish-lapland-7n-regular-win",
-      "name": "Swedish Lapland 7N Regular Winter",
+      "name": "Swedish Lapland 7 nights / 8 days",
       "filename": "Swedish Lapland 7N_Regular Winter.pdf",
       "region": "Scandinavia & Iceland",
       "folder": "multi-country/scandinavia-iceland",
@@ -1056,53 +1067,76 @@
         "Kiruna",
         "Abisko"
       ],
-      "duration": null,
+      "duration": "7 nights / 8 days",
       "type": "Regular",
       "season": "winter",
       "price_twin": 2087,
-      "currency": "\u20ac",
+      "currency": "€",
       "valid_till": "Mar 2027",
-      "description": "From Kiruna to Abisko \u2014 history, culture and local highlights.",
+      "is_expired": false,
+      "description": "Four days in Kiruna — dog sleds, ICEHOTEL, snowmobiles — then three nights at Abisko's Aurora Sky Station.",
       "tags": [
         "Kiruna",
-        "Abisko"
+        "Abisko",
+        "Sweden",
+        "Northern Lights",
+        "Winter"
       ]
     },
     {
       "id": "tromso-4n-regular-winter",
-      "name": "Tromso 4N Regular Winter",
+      "name": "Tromsø Winter 4 nights / 5 days",
       "filename": "Tromso 4N_Regular Winter.pdf",
       "region": "Scandinavia & Iceland",
       "folder": "multi-country/scandinavia-iceland",
-      "cities": [],
-      "duration": null,
+      "cities": [
+        "Tromsø"
+      ],
+      "duration": "4 nights / 5 days",
       "type": "Regular",
       "season": "winter",
       "price_twin": 1726,
-      "currency": "\u20ac",
+      "currency": "€",
       "valid_till": "Mar 2027",
-      "description": "Handpicked Scandinavia & Iceland itinerary with accommodation and transfers.",
-      "tags": []
+      "is_expired": false,
+      "description": "Northern Lights cruise, Sámi reindeer camp dinner, Lyngen Alps snowmobile safari and a polar whale watching expedition.",
+      "tags": [
+        "Tromsø",
+        "Norway",
+        "Northern Lights",
+        "Winter",
+        "Whale Watching"
+      ]
     },
     {
       "id": "tromso-7n-regular-winter",
-      "name": "Tromso 7N Regular Winter",
+      "name": "Tromsø Winter 7 nights / 8 days",
       "filename": "Tromso 7N_Regular Winter.pdf",
       "region": "Scandinavia & Iceland",
       "folder": "multi-country/scandinavia-iceland",
-      "cities": [],
-      "duration": null,
+      "cities": [
+        "Tromsø"
+      ],
+      "duration": "7 nights / 8 days",
       "type": "Regular",
       "season": "winter",
       "price_twin": 2599,
-      "currency": "\u20ac",
+      "currency": "€",
       "valid_till": "Mar 2027",
-      "description": "Handpicked Scandinavia & Iceland itinerary with accommodation and transfers.",
-      "tags": []
+      "is_expired": false,
+      "description": "Seven nights of Arctic immersion — whale watching, snowmobiles, reindeer sledding, Aurora cruises and a coastal fjord safari.",
+      "tags": [
+        "Tromsø",
+        "Norway",
+        "Northern Lights",
+        "Winter",
+        "Whale Watching",
+        "Sámi Culture"
+      ]
     },
     {
       "id": "6-nights--7-days-madbcn-privat",
-      "name": "6 nights, 7 days MADBCN Private",
+      "name": "6 nights, 7 days Madrid Barcelona - Private",
       "filename": "6 nights, 7 days MADBCN_Private.pdf",
       "region": "Spain & Portugal",
       "folder": "multi-country/spain-portugal",
@@ -1110,13 +1144,14 @@
         "Madrid",
         "Barcelona"
       ],
-      "duration": "7 days",
+      "duration": "6 nights / 7 days",
       "type": "Private",
       "tags": [
         "Madrid",
-        "Barcelona"
+        "Barcelona",
+        "Spain"
       ],
-      "description": "Private tour: Madrid to Barcelona with dedicated transport."
+      "description": "Royal palaces, Sagrada Família and Montserrat on a private Madrid to Barcelona circuit."
     },
     {
       "id": "8-nights--9-days-spain-private",
@@ -1130,7 +1165,7 @@
         "Seville",
         "Barcelona"
       ],
-      "duration": "9 days",
+      "duration": "8 nights / 9 days",
       "type": "Private",
       "tags": [
         "Madrid",
@@ -1138,7 +1173,7 @@
         "Seville",
         "Barcelona"
       ],
-      "description": "Private guided tour through Madrid, Granada, Seville and Barcelona."
+      "description": "Private guided Spain: Alhambra gardens, Seville flamenco, Toledo detour and Gaudí in Barcelona."
     },
     {
       "id": "8-nights--9-days-spain-regular",
@@ -1152,7 +1187,7 @@
         "Seville",
         "Barcelona"
       ],
-      "duration": "9 days",
+      "duration": "8 nights / 9 days",
       "type": "Regular",
       "tags": [
         "Madrid",
@@ -1160,7 +1195,7 @@
         "Seville",
         "Barcelona"
       ],
-      "description": "Trains, landmarks and local character through Madrid, Granada, Seville and Barcelona."
+      "description": "Alhambra gardens, Seville's Royal Alcázar and Gaudí's Barcelona by high-speed train."
     },
     {
       "id": "switz-001",
@@ -1180,7 +1215,7 @@
         "Alps",
         "Jungfrau"
       ],
-      "description": "From Lucerne to Interlaken \u2014 history, culture and local highlights."
+      "description": "Mount Titlis, the Jungfrau region and Rhine Falls on a Swiss Travel Pass loop."
     },
     {
       "id": "switz-002",
@@ -1202,7 +1237,7 @@
         "Jungfrau",
         "Lake Geneva"
       ],
-      "description": "Private guided tour through Lucerne, Interlaken, Montreux and Zurich."
+      "description": "Private guided Switzerland: Titlis, Interlaken paragliding views, Montreux jazz lakeside and Zurich."
     },
     {
       "id": "switz-003",
@@ -1224,7 +1259,7 @@
         "Jungfrau",
         "Lake Geneva"
       ],
-      "description": "Trains, landmarks and local character through Lucerne, Interlaken, Montreux and Zurich."
+      "description": "Seven nights on the Swiss Travel Pass — Titlis, Jungfrau, Lake Geneva and Broc chocolate factory."
     },
     {
       "id": "uk-002",
@@ -1244,10 +1279,9 @@
       "tags": [
         "England",
         "Scotland",
-        "Scottish Highlands",
-        "Multi-city"
+        "Scottish Highlands"
       ],
-      "description": "Trains, landmarks and local character through London, Manchester, Edinburgh and Inverness."
+      "description": "London to Glasgow via the Peak District, Edinburgh's old town, Loch Ness and the Isle of Skye."
     },
     {
       "id": "uk-001",
@@ -1265,7 +1299,7 @@
         "City Break",
         "Thames"
       ],
-      "description": "Private London experience with dedicated guide and transfers."
+      "description": "Private London — panoramic city tour, Thames cruise, Stonehenge and Bath with a dedicated vehicle."
     },
     {
       "id": "uk-010",
@@ -1282,7 +1316,7 @@
       "tags": [
         "Ireland"
       ],
-      "description": "Private tour: Dublin to Limerick with dedicated transport."
+      "description": "Private Ireland: Dublin's Georgian streets, Cliffs of Moher, Killarney and the Burren by minivan."
     },
     {
       "id": "uk-009",
@@ -1299,7 +1333,7 @@
       "tags": [
         "Ireland"
       ],
-      "description": "From Dublin to Limerick \u2014 history, culture and local highlights."
+      "description": "Dublin Hop-On Hop-Off, Cliffs of Moher tour and a train loop through the west of Ireland."
     },
     {
       "id": "uk-008",
@@ -1317,7 +1351,7 @@
         "Ireland",
         "Self Drive"
       ],
-      "description": "Self-drive from Dublin to Limerick \u2014 roads, views, freedom."
+      "description": "Self-drive Ireland: Cliffs of Moher, the Burren, Killarney and the Ring of Kerry at your own pace."
     },
     {
       "id": "uk-007",
@@ -1328,7 +1362,8 @@
       "cities": [
         "Edinburgh",
         "Inverness",
-        "Fort William"
+        "Fort William",
+        "Glasgow"
       ],
       "duration": "6 nights, 7 days",
       "type": "Private",
@@ -1336,7 +1371,7 @@
         "Scotland",
         "Scottish Highlands"
       ],
-      "description": "Private guided tour through Edinburgh, Inverness, Fort William and Glasgow."
+      "description": "Private Scotland: Edinburgh Castle, Loch Ness, the Isle of Skye and Loch Lomond with a dedicated vehicle."
     },
     {
       "id": "uk-006",
@@ -1347,7 +1382,8 @@
       "cities": [
         "Edinburgh",
         "Inverness",
-        "Fort William"
+        "Fort William",
+        "Glasgow"
       ],
       "duration": "6 nights, 7 days",
       "type": "Regular",
@@ -1355,7 +1391,7 @@
         "Scotland",
         "Scottish Highlands"
       ],
-      "description": "Trains, landmarks and local character through Edinburgh, Invernes s, Inverness and Glasgow."
+      "description": "Edinburgh to Glasgow by train via Inverness, the Isle of Skye and the Highlands."
     },
     {
       "id": "uk-005",
@@ -1366,7 +1402,8 @@
       "cities": [
         "Edinburgh",
         "Inverness",
-        "Fort William"
+        "Fort William",
+        "Glasgow"
       ],
       "duration": "6 nights, 7 days",
       "type": "Self Drive",
@@ -1375,7 +1412,7 @@
         "Scottish Highlands",
         "Self Drive"
       ],
-      "description": "Self-drive through Edinburgh, Inverness, Fort William and Glasgow \u2014 your route, your pace."
+      "description": "Self-drive Scotland: Edinburgh, Loch Ness, the Isle of Skye and Loch Lomond at your own pace."
     },
     {
       "id": "uk-004",
@@ -1396,7 +1433,7 @@
         "Scotland",
         "Scottish Highlands"
       ],
-      "description": "Trains, landmarks and local character through London, Glasgow, Inverness and Edinburgh."
+      "description": "London to Edinburgh by train via Glasgow, Loch Ness and the Highlands."
     },
     {
       "id": "uk-003",
@@ -1416,10 +1453,9 @@
       "tags": [
         "England",
         "Scotland",
-        "Scottish Highlands",
-        "Multi-city"
+        "Scottish Highlands"
       ],
-      "description": "Private guided tour through London, Manchester, Edinburgh, Inverness and Glasgow."
+      "description": "Private Britain: London, Peak District, Edinburgh, Isle of Skye and Loch Lomond with a dedicated vehicle."
     },
     {
       "id": "9-nights--10-days-cotswolds-de",
@@ -1435,17 +1471,16 @@
         "Exeter",
         "Bournemouth"
       ],
-      "duration": "10 days",
+      "duration": "9 nights / 10 days",
       "type": "Self Drive",
       "tags": [
-        "Cheltenham",
-        "Barnstaple",
-        "Truro",
-        "Plymouth",
-        "Exeter",
-        "Bournemouth"
+        "England",
+        "Cotswolds",
+        "Cornwall",
+        "Devon",
+        "Self Drive"
       ],
-      "description": "Self-drive through Cheltenham, Barnstaple, Truro, Plymouth, Exeter and Bournemouth \u2014 your route, your pace."
+      "description": "England's secret southwest — Tintagel, Land's End, the Jurassic Coast, Stonehenge and Windsor on one circuit."
     },
     {
       "id": "wce-005",
@@ -1469,7 +1504,7 @@
         "Alps",
         "Tuscany"
       ],
-      "description": "Private guided tour through Paris, Lucerne, Mestre, Venice, Florence and Rome."
+      "description": "Private grand tour: Paris, Swiss Alps, Venice canals, Florentine frescoes and the Colosseum."
     },
     {
       "id": "wce-006",
@@ -1493,7 +1528,7 @@
         "Alps",
         "Tuscany"
       ],
-      "description": "Trains, landmarks and local character through Paris, Lucerne and Rome."
+      "description": "Eiffel Tower, Mount Titlis, Venice gondolas and the Colosseum on a twelve-night grand tour by train."
     },
     {
       "id": "wce-001",
@@ -1514,7 +1549,7 @@
         "Alps",
         "Seine"
       ],
-      "description": "Private guided tour through Paris, Lucerne and Zurich."
+      "description": "Private Paris and Switzerland: Eiffel Tower, Seine cruise, Titlis cable car and the Rhine Falls."
     },
     {
       "id": "wce-002",
@@ -1535,7 +1570,7 @@
         "Alps",
         "Seine"
       ],
-      "description": "From Paris to Lucerne \u2014 history, culture and local highlights."
+      "description": "Paris city tour with Seine cruise, then Titlis, Lake Lucerne and the Rhine Falls by rail."
     },
     {
       "id": "wce-008",
@@ -1558,7 +1593,7 @@
         "Alps",
         "Canals"
       ],
-      "description": "Private guided tour through Amsterdam, Paris, Lucerne and Zurich."
+      "description": "Private: Amsterdam windmills, Paris Seine cruise, Swiss Alps and the Rhine Falls with a dedicated vehicle."
     },
     {
       "id": "wce-007",
@@ -1581,7 +1616,7 @@
         "Alps",
         "Canals"
       ],
-      "description": "Trains, landmarks and local character through Amsterdam, Paris and Lucerne."
+      "description": "Amsterdam canal tour, Paris city tour and Titlis on a four-country rail journey."
     },
     {
       "id": "wce-003",
@@ -1604,7 +1639,7 @@
         "Alps",
         "Danube"
       ],
-      "description": "Private guided tour through Paris, Lucerne, Innsbruck and Vienna."
+      "description": "Paris, Swiss Alps, Swarovski Crystal Worlds and Vienna's Schönbrunn on a private nine-night arc."
     },
     {
       "id": "wce-004",
@@ -1627,7 +1662,7 @@
         "Alps",
         "Danube"
       ],
-      "description": "Trains, landmarks and local character through Paris, Lucerne, Innsbruck and Vienna."
+      "description": "Paris to Vienna by rail — Titlis, Swarovski crystal worlds and a Schönbrunn Palace city tour."
     }
   ]
 }
