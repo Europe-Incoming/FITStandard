@@ -143,15 +143,16 @@ function displaySearchResults(results) {
     const resultsHTML = results.map(pkg => {
         const citiesList = pkg.cities && pkg.cities.length ? pkg.cities.join(', ') : '—';
         const pdfUrl = depth + pkg.folder + '/' + pkg.filename;
+        const isPdf = /\.pdf$/i.test(pkg.filename || '');
         const priceStr = pkg.price_twin ? `From ${pkg.currency || '€'}${pkg.price_twin.toLocaleString()} pp` : '';
         const typeStr = pkg.type || '';
         const durationStr = pkg.duration || '';
 
         return `
-            <a href="${pdfUrl}" class="search-result-card" target="_blank">
+            <a href="${pdfUrl}" class="search-result-card"${isPdf ? ' target="_blank"' : ''}>
                 <div class="result-header">
                     <h4>${pkg.name}</h4>
-                    <span class="pdf-badge">PDF</span>
+                    <span class="pdf-badge">${isPdf ? 'PDF' : 'VIEW'}</span>
                 </div>
                 <div class="result-details">
                     <span class="result-region">${pkg.region}</span>
