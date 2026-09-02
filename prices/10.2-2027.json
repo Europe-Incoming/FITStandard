@@ -1,0 +1,43 @@
+{
+  "validFrom": "1 Nov 2026",
+  "validTo": "31 Mar 2027",
+  "currency": "€",
+  "variants": {
+    "trains": {
+      "3": {
+        "winter": {
+          "single": null,
+          "twin": null,
+          "child": null
+        }
+      },
+      "4": {
+        "winter": {
+          "single": 3270,
+          "twin": 2115,
+          "child": 883
+        }
+      },
+      "validity": {
+        "winter": {
+          "from": "1 Nov 2026",
+          "to": "31 Mar 2027"
+        }
+      }
+    }
+  },
+  "optionalTours": [
+    {
+      "name": "Arctic Ice Floating under Northern Lights (3 hrs)",
+      "price": 140
+    },
+    {
+      "name": "Northern Lights Tour Sleigh Ride (4 hrs)",
+      "price": 125
+    },
+    {
+      "name": "Snowshoe Experience in Lapland Forest (3 hrs)",
+      "price": 205
+    }
+  ]
+}

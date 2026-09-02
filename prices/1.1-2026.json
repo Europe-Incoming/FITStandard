@@ -1,0 +1,75 @@
+{
+  "validFrom": "1 Apr 2026",
+  "validTo": "31 Mar 2027",
+  "currency": "£",
+  "variants": {
+    "private": {
+      "paxTiers": {
+        "winter": [
+          {
+            "pax": 8,
+            "3star": 517,
+            "4star": 572
+          },
+          {
+            "pax": 10,
+            "3star": 468,
+            "4star": 523
+          },
+          {
+            "pax": 12,
+            "3star": 435,
+            "4star": 490
+          },
+          {
+            "pax": 14,
+            "3star": 412,
+            "4star": 467
+          },
+          {
+            "pax": 16,
+            "3star": 394,
+            "4star": 449
+          }
+        ],
+        "summer": [
+          {
+            "pax": 8,
+            "3star": 541,
+            "4star": 598
+          },
+          {
+            "pax": 10,
+            "3star": 489,
+            "4star": 547
+          },
+          {
+            "pax": 12,
+            "3star": 455,
+            "4star": 513
+          },
+          {
+            "pax": 14,
+            "3star": 431,
+            "4star": 488
+          },
+          {
+            "pax": 16,
+            "3star": 412,
+            "4star": 470
+          }
+        ]
+      }
+    }
+  },
+  "optionalTours": [
+    {
+      "name": "Madam Tussauds admission ticket",
+      "price": 35
+    },
+    {
+      "name": "Tower of London admission ticket",
+      "price": 34
+    }
+  ]
+}
