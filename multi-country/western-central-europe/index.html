@@ -123,7 +123,7 @@ if(['US','CA','AU','NZ'].includes(d.country)){document.body.innerHTML='<div styl
     <div class="metro-tile-price-row"><span class="metro-tile-from">From</span><span class="metro-tile-amount">€655</span><span class="metro-tile-note">pp (twin)</span></div>
     <div class="metro-tile-validity">Valid till Dec 2026</div>
   </div>
-  <div class="metro-tile-map-col"><div id="map_4_nights__5_days_b_2" class="metro-tile-map"></div></div>
+  <div class="metro-tile-map-col"><div id="map_4_nights__5_days_b_0" class="metro-tile-map"></div></div>
 </a>
 <a href="4 nights, 5 days Bavarian Christmas Markets.pdf" class="metro-tile gold" target="_blank">
   <div class="metro-tile-body">
@@ -134,7 +134,7 @@ if(['US','CA','AU','NZ'].includes(d.country)){document.body.innerHTML='<div styl
     <div class="metro-tile-price-row"><span class="metro-tile-from">From</span><span class="metro-tile-amount">€589</span><span class="metro-tile-note">pp (twin)</span></div>
     <div class="metro-tile-validity">Valid till Dec 2026</div>
   </div>
-  <div class="metro-tile-map-col"><div id="map_4_nights__5_days_b_3" class="metro-tile-map"></div></div>
+  <div class="metro-tile-map-col"><div id="map_4_nights__5_days_b_1" class="metro-tile-map"></div></div>
 </a>
 <a href="7 nights, 8 days Paris Switzerland_Private.pdf" class="metro-tile navy" target="_blank">
   <div class="metro-tile-body">
@@ -145,7 +145,7 @@ if(['US','CA','AU','NZ'].includes(d.country)){document.body.innerHTML='<div styl
     <div class="metro-tile-price-row"><span class="metro-tile-from">From</span><span class="metro-tile-amount">€1,261</span><span class="metro-tile-note">pp (group rate)</span></div>
     <div class="metro-tile-validity">Valid till Nov 2026</div>
   </div>
-  <div class="metro-tile-map-col"><div id="map_7_nights__8_days_p_4" class="metro-tile-map"></div></div>
+  <div class="metro-tile-map-col"><div id="map_7_nights__8_days_p_2" class="metro-tile-map"></div></div>
 </a>
 <a href="7 nights, 8 days Paris Switzerland_Regular.pdf" class="metro-tile navy" target="_blank">
   <div class="metro-tile-body">
@@ -156,7 +156,7 @@ if(['US','CA','AU','NZ'].includes(d.country)){document.body.innerHTML='<div styl
     <div class="metro-tile-price-row"><span class="metro-tile-from">From</span><span class="metro-tile-amount">€1,455</span><span class="metro-tile-note">pp (twin)</span></div>
     <div class="metro-tile-validity">Valid till Nov 2026</div>
   </div>
-  <div class="metro-tile-map-col"><div id="map_7_nights__8_days_p_5" class="metro-tile-map"></div></div>
+  <div class="metro-tile-map-col"><div id="map_7_nights__8_days_p_3" class="metro-tile-map"></div></div>
 </a></div>
   <div class="metro-empty" id="metroEmpty" style="display:none">No packages match this search yet.</div>
 </div>
@@ -187,7 +187,7 @@ window.addEventListener('load',function(){(function(){
   var lngSpread=Math.max.apply(null,lngs)-Math.min.apply(null,lngs);
   var spread=Math.max(latSpread,lngSpread);
   var pad=spread>5?1.2:(spread>1?0.6:0.35);
-  var map=L.map('map_4_nights__5_days_b_2',{zoomControl:false,scrollWheelZoom:false,dragging:false,touchZoom:false,doubleClickZoom:false,boxZoom:false,keyboard:false,attributionControl:false});
+  var map=L.map('map_4_nights__5_days_b_0',{zoomControl:false,scrollWheelZoom:false,dragging:false,touchZoom:false,doubleClickZoom:false,boxZoom:false,keyboard:false,attributionControl:false});
   L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}',{maxZoom:16,attribution:''}).addTo(map);
   map.fitBounds([[Math.min.apply(null,lats)-pad,Math.min.apply(null,lngs)-pad],[Math.max.apply(null,lats)+pad,Math.max.apply(null,lngs)+pad]],{padding:[10,10]});
   var route=pts.map(function(p){return [p.lat,p.lng];});
@@ -213,7 +213,7 @@ window.addEventListener('load',function(){(function(){
   var lngSpread=Math.max.apply(null,lngs)-Math.min.apply(null,lngs);
   var spread=Math.max(latSpread,lngSpread);
   var pad=spread>5?1.2:(spread>1?0.6:0.35);
-  var map=L.map('map_4_nights__5_days_b_3',{zoomControl:false,scrollWheelZoom:false,dragging:false,touchZoom:false,doubleClickZoom:false,boxZoom:false,keyboard:false,attributionControl:false});
+  var map=L.map('map_4_nights__5_days_b_1',{zoomControl:false,scrollWheelZoom:false,dragging:false,touchZoom:false,doubleClickZoom:false,boxZoom:false,keyboard:false,attributionControl:false});
   L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}',{maxZoom:16,attribution:''}).addTo(map);
   map.fitBounds([[Math.min.apply(null,lats)-pad,Math.min.apply(null,lngs)-pad],[Math.max.apply(null,lats)+pad,Math.max.apply(null,lngs)+pad]],{padding:[10,10]});
   var route=pts.map(function(p){return [p.lat,p.lng];});
@@ -239,7 +239,7 @@ window.addEventListener('load',function(){(function(){
   var lngSpread=Math.max.apply(null,lngs)-Math.min.apply(null,lngs);
   var spread=Math.max(latSpread,lngSpread);
   var pad=spread>5?1.2:(spread>1?0.6:0.35);
-  var map=L.map('map_7_nights__8_days_p_4',{zoomControl:false,scrollWheelZoom:false,dragging:false,touchZoom:false,doubleClickZoom:false,boxZoom:false,keyboard:false,attributionControl:false});
+  var map=L.map('map_7_nights__8_days_p_2',{zoomControl:false,scrollWheelZoom:false,dragging:false,touchZoom:false,doubleClickZoom:false,boxZoom:false,keyboard:false,attributionControl:false});
   L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}',{maxZoom:16,attribution:''}).addTo(map);
   map.fitBounds([[Math.min.apply(null,lats)-pad,Math.min.apply(null,lngs)-pad],[Math.max.apply(null,lats)+pad,Math.max.apply(null,lngs)+pad]],{padding:[10,10]});
   var route=pts.map(function(p){return [p.lat,p.lng];});
@@ -265,7 +265,7 @@ window.addEventListener('load',function(){(function(){
   var lngSpread=Math.max.apply(null,lngs)-Math.min.apply(null,lngs);
   var spread=Math.max(latSpread,lngSpread);
   var pad=spread>5?1.2:(spread>1?0.6:0.35);
-  var map=L.map('map_7_nights__8_days_p_5',{zoomControl:false,scrollWheelZoom:false,dragging:false,touchZoom:false,doubleClickZoom:false,boxZoom:false,keyboard:false,attributionControl:false});
+  var map=L.map('map_7_nights__8_days_p_3',{zoomControl:false,scrollWheelZoom:false,dragging:false,touchZoom:false,doubleClickZoom:false,boxZoom:false,keyboard:false,attributionControl:false});
   L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}',{maxZoom:16,attribution:''}).addTo(map);
   map.fitBounds([[Math.min.apply(null,lats)-pad,Math.min.apply(null,lngs)-pad],[Math.max.apply(null,lats)+pad,Math.max.apply(null,lngs)+pad]],{padding:[10,10]});
   var route=pts.map(function(p){return [p.lat,p.lng];});

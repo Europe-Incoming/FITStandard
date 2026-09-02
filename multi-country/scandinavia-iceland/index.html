@@ -167,7 +167,7 @@ if(['US','CA','AU','NZ'].includes(d.country)){document.body.innerHTML='<div styl
     <div class="metro-tile-price-row"><span class="metro-tile-from">From</span><span class="metro-tile-amount">€1,771</span><span class="metro-tile-note">pp (twin)</span></div>
     <div class="metro-tile-validity">Valid till Oct 2026</div>
   </div>
-  <div class="metro-tile-map-col"><div id="map_iceland_self_drive_1" class="metro-tile-map"></div></div>
+  <div class="metro-tile-map-col"><div id="map_iceland_self_drive_0" class="metro-tile-map"></div></div>
 </a>
 <a href="Norway Nutshell_Regular 5 nights, 6 days.pdf" class="metro-tile navy metro-expired" target="_blank">
   <div class="metro-tile-body">
@@ -178,7 +178,7 @@ if(['US','CA','AU','NZ'].includes(d.country)){document.body.innerHTML='<div styl
     
     <div class="metro-tile-validity">Check availability</div>
   </div>
-  <div class="metro-tile-map-col"><div id="map_norway_nutshell_re_3" class="metro-tile-map"></div></div>
+  <div class="metro-tile-map-col"><div id="map_norway_nutshell_re_1" class="metro-tile-map"></div></div>
 </a></div>
   <div class="metro-empty" id="metroEmpty" style="display:none">No packages match this search yet.</div>
 </div>
@@ -209,7 +209,7 @@ window.addEventListener('load',function(){(function(){
   var lngSpread=Math.max.apply(null,lngs)-Math.min.apply(null,lngs);
   var spread=Math.max(latSpread,lngSpread);
   var pad=spread>5?1.2:(spread>1?0.6:0.35);
-  var map=L.map('map_iceland_self_drive_1',{zoomControl:false,scrollWheelZoom:false,dragging:false,touchZoom:false,doubleClickZoom:false,boxZoom:false,keyboard:false,attributionControl:false});
+  var map=L.map('map_iceland_self_drive_0',{zoomControl:false,scrollWheelZoom:false,dragging:false,touchZoom:false,doubleClickZoom:false,boxZoom:false,keyboard:false,attributionControl:false});
   L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}',{maxZoom:16,attribution:''}).addTo(map);
   map.fitBounds([[Math.min.apply(null,lats)-pad,Math.min.apply(null,lngs)-pad],[Math.max.apply(null,lats)+pad,Math.max.apply(null,lngs)+pad]],{padding:[10,10]});
   var route=pts.map(function(p){return [p.lat,p.lng];});
@@ -235,7 +235,7 @@ window.addEventListener('load',function(){(function(){
   var lngSpread=Math.max.apply(null,lngs)-Math.min.apply(null,lngs);
   var spread=Math.max(latSpread,lngSpread);
   var pad=spread>5?1.2:(spread>1?0.6:0.35);
-  var map=L.map('map_norway_nutshell_re_3',{zoomControl:false,scrollWheelZoom:false,dragging:false,touchZoom:false,doubleClickZoom:false,boxZoom:false,keyboard:false,attributionControl:false});
+  var map=L.map('map_norway_nutshell_re_1',{zoomControl:false,scrollWheelZoom:false,dragging:false,touchZoom:false,doubleClickZoom:false,boxZoom:false,keyboard:false,attributionControl:false});
   L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}',{maxZoom:16,attribution:''}).addTo(map);
   map.fitBounds([[Math.min.apply(null,lats)-pad,Math.min.apply(null,lngs)-pad],[Math.max.apply(null,lats)+pad,Math.max.apply(null,lngs)+pad]],{padding:[10,10]});
   var route=pts.map(function(p){return [p.lat,p.lng];});
