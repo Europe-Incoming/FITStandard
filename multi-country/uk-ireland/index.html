@@ -145,7 +145,7 @@ if(['US','CA','AU','NZ'].includes(d.country)){document.body.innerHTML='<div styl
     <div class="metro-tile-price-row"><span class="metro-tile-from">From</span><span class="metro-tile-amount">£1,984</span><span class="metro-tile-note">pp (group rate)</span></div>
     <div class="metro-tile-validity">Valid till Nov 2026</div>
   </div>
-  <div class="metro-tile-map-col"><div id="map_9_nights_10_days_e_9" class="metro-tile-map"></div></div>
+  <div class="metro-tile-map-col"><div id="map_9_nights_10_days_e_0" class="metro-tile-map"></div></div>
 </a>
 <a href="9 nights, 10 days Cotswolds Devon & Cornwall_Self-drive.pdf" class="metro-tile navy" target="_blank">
   <div class="metro-tile-body">
@@ -156,7 +156,7 @@ if(['US','CA','AU','NZ'].includes(d.country)){document.body.innerHTML='<div styl
     <div class="metro-tile-price-row"><span class="metro-tile-from">From</span><span class="metro-tile-amount">£1,221</span><span class="metro-tile-note">pp (twin)</span></div>
     <div class="metro-tile-validity">Valid till Oct 2026</div>
   </div>
-  <div class="metro-tile-map-col"><div id="map_9_nights__10_days__10" class="metro-tile-map"></div></div>
+  <div class="metro-tile-map-col"><div id="map_9_nights__10_days__1" class="metro-tile-map"></div></div>
 </a></div>
   <div class="metro-empty" id="metroEmpty" style="display:none">No packages match this search yet.</div>
 </div>
@@ -187,7 +187,7 @@ window.addEventListener('load',function(){(function(){
   var lngSpread=Math.max.apply(null,lngs)-Math.min.apply(null,lngs);
   var spread=Math.max(latSpread,lngSpread);
   var pad=spread>5?1.2:(spread>1?0.6:0.35);
-  var map=L.map('map_9_nights_10_days_e_9',{zoomControl:false,scrollWheelZoom:false,dragging:false,touchZoom:false,doubleClickZoom:false,boxZoom:false,keyboard:false,attributionControl:false});
+  var map=L.map('map_9_nights_10_days_e_0',{zoomControl:false,scrollWheelZoom:false,dragging:false,touchZoom:false,doubleClickZoom:false,boxZoom:false,keyboard:false,attributionControl:false});
   L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}',{maxZoom:16,attribution:''}).addTo(map);
   map.fitBounds([[Math.min.apply(null,lats)-pad,Math.min.apply(null,lngs)-pad],[Math.max.apply(null,lats)+pad,Math.max.apply(null,lngs)+pad]],{padding:[10,10]});
   var route=pts.map(function(p){return [p.lat,p.lng];});
@@ -213,7 +213,7 @@ window.addEventListener('load',function(){(function(){
   var lngSpread=Math.max.apply(null,lngs)-Math.min.apply(null,lngs);
   var spread=Math.max(latSpread,lngSpread);
   var pad=spread>5?1.2:(spread>1?0.6:0.35);
-  var map=L.map('map_9_nights__10_days__10',{zoomControl:false,scrollWheelZoom:false,dragging:false,touchZoom:false,doubleClickZoom:false,boxZoom:false,keyboard:false,attributionControl:false});
+  var map=L.map('map_9_nights__10_days__1',{zoomControl:false,scrollWheelZoom:false,dragging:false,touchZoom:false,doubleClickZoom:false,boxZoom:false,keyboard:false,attributionControl:false});
   L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}',{maxZoom:16,attribution:''}).addTo(map);
   map.fitBounds([[Math.min.apply(null,lats)-pad,Math.min.apply(null,lngs)-pad],[Math.max.apply(null,lats)+pad,Math.max.apply(null,lngs)+pad]],{padding:[10,10]});
   var route=pts.map(function(p){return [p.lat,p.lng];});

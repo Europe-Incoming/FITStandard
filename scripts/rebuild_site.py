@@ -1492,11 +1492,14 @@ def main():
         folder_abs = os.path.join(REPO_ROOT, folder_rel)
         if not os.path.isdir(folder_abs): continue
         pdfs = sorted([f for f in os.listdir(folder_abs) if f.lower().endswith('.pdf')])
-        if not pdfs: continue
 
         depth = config["depth"]
         region_slug = folder_rel.replace("multi-country/", "") if depth == 2 else "city-break"
         match_index = build_product_match_index(products, region_slug)
+        # A region with zero PDFs left (every route superseded by a product
+        # page) still needs rebuilding — don't skip it.
+        if not pdfs and not any(p.get("region") == region_slug for p in products):
+            continue
         region_products = sorted(
             (p for p in products if p.get("region") == region_slug),
             key=lambda p: p.get("id", "")
