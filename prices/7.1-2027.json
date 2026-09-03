@@ -1,0 +1,61 @@
+{
+  "validFrom": "1 Nov 2026",
+  "validTo": "31 Mar 2027",
+  "currency": "€",
+  "variants": {
+    "trains": {
+      "3": {
+        "winter": {
+          "single": 1059,
+          "twin": 722,
+          "child": 305
+        }
+      },
+      "4": {
+        "winter": {
+          "single": 1200,
+          "twin": 793,
+          "child": 332
+        }
+      },
+      "validity": {
+        "winter": {
+          "from": "1 Nov 2026",
+          "to": "31 Mar 2027"
+        }
+      }
+    },
+    "private": {
+      "paxTiers": {
+        "winter": [
+          {
+            "minPax": 8,
+            "3star": 1001,
+            "4star": 1072
+          },
+          {
+            "minPax": 10,
+            "3star": 882,
+            "4star": 953
+          },
+          {
+            "minPax": 12,
+            "3star": 803,
+            "4star": 874
+          },
+          {
+            "minPax": 14,
+            "3star": 746,
+            "4star": 817
+          },
+          {
+            "minPax": 16,
+            "3star": 704,
+            "4star": 774
+          }
+        ]
+      }
+    }
+  },
+  "optionalTours": []
+}

@@ -1,0 +1,63 @@
+{
+  "validFrom": "1 Apr 2026",
+  "validTo": "31 Oct 2026",
+  "currency": "£",
+  "variants": {
+    "selfdrive": {
+      "3": {
+        "summer": {
+          "single": 2116,
+          "twin": 1277,
+          "child": 524
+        }
+      },
+      "4": {
+        "summer": {
+          "single": 2530,
+          "twin": 1484,
+          "child": 605
+        }
+      },
+      "validity": {
+        "summer": {
+          "from": "1 Apr 2026",
+          "to": "31 Oct 2026"
+        }
+      }
+    }
+  },
+  "optionalTours": [
+    {
+      "name": "Ex Bath, Roman Baths admission ticket",
+      "price": 29
+    },
+    {
+      "name": "Ex Glastonbury, Glastonbury Abbey admission ticket",
+      "price": 15
+    },
+    {
+      "name": "Polgoon Vineyard afternoon tasting tour, 90 mins (Thu/Fri/Sat only)",
+      "price": 22
+    },
+    {
+      "name": "Minack Theatre admission ticket (closed Nov–Feb)",
+      "price": 12
+    },
+    {
+      "name": "Tintagel Castle admission ticket",
+      "price": 23
+    },
+    {
+      "name": "Alder Vineyard tour, 90 mins",
+      "price": 22
+    },
+    {
+      "name": "Plymouth Gin Distillery tour, 1 hr",
+      "price": 17
+    },
+    {
+      "name": "Exeter Cathedral admission",
+      "price": 14
+    }
+  ]
+}

@@ -92,16 +92,16 @@ if(['US','CA','AU','NZ'].includes(d.country)){document.body.innerHTML='<div styl
   </div>
   <div class="metro-tile-map-col"><div id="map_6_1" class="metro-tile-map"></div></div>
 </a>
-<a href="6 nights, 7 days MADBCN_Private.pdf" class="metro-tile gold" target="_blank">
+<a href="madbcn_brochure.html" class="metro-tile gold">
   <div class="metro-tile-body">
-    <div class="metro-tile-meta">6 nights / 7 days · All Year Round</div>
-    <div class="metro-tile-title">6 nights, 7 days Madrid & Barcelona</div>
-    <p class="metro-tile-blurb">Royal palaces, Sagrada Família and Montserrat on a private Madrid to Barcelona circuit.</p>
+    <div class="metro-tile-meta">6 nights · 7 days · Summer</div>
+    <div class="metro-tile-title">Madrid & Barcelona</div>
+    <p class="metro-tile-blurb">Madrid and Barcelona — by private coach.</p>
     <div class="metro-tile-route">Madrid · Barcelona</div>
-    <div class="metro-tile-price-row"><span class="metro-tile-from">From</span><span class="metro-tile-amount">€884</span><span class="metro-tile-note">pp (group rate)</span></div>
+    <div class="metro-tile-price-row"><span class="metro-tile-from">From</span><span class="metro-tile-amount">€924</span><span class="metro-tile-note">pp</span></div>
     <div class="metro-tile-validity">Valid till Nov 2026</div>
   </div>
-  <div class="metro-tile-map-col"><div id="map_6_nights__7_days_m_0" class="metro-tile-map"></div></div>
+  <div class="metro-tile-map-col"><div id="map_madbcn" class="metro-tile-map"></div></div>
 </a></div>
   <div class="metro-empty" id="metroEmpty" style="display:none">No packages match this search yet.</div>
 </div>
@@ -125,14 +125,14 @@ if(['US','CA','AU','NZ'].includes(d.country)){document.body.innerHTML='<div styl
   });
 })();
 window.addEventListener('load',function(){(function(){
-  var pts=[{"lat": 40.4168, "lng": -3.7038, "label": "Madrid", "nights": null}, {"lat": 41.3851, "lng": 2.1734, "label": "Barcelona", "nights": null}];
+  var pts=[{"lat": 40.4168, "lng": -3.7038, "label": "Madrid", "nights": 2}, {"lat": 37.1773, "lng": -3.5986, "label": "Granada", "nights": 2}, {"lat": 37.3891, "lng": -5.9845, "label": "Seville", "nights": 2}, {"lat": 41.3874, "lng": 2.1686, "label": "Barcelona", "nights": 2}];
   if(!pts.length) return;
   var lats=pts.map(function(p){return p.lat;}), lngs=pts.map(function(p){return p.lng;});
   var latSpread=Math.max.apply(null,lats)-Math.min.apply(null,lats);
   var lngSpread=Math.max.apply(null,lngs)-Math.min.apply(null,lngs);
   var spread=Math.max(latSpread,lngSpread);
   var pad=spread>5?1.2:(spread>1?0.6:0.35);
-  var map=L.map('map_6_nights__7_days_m_0',{zoomControl:false,scrollWheelZoom:false,dragging:false,touchZoom:false,doubleClickZoom:false,boxZoom:false,keyboard:false,attributionControl:false});
+  var map=L.map('map_6_1',{zoomControl:false,scrollWheelZoom:false,dragging:false,touchZoom:false,doubleClickZoom:false,boxZoom:false,keyboard:false,attributionControl:false});
   L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}',{maxZoom:16,attribution:''}).addTo(map);
   map.fitBounds([[Math.min.apply(null,lats)-pad,Math.min.apply(null,lngs)-pad],[Math.max.apply(null,lats)+pad,Math.max.apply(null,lngs)+pad]],{padding:[10,10]});
   var route=pts.map(function(p){return [p.lat,p.lng];});
@@ -151,14 +151,14 @@ window.addEventListener('load',function(){(function(){
   });
 })();
 (function(){
-  var pts=[{"lat": 40.4168, "lng": -3.7038, "label": "Madrid", "nights": 2}, {"lat": 37.1773, "lng": -3.5986, "label": "Granada", "nights": 2}, {"lat": 37.3891, "lng": -5.9845, "label": "Seville", "nights": 2}, {"lat": 41.3874, "lng": 2.1686, "label": "Barcelona", "nights": 2}];
+  var pts=[{"lat": 40.4168, "lng": -3.7038, "label": "Madrid", "nights": 3}, {"lat": 41.3851, "lng": 2.1734, "label": "Barcelona", "nights": 3}];
   if(!pts.length) return;
   var lats=pts.map(function(p){return p.lat;}), lngs=pts.map(function(p){return p.lng;});
   var latSpread=Math.max.apply(null,lats)-Math.min.apply(null,lats);
   var lngSpread=Math.max.apply(null,lngs)-Math.min.apply(null,lngs);
   var spread=Math.max(latSpread,lngSpread);
   var pad=spread>5?1.2:(spread>1?0.6:0.35);
-  var map=L.map('map_6_1',{zoomControl:false,scrollWheelZoom:false,dragging:false,touchZoom:false,doubleClickZoom:false,boxZoom:false,keyboard:false,attributionControl:false});
+  var map=L.map('map_madbcn',{zoomControl:false,scrollWheelZoom:false,dragging:false,touchZoom:false,doubleClickZoom:false,boxZoom:false,keyboard:false,attributionControl:false});
   L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}',{maxZoom:16,attribution:''}).addTo(map);
   map.fitBounds([[Math.min.apply(null,lats)-pad,Math.min.apply(null,lngs)-pad],[Math.max.apply(null,lats)+pad,Math.max.apply(null,lngs)+pad]],{padding:[10,10]});
   var route=pts.map(function(p){return [p.lat,p.lng];});

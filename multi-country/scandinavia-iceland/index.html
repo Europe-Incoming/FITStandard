@@ -158,27 +158,27 @@ if(['US','CA','AU','NZ'].includes(d.country)){document.body.innerHTML='<div styl
   </div>
   <div class="metro-tile-map-col"><div id="map_9_1" class="metro-tile-map"></div></div>
 </a>
-<a href="Iceland_Self-drive 7 nights, 8 days.pdf" class="metro-tile gold" target="_blank">
+<a href="9.2_brochure.html" class="metro-tile gold">
   <div class="metro-tile-body">
-    <div class="metro-tile-meta">7 nights / 8 days · All Year Round</div>
-    <div class="metro-tile-title">7 nights, 8 days Iceland</div>
-    <p class="metro-tile-blurb">Iceland's complete ring road — geysers, glacier lagoons, black beaches and the midnight sun.</p>
-    <div class="metro-tile-route">Reykjavik · Akureyri · Egilsstaðir · Hofn · Vik</div>
-    <div class="metro-tile-price-row"><span class="metro-tile-from">From</span><span class="metro-tile-amount">€1,771</span><span class="metro-tile-note">pp (twin)</span></div>
+    <div class="metro-tile-meta">5 nights · 6 days · Winter</div>
+    <div class="metro-tile-title">Norway Nutshell</div>
+    <p class="metro-tile-blurb">Oslo, Flåm and Bergen — by train.</p>
+    <div class="metro-tile-route">Oslo · Flåm · Bergen</div>
+    <div class="metro-tile-price-row"><span class="metro-tile-from">From</span><span class="metro-tile-amount">€1,122</span><span class="metro-tile-note">pp (twin)</span></div>
+    <div class="metro-tile-validity">Valid till Mar 2027</div>
+  </div>
+  <div class="metro-tile-map-col"><div id="map_9_2" class="metro-tile-map"></div></div>
+</a>
+<a href="iceland-ringroad_brochure.html" class="metro-tile navy">
+  <div class="metro-tile-body">
+    <div class="metro-tile-meta">7 nights · 8 days · Summer</div>
+    <div class="metro-tile-title">Iceland Ring Road</div>
+    <p class="metro-tile-blurb">Reykjavik, Akureyri and Mývatn — by self-drive.</p>
+    <div class="metro-tile-route">Reykjavik · Akureyri · Mývatn · Egilsstaðir · Höfn · Vík</div>
+    <div class="metro-tile-price-row"><span class="metro-tile-from">From</span><span class="metro-tile-amount">€1,852</span><span class="metro-tile-note">pp (twin)</span></div>
     <div class="metro-tile-validity">Valid till Oct 2026</div>
   </div>
-  <div class="metro-tile-map-col"><div id="map_iceland_self_drive_0" class="metro-tile-map"></div></div>
-</a>
-<a href="Norway Nutshell_Regular 5 nights, 6 days.pdf" class="metro-tile navy metro-expired" target="_blank">
-  <div class="metro-tile-body">
-    <div class="metro-tile-meta">5 nights / 6 days · All Year Round</div>
-    <div class="metro-tile-title">5 nights, 6 days Norway Nutshell</div>
-    <p class="metro-tile-blurb">Oslo's fjord waterfront, the Flåm Railway and Bergen's colourful Bryggen wharf.</p>
-    <div class="metro-tile-route">Oslo · Bergen</div>
-    
-    <div class="metro-tile-validity">Check availability</div>
-  </div>
-  <div class="metro-tile-map-col"><div id="map_norway_nutshell_re_1" class="metro-tile-map"></div></div>
+  <div class="metro-tile-map-col"><div id="map_iceland-ringroad" class="metro-tile-map"></div></div>
 </a></div>
   <div class="metro-empty" id="metroEmpty" style="display:none">No packages match this search yet.</div>
 </div>
@@ -202,58 +202,6 @@ if(['US','CA','AU','NZ'].includes(d.country)){document.body.innerHTML='<div styl
   });
 })();
 window.addEventListener('load',function(){(function(){
-  var pts=[{"lat": 64.1265, "lng": -21.8174, "label": "Reykjavik", "nights": null}, {"lat": 65.6826, "lng": -18.0913, "label": "Akureyri", "nights": null}, {"lat": 65.2620412, "lng": -14.4035258, "label": "Egilssta\u00f0ir", "nights": null}, {"lat": 64.2533, "lng": -15.208, "label": "Hofn", "nights": null}, {"lat": 63.4189, "lng": -18.994, "label": "Vik", "nights": null}];
-  if(!pts.length) return;
-  var lats=pts.map(function(p){return p.lat;}), lngs=pts.map(function(p){return p.lng;});
-  var latSpread=Math.max.apply(null,lats)-Math.min.apply(null,lats);
-  var lngSpread=Math.max.apply(null,lngs)-Math.min.apply(null,lngs);
-  var spread=Math.max(latSpread,lngSpread);
-  var pad=spread>5?1.2:(spread>1?0.6:0.35);
-  var map=L.map('map_iceland_self_drive_0',{zoomControl:false,scrollWheelZoom:false,dragging:false,touchZoom:false,doubleClickZoom:false,boxZoom:false,keyboard:false,attributionControl:false});
-  L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}',{maxZoom:16,attribution:''}).addTo(map);
-  map.fitBounds([[Math.min.apply(null,lats)-pad,Math.min.apply(null,lngs)-pad],[Math.max.apply(null,lats)+pad,Math.max.apply(null,lngs)+pad]],{padding:[10,10]});
-  var route=pts.map(function(p){return [p.lat,p.lng];});
-  if(false && route.length>1) route.push(route[0]);
-  if(route.length>1) L.polyline(route,{color:'#0B1733',weight:1.5,dashArray:'4,4'}).addTo(map);
-  pts.forEach(function(p){
-    if(p.nights){
-      L.marker([p.lat,p.lng],{icon:L.divIcon({className:'',iconSize:[18,18],iconAnchor:[9,9],
-        html:'<div style="width:18px;height:18px;background:#F2B91D;color:#0B1733;font-size:9px;font-weight:700;line-height:18px;text-align:center;box-sizing:border-box">'+p.nights+'N</div>'})}).addTo(map)
-       .bindTooltip(p.label,{permanent:true,direction:'top',className:'city-tip',offset:[0,-10]});
-    } else {
-      L.marker([p.lat,p.lng],{icon:L.divIcon({className:'',iconSize:[10,10],iconAnchor:[5,5],
-        html:'<div style="width:10px;height:10px;background:#0B1733;box-sizing:border-box"></div>'})}).addTo(map)
-       .bindTooltip(p.label,{permanent:true,direction:'top',className:'city-tip',offset:[0,-6]});
-    }
-  });
-})();
-(function(){
-  var pts=[{"lat": 59.9139, "lng": 10.7522, "label": "Oslo", "nights": null}, {"lat": 60.3913, "lng": 5.3221, "label": "Bergen", "nights": null}];
-  if(!pts.length) return;
-  var lats=pts.map(function(p){return p.lat;}), lngs=pts.map(function(p){return p.lng;});
-  var latSpread=Math.max.apply(null,lats)-Math.min.apply(null,lats);
-  var lngSpread=Math.max.apply(null,lngs)-Math.min.apply(null,lngs);
-  var spread=Math.max(latSpread,lngSpread);
-  var pad=spread>5?1.2:(spread>1?0.6:0.35);
-  var map=L.map('map_norway_nutshell_re_1',{zoomControl:false,scrollWheelZoom:false,dragging:false,touchZoom:false,doubleClickZoom:false,boxZoom:false,keyboard:false,attributionControl:false});
-  L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}',{maxZoom:16,attribution:''}).addTo(map);
-  map.fitBounds([[Math.min.apply(null,lats)-pad,Math.min.apply(null,lngs)-pad],[Math.max.apply(null,lats)+pad,Math.max.apply(null,lngs)+pad]],{padding:[10,10]});
-  var route=pts.map(function(p){return [p.lat,p.lng];});
-  if(false && route.length>1) route.push(route[0]);
-  if(route.length>1) L.polyline(route,{color:'#0B1733',weight:1.5,dashArray:'4,4'}).addTo(map);
-  pts.forEach(function(p){
-    if(p.nights){
-      L.marker([p.lat,p.lng],{icon:L.divIcon({className:'',iconSize:[18,18],iconAnchor:[9,9],
-        html:'<div style="width:18px;height:18px;background:#F2B91D;color:#0B1733;font-size:9px;font-weight:700;line-height:18px;text-align:center;box-sizing:border-box">'+p.nights+'N</div>'})}).addTo(map)
-       .bindTooltip(p.label,{permanent:true,direction:'top',className:'city-tip',offset:[0,-10]});
-    } else {
-      L.marker([p.lat,p.lng],{icon:L.divIcon({className:'',iconSize:[10,10],iconAnchor:[5,5],
-        html:'<div style="width:10px;height:10px;background:#0B1733;box-sizing:border-box"></div>'})}).addTo(map)
-       .bindTooltip(p.label,{permanent:true,direction:'top',className:'city-tip',offset:[0,-6]});
-    }
-  });
-})();
-(function(){
   var pts=[{"lat": 66.5039, "lng": 25.7294, "label": "Rovaniemi", "nights": 4}];
   if(!pts.length) return;
   var lats=pts.map(function(p){return p.lat;}), lngs=pts.map(function(p){return p.lng;});
@@ -422,6 +370,58 @@ window.addEventListener('load',function(){(function(){
   map.fitBounds([[Math.min.apply(null,lats)-pad,Math.min.apply(null,lngs)-pad],[Math.max.apply(null,lats)+pad,Math.max.apply(null,lngs)+pad]],{padding:[10,10]});
   var route=pts.map(function(p){return [p.lat,p.lng];});
   if(false && route.length>1) route.push(route[0]);
+  if(route.length>1) L.polyline(route,{color:'#0B1733',weight:1.5,dashArray:'4,4'}).addTo(map);
+  pts.forEach(function(p){
+    if(p.nights){
+      L.marker([p.lat,p.lng],{icon:L.divIcon({className:'',iconSize:[18,18],iconAnchor:[9,9],
+        html:'<div style="width:18px;height:18px;background:#F2B91D;color:#0B1733;font-size:9px;font-weight:700;line-height:18px;text-align:center;box-sizing:border-box">'+p.nights+'N</div>'})}).addTo(map)
+       .bindTooltip(p.label,{permanent:true,direction:'top',className:'city-tip',offset:[0,-10]});
+    } else {
+      L.marker([p.lat,p.lng],{icon:L.divIcon({className:'',iconSize:[10,10],iconAnchor:[5,5],
+        html:'<div style="width:10px;height:10px;background:#0B1733;box-sizing:border-box"></div>'})}).addTo(map)
+       .bindTooltip(p.label,{permanent:true,direction:'top',className:'city-tip',offset:[0,-6]});
+    }
+  });
+})();
+(function(){
+  var pts=[{"lat": 59.9139, "lng": 10.7522, "label": "Oslo", "nights": 3}, {"lat": 60.8633, "lng": 7.1159, "label": "Fl\u00e5m", "nights": 0}, {"lat": 60.3913, "lng": 5.3221, "label": "Bergen", "nights": 2}];
+  if(!pts.length) return;
+  var lats=pts.map(function(p){return p.lat;}), lngs=pts.map(function(p){return p.lng;});
+  var latSpread=Math.max.apply(null,lats)-Math.min.apply(null,lats);
+  var lngSpread=Math.max.apply(null,lngs)-Math.min.apply(null,lngs);
+  var spread=Math.max(latSpread,lngSpread);
+  var pad=spread>5?1.2:(spread>1?0.6:0.35);
+  var map=L.map('map_9_2',{zoomControl:false,scrollWheelZoom:false,dragging:false,touchZoom:false,doubleClickZoom:false,boxZoom:false,keyboard:false,attributionControl:false});
+  L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}',{maxZoom:16,attribution:''}).addTo(map);
+  map.fitBounds([[Math.min.apply(null,lats)-pad,Math.min.apply(null,lngs)-pad],[Math.max.apply(null,lats)+pad,Math.max.apply(null,lngs)+pad]],{padding:[10,10]});
+  var route=pts.map(function(p){return [p.lat,p.lng];});
+  if(true && route.length>1) route.push(route[0]);
+  if(route.length>1) L.polyline(route,{color:'#0B1733',weight:1.5,dashArray:'4,4'}).addTo(map);
+  pts.forEach(function(p){
+    if(p.nights){
+      L.marker([p.lat,p.lng],{icon:L.divIcon({className:'',iconSize:[18,18],iconAnchor:[9,9],
+        html:'<div style="width:18px;height:18px;background:#F2B91D;color:#0B1733;font-size:9px;font-weight:700;line-height:18px;text-align:center;box-sizing:border-box">'+p.nights+'N</div>'})}).addTo(map)
+       .bindTooltip(p.label,{permanent:true,direction:'top',className:'city-tip',offset:[0,-10]});
+    } else {
+      L.marker([p.lat,p.lng],{icon:L.divIcon({className:'',iconSize:[10,10],iconAnchor:[5,5],
+        html:'<div style="width:10px;height:10px;background:#0B1733;box-sizing:border-box"></div>'})}).addTo(map)
+       .bindTooltip(p.label,{permanent:true,direction:'top',className:'city-tip',offset:[0,-6]});
+    }
+  });
+})();
+(function(){
+  var pts=[{"lat": 64.1265, "lng": -21.8174, "label": "Reykjavik", "nights": 2}, {"lat": 65.6826, "lng": -18.0913, "label": "Akureyri", "nights": 1}, {"lat": 65.6, "lng": -17.35, "label": "M\u00fdvatn", "nights": 1}, {"lat": 65.2620412, "lng": -14.4035258, "label": "Egilssta\u00f0ir", "nights": 1}, {"lat": 64.2533, "lng": -15.208, "label": "H\u00f6fn", "nights": 1}, {"lat": 63.4189, "lng": -18.994, "label": "V\u00edk", "nights": 1}];
+  if(!pts.length) return;
+  var lats=pts.map(function(p){return p.lat;}), lngs=pts.map(function(p){return p.lng;});
+  var latSpread=Math.max.apply(null,lats)-Math.min.apply(null,lats);
+  var lngSpread=Math.max.apply(null,lngs)-Math.min.apply(null,lngs);
+  var spread=Math.max(latSpread,lngSpread);
+  var pad=spread>5?1.2:(spread>1?0.6:0.35);
+  var map=L.map('map_iceland-ringroad',{zoomControl:false,scrollWheelZoom:false,dragging:false,touchZoom:false,doubleClickZoom:false,boxZoom:false,keyboard:false,attributionControl:false});
+  L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}',{maxZoom:16,attribution:''}).addTo(map);
+  map.fitBounds([[Math.min.apply(null,lats)-pad,Math.min.apply(null,lngs)-pad],[Math.max.apply(null,lats)+pad,Math.max.apply(null,lngs)+pad]],{padding:[10,10]});
+  var route=pts.map(function(p){return [p.lat,p.lng];});
+  if(true && route.length>1) route.push(route[0]);
   if(route.length>1) L.polyline(route,{color:'#0B1733',weight:1.5,dashArray:'4,4'}).addTo(map);
   pts.forEach(function(p){
     if(p.nights){
