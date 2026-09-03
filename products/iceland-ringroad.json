@@ -1,0 +1,207 @@
+{
+  "id": "iceland-ringroad",
+  "title": "Iceland Ring Road.",
+  "styles": {
+    "selfdrive": {
+      "name": "Self Drive",
+      "blurb": "A self-drive circuit of Iceland's south and east — the Blue Lagoon, whale watching off Akureyri, Europe's most powerful waterfall, and the Jökulsárlón glacier lagoon.",
+      "nights": "7 nights · 8 days",
+      "route": "Reykjavik (1N) → Akureyri (1N) → Mývatn/Húsavík (1N) → Egilsstaðir (1N) → Höfn (1N) → Vík (1N) → Reykjavik (2N)",
+      "aboutNights": "7 nights across 7 stays",
+      "transport": {
+        "1": "Rental car pickup at Keflavík Airport (economy class), then self-drive to Reykjavik via the Blue Lagoon.",
+        "2": "Self-drive approx. 460km to Akureyri via the Hraunfossar waterfalls and Skagafjörður.",
+        "3": "Self-drive approx. 130km to Mývatn via the Goðafoss waterfall, after a whale-watching tour in Akureyri.",
+        "4": "Self-drive approx. 330km to Egilsstaðir via the Krafla lava fields and Dettifoss waterfall.",
+        "5": "Self-drive approx. 260km to Höfn through the Eastfjords.",
+        "6": "Self-drive approx. 300km to Vík via Jökulsárlón glacier lagoon.",
+        "7": "Self-drive approx. 300km back to Reykjavik via the Golden Circle.",
+        "8": "Self-drive to Keflavík Airport and return the rental car."
+      },
+      "inclusions": [
+        "7 nights accommodation including breakfast",
+        "Blue Lagoon Comfort package",
+        "Whale watching boat tour in Akureyri",
+        "Mývatn Nature Baths admission",
+        "Jökulsárlón glacier lagoon amphibian boat tour, 30 mins",
+        "Rental car (economy class), Day 1 10am to Day 8 12pm"
+      ]
+    }
+  },
+  "days": [
+    {
+      "num": 1,
+      "title": "Arrival in Reykjavik",
+      "overnight": "Overnight: Reykjavik",
+      "desc": "Pick up your rental vehicle at Keflavík Airport and begin your self-drive adventure with a stop at the Blue Lagoon, soaking in its geothermal waters with the Comfort Package included. Overnight in Reykjavik."
+    },
+    {
+      "num": 2,
+      "title": "Reykjavik to Akureyri",
+      "overnight": "Overnight: Akureyri",
+      "desc": "A scenic drive of approximately 460km north to Akureyri, the capital of the north. Along the way, see the Hraunfossar waterfalls cascading from lava into the river below, and pass through Skagafjörður, renowned for its horse breeding. Overnight in Akureyri.",
+      "experience": "Skagafjörður's Icelandic horses — a breed kept pure for over a thousand years — graze in fields right beside the road through this valley."
+    },
+    {
+      "num": 3,
+      "title": "Akureyri to Mývatn",
+      "overnight": "Overnight: Mývatn / Húsavík area",
+      "desc": "A whale-watching boat tour from Akureyri, spanning roughly 3 hours, offers a chance to see these creatures in their natural habitat. Continue the self-drive to Mývatn (approx. 130km), stopping at the Goðafoss waterfall en route, and end the day at the Mývatn Nature Baths, included in your package. Overnight in the Mývatn/Húsavík area."
+    },
+    {
+      "num": 4,
+      "title": "Mývatn to Egilsstaðir",
+      "overnight": "Overnight: Egilsstaðir",
+      "desc": "A scenic self-drive of approximately 330km, passing the Krafla lava fields before reaching Dettifoss, the most powerful waterfall in Europe. Overnight in Egilsstaðir."
+    },
+    {
+      "num": 5,
+      "title": "Egilsstaðir to Höfn",
+      "overnight": "Overnight: Höfn",
+      "desc": "A journey of approximately 260km through the Eastfjords, beginning with Reyðarfjörður and its World War II history museum, then winding roads through the fjords of southeast Iceland before passing through the Almannaskarð tunnel to Höfn. Overnight in Höfn."
+    },
+    {
+      "num": 6,
+      "title": "Höfn to Vík",
+      "overnight": "Overnight: Vík",
+      "desc": "A breathtaking self-drive of approximately 300km along Iceland's southeast, past outlet glaciers of Vatnajökull, Europe's largest ice cap. The highlight is Jökulsárlón, a glacier lagoon at the foot of Iceland's highest peak — take in the scenery on an included 30-minute amphibian boat tour before continuing to Vík. Overnight in Vík.",
+      "experience": "Icebergs calved from Breiðamerkurjökull glacier drift through the Jökulsárlón lagoon and out to Diamond Beach, where chunks of clear ice wash up on black volcanic sand."
+    },
+    {
+      "num": 7,
+      "title": "Vík to Reykjavik",
+      "overnight": "Overnight: Reykjavik",
+      "desc": "A westbound journey of approximately 300km along the south coast, taking in the Golden Circle's Gullfoss, Geysir and Þingvellir National Park, plus the Skógafoss and Seljalandsfoss waterfalls en route back to the capital. Overnight in Reykjavik."
+    },
+    {
+      "num": 8,
+      "title": "Depart Reykjavik",
+      "overnight": "Departure day",
+      "desc": "Drive to Keflavík Airport for your departure flight and return your rental car at the airport office, marking the end of your tour through Iceland's wonders."
+    }
+  ],
+  "hotels": [
+    {
+      "city": "Reykjavik",
+      "nights": "1 Night + 1 Night",
+      "h3": "Hotel Klettur"
+    },
+    {
+      "city": "Akureyri",
+      "nights": "1 Night",
+      "h3": "Akureyri Hotel"
+    },
+    {
+      "city": "Húsavík / Mývatn area",
+      "nights": "1 Night",
+      "h3": "Cape Hotel Húsavík"
+    },
+    {
+      "city": "Egilsstaðir",
+      "nights": "1 Night",
+      "h3": "Hótel Snæfell"
+    },
+    {
+      "city": "Höfn",
+      "nights": "1 Night",
+      "h3": "Fosshótel Vatnajökull"
+    },
+    {
+      "city": "Vík",
+      "nights": "1 Night",
+      "h3": "Hótel Katla"
+    }
+  ],
+  "about": [
+    {
+      "title": "Best season",
+      "body": "June–August for the longest daylight and easiest driving conditions on mountain roads; the Ring Road is open year-round but winter driving requires care and daylight is limited."
+    },
+    {
+      "title": "Weather",
+      "body": "Subarctic and famously changeable: summer highs around 10–15°C, winter lows well below freezing with strong winds — layers and waterproofs matter whatever the forecast says."
+    },
+    {
+      "title": "Currency & docs",
+      "body": "The Icelandic Króna (ISK) is the local currency, though cards are accepted almost everywhere, even for small purchases. Iceland is a Schengen Area member (though not an EU member), so no separate visa is needed for Schengen visa holders."
+    }
+  ],
+  "goodToKnow": [
+    {
+      "title": "Driving distances",
+      "body": "Daily driving legs run 130–460km on roads that are often single-lane with gravel sections in the east — build in extra time for photo stops and don't plan tight same-day connections."
+    },
+    {
+      "title": "Weather-dependent roads",
+      "body": "Mountain passes and some Eastfjords roads can close at short notice outside summer — check road.is before setting out each day, particularly October to April."
+    },
+    {
+      "title": "Whale watching",
+      "body": "Sightings are common but never guaranteed — Akureyri's Eyjafjörður is one of Iceland's more reliable spots, but weather can cancel or shorten trips."
+    },
+    {
+      "title": "What to pack",
+      "body": "Waterproof layers, warm layers even in summer, and swimwear for the geothermal pools at the Blue Lagoon and Mývatn Nature Baths."
+    },
+    {
+      "title": "Tipping",
+      "body": "Tipping is not expected in Iceland — service is built into prices by law, so no additional tip is required in restaurants or for guides."
+    }
+  ],
+  "map": {
+    "points": [
+      {
+        "lat": 64.1265,
+        "lng": -21.8174,
+        "label": "Reykjavik",
+        "nights": 2
+      },
+      {
+        "lat": 65.6826,
+        "lng": -18.0913,
+        "label": "Akureyri",
+        "nights": 1
+      },
+      {
+        "lat": 65.6,
+        "lng": -17.35,
+        "label": "Mývatn",
+        "nights": 1
+      },
+      {
+        "lat": 65.2620412,
+        "lng": -14.4035258,
+        "label": "Egilsstaðir",
+        "nights": 1
+      },
+      {
+        "lat": 64.2533,
+        "lng": -15.208,
+        "label": "Höfn",
+        "nights": 1
+      },
+      {
+        "lat": 63.4189,
+        "lng": -18.994,
+        "label": "Vík",
+        "nights": 1
+      }
+    ],
+    "closeLoop": true
+  },
+  "region": "scandinavia-iceland",
+  "pricesFile": "prices/iceland-ringroad-2026.json",
+  "heroImage": "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=1600&q=80",
+  "eyebrow": "Europe Incoming · FIT Packages · 2026–27",
+  "terms": [
+    "All rates are net and per person for the package.",
+    "Child rates apply for children aged 2 to 11 years old. One child sharing a room with 2 adults, subject to hotel policy.",
+    "All rates are subject to availability at the time of booking. Europe Incoming will endeavour to match the rates quoted.",
+    "Rates are not applicable during trade fair periods, major European public holidays, and other major events.",
+    "City taxes are not included in the price.",
+    "If certain attractions are closed during specific periods, alternative options will be arranged.",
+    "All bookings must be confirmed at least 60 working days prior to arrival.",
+    "100% pre-payment required by bank transfer or credit card (Visa or Mastercard). All bank transfer charges covered by the Agent.",
+    "Vouchers will be issued after receipt of full payment."
+  ]
+}

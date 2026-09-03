@@ -1,0 +1,153 @@
+{
+  "id": "madbcn",
+  "title": "Madrid & Barcelona.",
+  "styles": {
+    "private": {
+      "name": "Private Minicoach",
+      "blurb": "Madrid and Barcelona linked by private coach, with guided tours of both cities plus excursions to Toledo and Montserrat.",
+      "nights": "6 nights · 7 days",
+      "route": "Madrid (3N) → Barcelona (3N)",
+      "aboutNights": "6 nights across 2 stays",
+      "transport": {
+        "1": "Private transfer from Madrid Airport to your hotel.",
+        "4": "Private minicoach transfer from Madrid to Barcelona (daily driving capped at 8 hrs).",
+        "7": "Private transfer from your hotel to Barcelona Airport."
+      },
+      "inclusions": [
+        "6 nights accommodation including breakfast",
+        "Private minicoach Day 1 to Day 6 as per programme",
+        "Madrid city tour with English-speaking guide, 3 hrs",
+        "Toledo excursion with English-speaking guide, 5 hrs",
+        "Barcelona city tour with English-speaking guide, 3 hrs",
+        "Excursion to Montserrat with English-speaking guide, 5 hrs, including admission tickets",
+        "Private transfer from your Barcelona hotel to the airport"
+      ]
+    }
+  },
+  "days": [
+    {
+      "num": 1,
+      "title": "Arrival in Madrid",
+      "overnight": "Overnight: Madrid",
+      "desc": "Touch down in Madrid, the vibrant heart of Spain, known for its rich history and lively atmosphere, and transfer privately to your hotel. Overnight in Madrid."
+    },
+    {
+      "num": 2,
+      "title": "Madrid",
+      "overnight": "Overnight: Madrid",
+      "desc": "A 3-hour guided tour takes in Madrid's highlights — Puerta del Sol, Gran Vía, the regal Royal Palace (entrance not included) and the lively Plaza Mayor. Overnight in Madrid.",
+      "taste": "A stop for churros con chocolate at one of Madrid's historic chocolaterías, a Madrileño breakfast tradition since the 19th century."
+    },
+    {
+      "num": 3,
+      "title": "Madrid — Toledo Excursion",
+      "overnight": "Overnight: Madrid",
+      "desc": "A guided 5-hour exploration of Toledo, a UNESCO World Heritage city, uncovering its historical charm through enchanting streets and architectural wonders. Return to Madrid for the evening. Overnight in Madrid.",
+      "experience": "Toledo's Alcázar and its winding medieval streets reflect centuries of coexistence between Christian, Muslim and Jewish communities — look for the Sinagoga del Tránsito and the Mezquita del Cristo de la Luz along the way."
+    },
+    {
+      "num": 4,
+      "title": "Madrid to Barcelona",
+      "overnight": "Overnight: Barcelona",
+      "desc": "A scenic coach transfer to Barcelona, the “City of Counts”, renowned for Antoni Gaudí's architecture, Catalan culture and the iconic Sagrada Família. Overnight in Barcelona."
+    },
+    {
+      "num": 5,
+      "title": "Barcelona",
+      "overnight": "Overnight: Barcelona",
+      "desc": "A 3-hour guided tour roams the historic Gothic Quarter, strolls down La Rambla, and takes in Gaudí's Casa Batlló and Casa Milà. Overnight in Barcelona.",
+      "shopping": "Passeig de Gràcia, right by Casa Batlló, is Barcelona's flagship shopping avenue for both international brands and Catalan designers."
+    },
+    {
+      "num": 6,
+      "title": "Barcelona — Montserrat Excursion",
+      "overnight": "Overnight: Barcelona",
+      "desc": "A guided 5-hour journey to Montserrat, a mystical mountain retreat, visiting the Montserrat Monastery, home to the revered Black Madonna. Overnight in Barcelona.",
+      "experience": "The Montserrat funicular or cable car ride up the mountain is part of the experience — jagged rock formations rise around the monastery on all sides."
+    },
+    {
+      "num": 7,
+      "title": "Depart Barcelona",
+      "overnight": "Departure day",
+      "desc": "A private transfer takes you from your Barcelona hotel to the airport, concluding your journey through Madrid and Barcelona."
+    }
+  ],
+  "hotels": [
+    {
+      "city": "Madrid",
+      "nights": "3 Nights",
+      "h3": "Hotel Suites Viena Plaza De España",
+      "h4": "The First One Madrid Preciados"
+    },
+    {
+      "city": "Barcelona",
+      "nights": "3 Nights",
+      "h3": "Hotel Barcelona House",
+      "h4": "Novotel Barcelona City"
+    }
+  ],
+  "about": [
+    {
+      "title": "Best season",
+      "body": "April–June and September–October for mild temperatures in both cities; July–August is hot, especially in Madrid, which sits inland on Spain's central plateau."
+    },
+    {
+      "title": "Weather",
+      "body": "Madrid: continental, hot dry summers up to 35°C and cold winters. Barcelona: Mediterranean, milder year-round thanks to the coast, rarely dropping below 5°C in winter."
+    },
+    {
+      "title": "Currency & docs",
+      "body": "The Euro (€) is the local currency, and Spain is a Schengen Area member — no separate visa is needed for Schengen visa holders."
+    }
+  ],
+  "goodToKnow": [
+    {
+      "title": "Sagrada Família",
+      "body": "Entry is not included in the Barcelona city tour — book Sagrada Família tickets in advance, as timed-entry slots often sell out days ahead in peak season."
+    },
+    {
+      "title": "Siesta hours",
+      "body": "Many smaller shops in both cities close for a few hours in early afternoon — plan independent shopping around this local rhythm."
+    },
+    {
+      "title": "What to pack",
+      "body": "Comfortable shoes for cobbled old-town streets in both cities; sun protection for Madrid's intense summer sun."
+    },
+    {
+      "title": "Tipping",
+      "body": "Tipping is modest in Spain — rounding up or leaving 5–10% for good restaurant service is generous rather than expected."
+    }
+  ],
+  "map": {
+    "points": [
+      {
+        "lat": 40.4168,
+        "lng": -3.7038,
+        "label": "Madrid",
+        "nights": 3
+      },
+      {
+        "lat": 41.3851,
+        "lng": 2.1734,
+        "label": "Barcelona",
+        "nights": 3
+      }
+    ],
+    "closeLoop": false
+  },
+  "region": "spain-portugal",
+  "pricesFile": "prices/madbcn-2026.json",
+  "heroImage": "https://images.unsplash.com/photo-1543783207-ec64e4d95325?w=1600&q=80",
+  "eyebrow": "Europe Incoming · FIT Packages · 2026–27",
+  "terms": [
+    "All rates are net and per person for the package.",
+    "Child rates apply for children aged 2 to 11 years old. One child sharing a room with 2 adults, subject to hotel policy.",
+    "All rates are subject to availability at the time of booking. Europe Incoming will endeavour to match the rates quoted.",
+    "Rates are not applicable during trade fair periods, major European public holidays, and other major events.",
+    "City taxes are not included in the price.",
+    "If certain attractions are closed during specific periods, alternative options will be arranged.",
+    "All bookings must be confirmed at least 60 working days prior to arrival.",
+    "100% pre-payment required by bank transfer or credit card (Visa or Mastercard). All bank transfer charges covered by the Agent.",
+    "Vouchers will be issued after receipt of full payment."
+  ]
+}

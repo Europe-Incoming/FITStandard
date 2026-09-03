@@ -1,0 +1,30 @@
+{
+  "validFrom": "20 Nov 2026",
+  "validTo": "24 Dec 2026",
+  "currency": "€",
+  "variants": {
+    "trains": {
+      "3": {
+        "winter": {
+          "single": 1029,
+          "twin": 655,
+          "child": 272
+        }
+      },
+      "4": {
+        "winter": {
+          "single": 1183,
+          "twin": 732,
+          "child": 302
+        }
+      },
+      "validity": {
+        "winter": {
+          "from": "20 Nov 2026",
+          "to": "24 Dec 2026"
+        }
+      }
+    }
+  },
+  "optionalTours": []
+}

@@ -1,0 +1,94 @@
+{
+  "validFrom": "1 Nov 2026",
+  "validTo": "31 Mar 2027",
+  "currency": "€",
+  "variants": {
+    "trains": {
+      "3": {
+        "winter": {
+          "single": 2246,
+          "twin": 1498,
+          "child": 629
+        }
+      },
+      "4": {
+        "winter": {
+          "single": 2745,
+          "twin": 1748,
+          "child": 727
+        }
+      },
+      "validity": {
+        "winter": {
+          "from": "1 Nov 2026",
+          "to": "31 Mar 2027"
+        }
+      }
+    },
+    "private": {
+      "paxTiers": {
+        "winter": [
+          {
+            "minPax": 8,
+            "3star": 1944,
+            "4star": 2193
+          },
+          {
+            "minPax": 10,
+            "3star": 1743,
+            "4star": 1992
+          },
+          {
+            "minPax": 12,
+            "3star": 1608,
+            "4star": 1858
+          },
+          {
+            "minPax": 14,
+            "3star": 1513,
+            "4star": 1762
+          },
+          {
+            "minPax": 16,
+            "3star": 1441,
+            "4star": 1690
+          }
+        ]
+      }
+    }
+  },
+  "optionalTours": [
+    {
+      "name": "Moulin Rouge with drinks, 9pm",
+      "price": 185
+    },
+    {
+      "name": "Louvre Museum (audioguide €5pp)",
+      "price": 25
+    },
+    {
+      "name": "Paris Montmartre food tour, 4-hr walking",
+      "price": 149
+    },
+    {
+      "name": "Disney 1 day 1 park ticket with shuttle coach transfers",
+      "price": 146
+    },
+    {
+      "name": "Guided tour of Versailles Palace with coach transfer",
+      "price": 104
+    },
+    {
+      "name": "Grindelwald First (any two activities)",
+      "price": 75
+    },
+    {
+      "name": "Rhine Falls, 30-min boat ride",
+      "price": 22
+    },
+    {
+      "name": "Lindt Chocolate Museum ticket",
+      "price": 20
+    }
+  ]
+}

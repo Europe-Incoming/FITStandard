@@ -1,0 +1,44 @@
+{
+  "validFrom": "1 Apr 2026",
+  "validTo": "30 Nov 2026",
+  "currency": "€",
+  "variants": {
+    "private": {
+      "paxTiers": {
+        "summer": [
+          {
+            "minPax": 8,
+            "3star": 1512,
+            "4star": 1628
+          },
+          {
+            "minPax": 10,
+            "3star": 1277,
+            "4star": 1393
+          },
+          {
+            "minPax": 12,
+            "3star": 1120,
+            "4star": 1236
+          },
+          {
+            "minPax": 14,
+            "3star": 1008,
+            "4star": 1124
+          },
+          {
+            "minPax": 16,
+            "3star": 924,
+            "4star": 1040
+          }
+        ]
+      }
+    }
+  },
+  "optionalTours": [
+    {
+      "name": "Sagrada Família admission ticket",
+      "price": 45
+    }
+  ]
+}

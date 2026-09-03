@@ -1,0 +1,52 @@
+{
+  "validFrom": "1 Apr 2026",
+  "validTo": "30 Nov 2026",
+  "currency": "£",
+  "variants": {
+    "private": {
+      "paxTiers": {
+        "summer": [
+          {
+            "minPax": 8,
+            "3star": 2638,
+            "4star": 2721
+          },
+          {
+            "minPax": 10,
+            "3star": 2413,
+            "4star": 2495
+          },
+          {
+            "minPax": 12,
+            "3star": 2262,
+            "4star": 2344
+          },
+          {
+            "minPax": 14,
+            "3star": 2155,
+            "4star": 2237
+          },
+          {
+            "minPax": 16,
+            "3star": 2074,
+            "4star": 2156
+          }
+        ]
+      }
+    }
+  },
+  "optionalTours": [
+    {
+      "name": "Madame Tussauds ticket",
+      "price": 35
+    },
+    {
+      "name": "Tower of London ticket",
+      "price": 34
+    },
+    {
+      "name": "Edinburgh Castle ticket",
+      "price": 22
+    }
+  ]
+}

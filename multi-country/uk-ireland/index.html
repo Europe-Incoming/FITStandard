@@ -125,7 +125,29 @@ if(['US','CA','AU','NZ'].includes(d.country)){document.body.innerHTML='<div styl
   </div>
   <div class="metro-tile-map-col"><div id="map_1_4" class="metro-tile-map"></div></div>
 </a>
-<a href="ireland-discovery_brochure.html" class="metro-tile gold">
+<a href="cotswolds-devon-cornwall_brochure.html" class="metro-tile gold">
+  <div class="metro-tile-body">
+    <div class="metro-tile-meta">9 nights · 10 days · Summer</div>
+    <div class="metro-tile-title">Cotswolds, Devon & Cornwall</div>
+    <p class="metro-tile-blurb">London, Cheltenham and Barnstaple — by self-drive.</p>
+    <div class="metro-tile-route">London · Cheltenham · Barnstaple · Truro · Plymouth · Exeter · Bournemouth</div>
+    <div class="metro-tile-price-row"><span class="metro-tile-from">From</span><span class="metro-tile-amount">£1,277</span><span class="metro-tile-note">pp (twin)</span></div>
+    <div class="metro-tile-validity">Valid till Oct 2026</div>
+  </div>
+  <div class="metro-tile-map-col"><div id="map_cotswolds-devon-cornwall" class="metro-tile-map"></div></div>
+</a>
+<a href="england-scotland-9n_brochure.html" class="metro-tile navy">
+  <div class="metro-tile-body">
+    <div class="metro-tile-meta">9 nights · 10 days · Summer</div>
+    <div class="metro-tile-title">Private Britain & Scotland Tour</div>
+    <p class="metro-tile-blurb">London, Manchester and Edinburgh — by private coach.</p>
+    <div class="metro-tile-route">London · Manchester · Edinburgh · Inverness · Glasgow</div>
+    <div class="metro-tile-price-row"><span class="metro-tile-from">From</span><span class="metro-tile-amount">£2,074</span><span class="metro-tile-note">pp</span></div>
+    <div class="metro-tile-validity">Valid till Nov 2026</div>
+  </div>
+  <div class="metro-tile-map-col"><div id="map_england-scotland-9n" class="metro-tile-map"></div></div>
+</a>
+<a href="ireland-discovery_brochure.html" class="metro-tile navy">
   <div class="metro-tile-body">
     <div class="metro-tile-meta">6 nights · 7 days · All Year Round</div>
     <div class="metro-tile-title">Ireland Discovery</div>
@@ -135,28 +157,6 @@ if(['US','CA','AU','NZ'].includes(d.country)){document.body.innerHTML='<div styl
     <div class="metro-tile-validity">Valid till Nov 2027</div>
   </div>
   <div class="metro-tile-map-col"><div id="map_ireland-discovery" class="metro-tile-map"></div></div>
-</a>
-<a href="9 Nights 10 Days England-Scotland_ Private.pdf" class="metro-tile navy" target="_blank">
-  <div class="metro-tile-body">
-    <div class="metro-tile-meta">9 nights / 10 days · All Year Round</div>
-    <div class="metro-tile-title">9 nights, 10 days England & Scotland</div>
-    <p class="metro-tile-blurb">Private Britain: London, Peak District, Edinburgh, Isle of Skye and Loch Lomond with a dedicated vehicle.</p>
-    <div class="metro-tile-route">London · Manchester · Edinburgh · Inverness · Glasgow</div>
-    <div class="metro-tile-price-row"><span class="metro-tile-from">From</span><span class="metro-tile-amount">£1,984</span><span class="metro-tile-note">pp (group rate)</span></div>
-    <div class="metro-tile-validity">Valid till Nov 2026</div>
-  </div>
-  <div class="metro-tile-map-col"><div id="map_9_nights_10_days_e_0" class="metro-tile-map"></div></div>
-</a>
-<a href="9 nights, 10 days Cotswolds Devon & Cornwall_Self-drive.pdf" class="metro-tile navy" target="_blank">
-  <div class="metro-tile-body">
-    <div class="metro-tile-meta">9 nights / 10 days · All Year Round</div>
-    <div class="metro-tile-title">9 nights, 10 days Cotswolds, Devon & Cornwall</div>
-    <p class="metro-tile-blurb">England's secret southwest — Tintagel, Land's End, the Jurassic Coast, Stonehenge and Windsor on one circuit.</p>
-    <div class="metro-tile-route">Cheltenham · Barnstaple · Truro · Plymouth · Exeter · Bournemouth</div>
-    <div class="metro-tile-price-row"><span class="metro-tile-from">From</span><span class="metro-tile-amount">£1,221</span><span class="metro-tile-note">pp (twin)</span></div>
-    <div class="metro-tile-validity">Valid till Oct 2026</div>
-  </div>
-  <div class="metro-tile-map-col"><div id="map_9_nights__10_days__1" class="metro-tile-map"></div></div>
 </a></div>
   <div class="metro-empty" id="metroEmpty" style="display:none">No packages match this search yet.</div>
 </div>
@@ -180,58 +180,6 @@ if(['US','CA','AU','NZ'].includes(d.country)){document.body.innerHTML='<div styl
   });
 })();
 window.addEventListener('load',function(){(function(){
-  var pts=[{"lat": 51.5074, "lng": -0.1278, "label": "London", "nights": null}, {"lat": 53.4808, "lng": -2.2426, "label": "Manchester", "nights": null}, {"lat": 55.9533, "lng": -3.1883, "label": "Edinburgh", "nights": null}, {"lat": 57.4778, "lng": -4.2247, "label": "Inverness", "nights": null}, {"lat": 55.8642, "lng": -4.2518, "label": "Glasgow", "nights": null}];
-  if(!pts.length) return;
-  var lats=pts.map(function(p){return p.lat;}), lngs=pts.map(function(p){return p.lng;});
-  var latSpread=Math.max.apply(null,lats)-Math.min.apply(null,lats);
-  var lngSpread=Math.max.apply(null,lngs)-Math.min.apply(null,lngs);
-  var spread=Math.max(latSpread,lngSpread);
-  var pad=spread>5?1.2:(spread>1?0.6:0.35);
-  var map=L.map('map_9_nights_10_days_e_0',{zoomControl:false,scrollWheelZoom:false,dragging:false,touchZoom:false,doubleClickZoom:false,boxZoom:false,keyboard:false,attributionControl:false});
-  L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}',{maxZoom:16,attribution:''}).addTo(map);
-  map.fitBounds([[Math.min.apply(null,lats)-pad,Math.min.apply(null,lngs)-pad],[Math.max.apply(null,lats)+pad,Math.max.apply(null,lngs)+pad]],{padding:[10,10]});
-  var route=pts.map(function(p){return [p.lat,p.lng];});
-  if(false && route.length>1) route.push(route[0]);
-  if(route.length>1) L.polyline(route,{color:'#0B1733',weight:1.5,dashArray:'4,4'}).addTo(map);
-  pts.forEach(function(p){
-    if(p.nights){
-      L.marker([p.lat,p.lng],{icon:L.divIcon({className:'',iconSize:[18,18],iconAnchor:[9,9],
-        html:'<div style="width:18px;height:18px;background:#F2B91D;color:#0B1733;font-size:9px;font-weight:700;line-height:18px;text-align:center;box-sizing:border-box">'+p.nights+'N</div>'})}).addTo(map)
-       .bindTooltip(p.label,{permanent:true,direction:'top',className:'city-tip',offset:[0,-10]});
-    } else {
-      L.marker([p.lat,p.lng],{icon:L.divIcon({className:'',iconSize:[10,10],iconAnchor:[5,5],
-        html:'<div style="width:10px;height:10px;background:#0B1733;box-sizing:border-box"></div>'})}).addTo(map)
-       .bindTooltip(p.label,{permanent:true,direction:'top',className:'city-tip',offset:[0,-6]});
-    }
-  });
-})();
-(function(){
-  var pts=[{"lat": 51.8994, "lng": -2.0783, "label": "Cheltenham", "nights": null}, {"lat": 51.0803, "lng": -4.0588, "label": "Barnstaple", "nights": null}, {"lat": 50.2632, "lng": -5.051, "label": "Truro", "nights": null}, {"lat": 50.3755, "lng": -4.1427, "label": "Plymouth", "nights": null}, {"lat": 50.7184, "lng": -3.5339, "label": "Exeter", "nights": null}, {"lat": 50.7192, "lng": -1.8808, "label": "Bournemouth", "nights": null}];
-  if(!pts.length) return;
-  var lats=pts.map(function(p){return p.lat;}), lngs=pts.map(function(p){return p.lng;});
-  var latSpread=Math.max.apply(null,lats)-Math.min.apply(null,lats);
-  var lngSpread=Math.max.apply(null,lngs)-Math.min.apply(null,lngs);
-  var spread=Math.max(latSpread,lngSpread);
-  var pad=spread>5?1.2:(spread>1?0.6:0.35);
-  var map=L.map('map_9_nights__10_days__1',{zoomControl:false,scrollWheelZoom:false,dragging:false,touchZoom:false,doubleClickZoom:false,boxZoom:false,keyboard:false,attributionControl:false});
-  L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}',{maxZoom:16,attribution:''}).addTo(map);
-  map.fitBounds([[Math.min.apply(null,lats)-pad,Math.min.apply(null,lngs)-pad],[Math.max.apply(null,lats)+pad,Math.max.apply(null,lngs)+pad]],{padding:[10,10]});
-  var route=pts.map(function(p){return [p.lat,p.lng];});
-  if(false && route.length>1) route.push(route[0]);
-  if(route.length>1) L.polyline(route,{color:'#0B1733',weight:1.5,dashArray:'4,4'}).addTo(map);
-  pts.forEach(function(p){
-    if(p.nights){
-      L.marker([p.lat,p.lng],{icon:L.divIcon({className:'',iconSize:[18,18],iconAnchor:[9,9],
-        html:'<div style="width:18px;height:18px;background:#F2B91D;color:#0B1733;font-size:9px;font-weight:700;line-height:18px;text-align:center;box-sizing:border-box">'+p.nights+'N</div>'})}).addTo(map)
-       .bindTooltip(p.label,{permanent:true,direction:'top',className:'city-tip',offset:[0,-10]});
-    } else {
-      L.marker([p.lat,p.lng],{icon:L.divIcon({className:'',iconSize:[10,10],iconAnchor:[5,5],
-        html:'<div style="width:10px;height:10px;background:#0B1733;box-sizing:border-box"></div>'})}).addTo(map)
-       .bindTooltip(p.label,{permanent:true,direction:'top',className:'city-tip',offset:[0,-6]});
-    }
-  });
-})();
-(function(){
   var pts=[{"lat": 51.5074, "lng": -0.1278, "label": "London", "nights": 3}, {"lat": 51.1789, "lng": -1.8262, "label": "Stonehenge", "nights": 0}, {"lat": 51.3811, "lng": -2.359, "label": "Bath", "nights": 0}];
   if(!pts.length) return;
   var lats=pts.map(function(p){return p.lat;}), lngs=pts.map(function(p){return p.lng;});
@@ -318,6 +266,58 @@ window.addEventListener('load',function(){(function(){
   var spread=Math.max(latSpread,lngSpread);
   var pad=spread>5?1.2:(spread>1?0.6:0.35);
   var map=L.map('map_1_4',{zoomControl:false,scrollWheelZoom:false,dragging:false,touchZoom:false,doubleClickZoom:false,boxZoom:false,keyboard:false,attributionControl:false});
+  L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}',{maxZoom:16,attribution:''}).addTo(map);
+  map.fitBounds([[Math.min.apply(null,lats)-pad,Math.min.apply(null,lngs)-pad],[Math.max.apply(null,lats)+pad,Math.max.apply(null,lngs)+pad]],{padding:[10,10]});
+  var route=pts.map(function(p){return [p.lat,p.lng];});
+  if(false && route.length>1) route.push(route[0]);
+  if(route.length>1) L.polyline(route,{color:'#0B1733',weight:1.5,dashArray:'4,4'}).addTo(map);
+  pts.forEach(function(p){
+    if(p.nights){
+      L.marker([p.lat,p.lng],{icon:L.divIcon({className:'',iconSize:[18,18],iconAnchor:[9,9],
+        html:'<div style="width:18px;height:18px;background:#F2B91D;color:#0B1733;font-size:9px;font-weight:700;line-height:18px;text-align:center;box-sizing:border-box">'+p.nights+'N</div>'})}).addTo(map)
+       .bindTooltip(p.label,{permanent:true,direction:'top',className:'city-tip',offset:[0,-10]});
+    } else {
+      L.marker([p.lat,p.lng],{icon:L.divIcon({className:'',iconSize:[10,10],iconAnchor:[5,5],
+        html:'<div style="width:10px;height:10px;background:#0B1733;box-sizing:border-box"></div>'})}).addTo(map)
+       .bindTooltip(p.label,{permanent:true,direction:'top',className:'city-tip',offset:[0,-6]});
+    }
+  });
+})();
+(function(){
+  var pts=[{"lat": 51.5074, "lng": -0.1278, "label": "London", "nights": 1}, {"lat": 51.8994, "lng": -2.0783, "label": "Cheltenham", "nights": 1}, {"lat": 51.0803, "lng": -4.0588, "label": "Barnstaple", "nights": 1}, {"lat": 50.2632, "lng": -5.051, "label": "Truro", "nights": 2}, {"lat": 50.3755, "lng": -4.1427, "label": "Plymouth", "nights": 1}, {"lat": 50.7184, "lng": -3.5339, "label": "Exeter", "nights": 1}, {"lat": 50.7192, "lng": -1.8808, "label": "Bournemouth", "nights": 1}];
+  if(!pts.length) return;
+  var lats=pts.map(function(p){return p.lat;}), lngs=pts.map(function(p){return p.lng;});
+  var latSpread=Math.max.apply(null,lats)-Math.min.apply(null,lats);
+  var lngSpread=Math.max.apply(null,lngs)-Math.min.apply(null,lngs);
+  var spread=Math.max(latSpread,lngSpread);
+  var pad=spread>5?1.2:(spread>1?0.6:0.35);
+  var map=L.map('map_cotswolds-devon-cornwall',{zoomControl:false,scrollWheelZoom:false,dragging:false,touchZoom:false,doubleClickZoom:false,boxZoom:false,keyboard:false,attributionControl:false});
+  L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}',{maxZoom:16,attribution:''}).addTo(map);
+  map.fitBounds([[Math.min.apply(null,lats)-pad,Math.min.apply(null,lngs)-pad],[Math.max.apply(null,lats)+pad,Math.max.apply(null,lngs)+pad]],{padding:[10,10]});
+  var route=pts.map(function(p){return [p.lat,p.lng];});
+  if(false && route.length>1) route.push(route[0]);
+  if(route.length>1) L.polyline(route,{color:'#0B1733',weight:1.5,dashArray:'4,4'}).addTo(map);
+  pts.forEach(function(p){
+    if(p.nights){
+      L.marker([p.lat,p.lng],{icon:L.divIcon({className:'',iconSize:[18,18],iconAnchor:[9,9],
+        html:'<div style="width:18px;height:18px;background:#F2B91D;color:#0B1733;font-size:9px;font-weight:700;line-height:18px;text-align:center;box-sizing:border-box">'+p.nights+'N</div>'})}).addTo(map)
+       .bindTooltip(p.label,{permanent:true,direction:'top',className:'city-tip',offset:[0,-10]});
+    } else {
+      L.marker([p.lat,p.lng],{icon:L.divIcon({className:'',iconSize:[10,10],iconAnchor:[5,5],
+        html:'<div style="width:10px;height:10px;background:#0B1733;box-sizing:border-box"></div>'})}).addTo(map)
+       .bindTooltip(p.label,{permanent:true,direction:'top',className:'city-tip',offset:[0,-6]});
+    }
+  });
+})();
+(function(){
+  var pts=[{"lat": 51.5074, "lng": -0.1278, "label": "London", "nights": 3}, {"lat": 53.4808, "lng": -2.2426, "label": "Manchester", "nights": 1}, {"lat": 55.9533, "lng": -3.1883, "label": "Edinburgh", "nights": 2}, {"lat": 57.4778, "lng": -4.2247, "label": "Inverness", "nights": 2}, {"lat": 55.8642, "lng": -4.2518, "label": "Glasgow", "nights": 1}];
+  if(!pts.length) return;
+  var lats=pts.map(function(p){return p.lat;}), lngs=pts.map(function(p){return p.lng;});
+  var latSpread=Math.max.apply(null,lats)-Math.min.apply(null,lats);
+  var lngSpread=Math.max.apply(null,lngs)-Math.min.apply(null,lngs);
+  var spread=Math.max(latSpread,lngSpread);
+  var pad=spread>5?1.2:(spread>1?0.6:0.35);
+  var map=L.map('map_england-scotland-9n',{zoomControl:false,scrollWheelZoom:false,dragging:false,touchZoom:false,doubleClickZoom:false,boxZoom:false,keyboard:false,attributionControl:false});
   L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}',{maxZoom:16,attribution:''}).addTo(map);
   map.fitBounds([[Math.min.apply(null,lats)-pad,Math.min.apply(null,lngs)-pad],[Math.max.apply(null,lats)+pad,Math.max.apply(null,lngs)+pad]],{padding:[10,10]});
   var route=pts.map(function(p){return [p.lat,p.lng];});
