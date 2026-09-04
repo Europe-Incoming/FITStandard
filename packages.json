@@ -836,6 +836,1237 @@
       "season": "all-year"
     },
     {
+      "id": "3-1-private",
+      "name": "3.1-private",
+      "filename": "3.1-private.pdf",
+      "region": "Italy",
+      "folder": "multi-country/italy",
+      "cities": [
+        "Venice Mestre",
+        "Florence",
+        "Rome"
+      ],
+      "duration": null,
+      "type": null,
+      "season": "all-year",
+      "price_twin": 858,
+      "currency": "€",
+      "valid_till": null,
+      "is_expired": false,
+      "description": "Trains, landmarks and local character through Venice Mestre, Florence and Rome.",
+      "tags": [
+        "Venice Mestre",
+        "Florence",
+        "Rome"
+      ]
+    },
+    {
+      "id": "3-1-trains",
+      "name": "3.1-trains",
+      "filename": "3.1-trains.pdf",
+      "region": "Italy",
+      "folder": "multi-country/italy",
+      "cities": [
+        "Venice Mestre",
+        "Florence",
+        "Rome"
+      ],
+      "duration": null,
+      "type": null,
+      "season": "all-year",
+      "price_twin": 790,
+      "currency": "€",
+      "valid_till": null,
+      "is_expired": false,
+      "description": "Trains, landmarks and local character through Venice Mestre, Florence and Rome.",
+      "tags": [
+        "Venice Mestre",
+        "Florence",
+        "Rome"
+      ]
+    },
+    {
+      "id": "3-2-private",
+      "name": "3.2-private",
+      "filename": "3.2-private.pdf",
+      "region": "Italy",
+      "folder": "multi-country/italy",
+      "cities": [
+        "Rome",
+        "Naples",
+        "Florence",
+        "Venice Mestre",
+        "Milan"
+      ],
+      "duration": null,
+      "type": null,
+      "season": "all-year",
+      "price_twin": 1423,
+      "currency": "€",
+      "valid_till": null,
+      "is_expired": false,
+      "description": "Trains, landmarks and local character through Rome, Naples, Florence, Venice Mestre and Milan.",
+      "tags": [
+        "Rome",
+        "Naples",
+        "Florence",
+        "Venice Mestre",
+        "Milan"
+      ]
+    },
+    {
+      "id": "3-2-trains",
+      "name": "3.2-trains",
+      "filename": "3.2-trains.pdf",
+      "region": "Italy",
+      "folder": "multi-country/italy",
+      "cities": [
+        "Rome",
+        "Florence",
+        "Venice Mestre",
+        "Naples",
+        "Milan"
+      ],
+      "duration": null,
+      "type": null,
+      "season": "all-year",
+      "price_twin": 1326,
+      "currency": "€",
+      "valid_till": null,
+      "is_expired": false,
+      "description": "Trains, landmarks and local character through Rome, Florence, Venice Mestre, Naples and Milan.",
+      "tags": [
+        "Rome",
+        "Florence",
+        "Venice Mestre",
+        "Naples",
+        "Milan"
+      ]
+    },
+    {
+      "id": "3-3-selfdrive",
+      "name": "3.3-selfdrive",
+      "filename": "3.3-selfdrive.pdf",
+      "region": "Italy",
+      "folder": "multi-country/italy",
+      "cities": [
+        "Cagliari",
+        "Cala",
+        "Alghero",
+        "Olbia",
+        "Cala Gonone"
+      ],
+      "duration": null,
+      "type": null,
+      "season": "all-year",
+      "price_twin": 912,
+      "currency": "€",
+      "valid_till": null,
+      "is_expired": false,
+      "description": "Trains, landmarks and local character through Cagliari, Cala, Alghero, Olbia and Cala Gonone.",
+      "tags": [
+        "Cagliari",
+        "Cala",
+        "Alghero",
+        "Olbia",
+        "Cala Gonone"
+      ]
+    },
+    {
+      "id": "7-1-private",
+      "name": "7.1-private",
+      "filename": "7.1-private.pdf",
+      "region": "Eastern Europe",
+      "folder": "multi-country/eastern-europe",
+      "cities": [
+        "Prague",
+        "Vienna",
+        "Budapest"
+      ],
+      "duration": null,
+      "type": null,
+      "season": "all-year",
+      "price_twin": 704,
+      "currency": "€",
+      "valid_till": null,
+      "is_expired": false,
+      "description": "Trains, landmarks and local character through Prague, Vienna and Budapest.",
+      "tags": [
+        "Prague",
+        "Vienna",
+        "Budapest"
+      ]
+    },
+    {
+      "id": "7-1-trains",
+      "name": "7.1-trains",
+      "filename": "7.1-trains.pdf",
+      "region": "Eastern Europe",
+      "folder": "multi-country/eastern-europe",
+      "cities": [
+        "Prague",
+        "Vienna",
+        "Budapest"
+      ],
+      "duration": null,
+      "type": null,
+      "season": "all-year",
+      "price_twin": 722,
+      "currency": "€",
+      "valid_till": null,
+      "is_expired": false,
+      "description": "Trains, landmarks and local character through Prague, Vienna and Budapest.",
+      "tags": [
+        "Prague",
+        "Vienna",
+        "Budapest"
+      ]
+    },
+    {
+      "id": "5-1-private",
+      "name": "5.1-private",
+      "filename": "5.1-private.pdf",
+      "region": "France",
+      "folder": "multi-country/france",
+      "cities": [
+        "Paris",
+        "Aix en Provence",
+        "Nice",
+        "Avignon"
+      ],
+      "duration": null,
+      "type": null,
+      "season": "all-year",
+      "price_twin": 1471,
+      "currency": "€",
+      "valid_till": null,
+      "is_expired": false,
+      "description": "Trains, landmarks and local character through Paris, Aix en Provence, Nice and Avignon.",
+      "tags": [
+        "Paris",
+        "Aix en Provence",
+        "Nice",
+        "Avignon"
+      ]
+    },
+    {
+      "id": "5-1-selfdrive",
+      "name": "5.1-selfdrive",
+      "filename": "5.1-selfdrive.pdf",
+      "region": "France",
+      "folder": "multi-country/france",
+      "cities": [
+        "Paris",
+        "Avignon",
+        "Aix en Provence",
+        "Nice"
+      ],
+      "duration": null,
+      "type": null,
+      "season": "all-year",
+      "price_twin": 1340,
+      "currency": "€",
+      "valid_till": null,
+      "is_expired": false,
+      "description": "Trains, landmarks and local character through Paris, Avignon, Aix en Provence and Nice.",
+      "tags": [
+        "Paris",
+        "Avignon",
+        "Aix en Provence",
+        "Nice"
+      ]
+    },
+    {
+      "id": "5-1-trains",
+      "name": "5.1-trains",
+      "filename": "5.1-trains.pdf",
+      "region": "France",
+      "folder": "multi-country/france",
+      "cities": [
+        "Paris",
+        "Avignon",
+        "Aix en Provence",
+        "Nice"
+      ],
+      "duration": null,
+      "type": null,
+      "season": "all-year",
+      "price_twin": 1131,
+      "currency": "€",
+      "valid_till": null,
+      "is_expired": false,
+      "description": "Trains, landmarks and local character through Paris, Avignon, Aix en Provence and Nice.",
+      "tags": [
+        "Paris",
+        "Avignon",
+        "Aix en Provence",
+        "Nice"
+      ]
+    },
+    {
+      "id": "5-2-private",
+      "name": "5.2-private",
+      "filename": "5.2-private.pdf",
+      "region": "France",
+      "folder": "multi-country/france",
+      "cities": [
+        "Paris",
+        "Tours",
+        "Bayeux"
+      ],
+      "duration": null,
+      "type": null,
+      "season": "all-year",
+      "price_twin": 1233,
+      "currency": "€",
+      "valid_till": null,
+      "is_expired": false,
+      "description": "Trains, landmarks and local character through Paris, Tours and Bayeux.",
+      "tags": [
+        "Paris",
+        "Tours",
+        "Bayeux"
+      ]
+    },
+    {
+      "id": "5-2-selfdrive",
+      "name": "5.2-selfdrive",
+      "filename": "5.2-selfdrive.pdf",
+      "region": "France",
+      "folder": "multi-country/france",
+      "cities": [
+        "Paris",
+        "Tours",
+        "Bayeux"
+      ],
+      "duration": null,
+      "type": null,
+      "season": "all-year",
+      "price_twin": 961,
+      "currency": "€",
+      "valid_till": null,
+      "is_expired": false,
+      "description": "Trains, landmarks and local character through Paris, Tours and Bayeux.",
+      "tags": [
+        "Paris",
+        "Tours",
+        "Bayeux"
+      ]
+    },
+    {
+      "id": "5-2-trains",
+      "name": "5.2-trains",
+      "filename": "5.2-trains.pdf",
+      "region": "France",
+      "folder": "multi-country/france",
+      "cities": [
+        "Paris",
+        "Tours",
+        "Bayeux"
+      ],
+      "duration": null,
+      "type": null,
+      "season": "all-year",
+      "price_twin": 966,
+      "currency": "€",
+      "valid_till": null,
+      "is_expired": false,
+      "description": "Trains, landmarks and local character through Paris, Tours and Bayeux.",
+      "tags": [
+        "Paris",
+        "Tours",
+        "Bayeux"
+      ]
+    },
+    {
+      "id": "5-3-selfdrive",
+      "name": "5.3-selfdrive",
+      "filename": "5.3-selfdrive.pdf",
+      "region": "France",
+      "folder": "multi-country/france",
+      "cities": [
+        "Ajaccio",
+        "Porto-Ota",
+        "Corte",
+        "Bonifacio"
+      ],
+      "duration": null,
+      "type": null,
+      "season": "all-year",
+      "price_twin": 1150,
+      "currency": "€",
+      "valid_till": null,
+      "is_expired": false,
+      "description": "Trains, landmarks and local character through Ajaccio, Porto-Ota, Corte and Bonifacio.",
+      "tags": [
+        "Ajaccio",
+        "Porto-Ota",
+        "Corte",
+        "Bonifacio"
+      ]
+    },
+    {
+      "id": "10-1-trains",
+      "name": "10.1-trains",
+      "filename": "10.1-trains.pdf",
+      "region": "Scandinavia & Iceland",
+      "folder": "multi-country/scandinavia-iceland",
+      "cities": [
+        "Rovaniemi"
+      ],
+      "duration": null,
+      "type": null,
+      "season": "all-year",
+      "price_twin": 495,
+      "currency": "€",
+      "valid_till": null,
+      "is_expired": false,
+      "description": "Reindeer safaris, husky experiences and guaranteed Northern Lights from Santa's hometown.",
+      "tags": [
+        "Rovaniemi"
+      ]
+    },
+    {
+      "id": "10-2-trains",
+      "name": "10.2-trains",
+      "filename": "10.2-trains.pdf",
+      "region": "Scandinavia & Iceland",
+      "folder": "multi-country/scandinavia-iceland",
+      "cities": [
+        "Rovaniemi"
+      ],
+      "duration": null,
+      "type": null,
+      "season": "all-year",
+      "price_twin": 883,
+      "currency": "€",
+      "valid_till": null,
+      "is_expired": false,
+      "description": "Reindeer safaris, husky experiences and guaranteed Northern Lights from Santa's hometown.",
+      "tags": [
+        "Rovaniemi"
+      ]
+    },
+    {
+      "id": "10-3-trains",
+      "name": "10.3-trains",
+      "filename": "10.3-trains.pdf",
+      "region": "Scandinavia & Iceland",
+      "folder": "multi-country/scandinavia-iceland",
+      "cities": [
+        "Tromsø"
+      ],
+      "duration": null,
+      "type": null,
+      "season": "all-year",
+      "price_twin": 740,
+      "currency": "€",
+      "valid_till": null,
+      "is_expired": false,
+      "description": "Northern Lights, whale watching and Sámi reindeer culture in Arctic Norway.",
+      "tags": [
+        "Tromsø"
+      ]
+    },
+    {
+      "id": "10-4-trains",
+      "name": "10.4-trains",
+      "filename": "10.4-trains.pdf",
+      "region": "Scandinavia & Iceland",
+      "folder": "multi-country/scandinavia-iceland",
+      "cities": [
+        "Tromsø"
+      ],
+      "duration": null,
+      "type": null,
+      "season": "all-year",
+      "price_twin": 1105,
+      "currency": "€",
+      "valid_till": null,
+      "is_expired": false,
+      "description": "Northern Lights, whale watching and Sámi reindeer culture in Arctic Norway.",
+      "tags": [
+        "Tromsø"
+      ]
+    },
+    {
+      "id": "10-5-trains",
+      "name": "10.5-trains",
+      "filename": "10.5-trains.pdf",
+      "region": "Scandinavia & Iceland",
+      "folder": "multi-country/scandinavia-iceland",
+      "cities": [
+        "Kiruna"
+      ],
+      "duration": null,
+      "type": null,
+      "season": "all-year",
+      "price_twin": 580,
+      "currency": "€",
+      "valid_till": null,
+      "is_expired": false,
+      "description": "Dog sledding, ICEHOTEL and a Northern Lights chase in Swedish Lapland.",
+      "tags": [
+        "Kiruna"
+      ]
+    },
+    {
+      "id": "10-6-trains",
+      "name": "10.6-trains",
+      "filename": "10.6-trains.pdf",
+      "region": "Scandinavia & Iceland",
+      "folder": "multi-country/scandinavia-iceland",
+      "cities": [
+        "Kiruna",
+        "Abisko"
+      ],
+      "duration": null,
+      "type": null,
+      "season": "all-year",
+      "price_twin": 891,
+      "currency": "€",
+      "valid_till": null,
+      "is_expired": false,
+      "description": "Dog sleds, ice art suites and the Aurora Sky Station across Swedish Lapland.",
+      "tags": [
+        "Kiruna",
+        "Abisko"
+      ]
+    },
+    {
+      "id": "9-1-trains",
+      "name": "9.1-trains",
+      "filename": "9.1-trains.pdf",
+      "region": "Scandinavia & Iceland",
+      "folder": "multi-country/scandinavia-iceland",
+      "cities": [
+        "Copenhagen",
+        "Stockholm",
+        "Oslo",
+        "Helsinki"
+      ],
+      "duration": null,
+      "type": null,
+      "season": "all-year",
+      "price_twin": 1048,
+      "currency": "€",
+      "valid_till": null,
+      "is_expired": false,
+      "description": "Trains, landmarks and local character through Copenhagen, Stockholm, Oslo and Helsinki.",
+      "tags": [
+        "Copenhagen",
+        "Stockholm",
+        "Oslo",
+        "Helsinki"
+      ]
+    },
+    {
+      "id": "9-2-trains",
+      "name": "9.2-trains",
+      "filename": "9.2-trains.pdf",
+      "region": "Scandinavia & Iceland",
+      "folder": "multi-country/scandinavia-iceland",
+      "cities": [
+        "Oslo",
+        "Bergen"
+      ],
+      "duration": null,
+      "type": null,
+      "season": "all-year",
+      "price_twin": 1122,
+      "currency": "€",
+      "valid_till": null,
+      "is_expired": false,
+      "description": "From Oslo to Bergen — landmarks, local character and curated transfers.",
+      "tags": [
+        "Oslo",
+        "Bergen"
+      ]
+    },
+    {
+      "id": "iceland-ringroad-selfdrive",
+      "name": "iceland-ringroad-selfdrive",
+      "filename": "iceland-ringroad-selfdrive.pdf",
+      "region": "Scandinavia & Iceland",
+      "folder": "multi-country/scandinavia-iceland",
+      "cities": [
+        "Reykjavik",
+        "Akureyri",
+        "Höfn",
+        "Vík"
+      ],
+      "duration": null,
+      "type": null,
+      "season": "all-year",
+      "price_twin": 773,
+      "currency": "€",
+      "valid_till": null,
+      "is_expired": false,
+      "description": "Golden Circle, black beaches and the Blue Lagoon on Iceland's ring road.",
+      "tags": [
+        "Reykjavik",
+        "Akureyri",
+        "Höfn",
+        "Vík"
+      ]
+    },
+    {
+      "id": "6-1-private",
+      "name": "6.1-private",
+      "filename": "6.1-private.pdf",
+      "region": "Spain & Portugal",
+      "folder": "multi-country/spain-portugal",
+      "cities": [
+        "Madrid",
+        "Seville",
+        "Granada"
+      ],
+      "duration": null,
+      "type": null,
+      "season": "all-year",
+      "price_twin": 1935,
+      "currency": "€",
+      "valid_till": null,
+      "is_expired": false,
+      "description": "Trains, landmarks and local character through Madrid, Seville and Granada.",
+      "tags": [
+        "Madrid",
+        "Seville",
+        "Granada"
+      ]
+    },
+    {
+      "id": "6-1-trains",
+      "name": "6.1-trains",
+      "filename": "6.1-trains.pdf",
+      "region": "Spain & Portugal",
+      "folder": "multi-country/spain-portugal",
+      "cities": [
+        "Madrid",
+        "Seville",
+        "Granada"
+      ],
+      "duration": null,
+      "type": null,
+      "season": "all-year",
+      "price_twin": 1442,
+      "currency": "€",
+      "valid_till": null,
+      "is_expired": false,
+      "description": "Trains, landmarks and local character through Madrid, Seville and Granada.",
+      "tags": [
+        "Madrid",
+        "Seville",
+        "Granada"
+      ]
+    },
+    {
+      "id": "4-1-trains",
+      "name": "4.1-trains",
+      "filename": "4.1-trains.pdf",
+      "region": "Switzerland",
+      "folder": "multi-country/switzerland",
+      "cities": [
+        "Lucerne",
+        "Interlaken"
+      ],
+      "duration": null,
+      "type": null,
+      "season": "all-year",
+      "price_twin": 773,
+      "currency": "€",
+      "valid_till": null,
+      "is_expired": false,
+      "description": "From Lucerne to Interlaken — landmarks, local character and curated transfers.",
+      "tags": [
+        "Lucerne",
+        "Interlaken"
+      ]
+    },
+    {
+      "id": "4-2-private",
+      "name": "4.2-private",
+      "filename": "4.2-private.pdf",
+      "region": "Switzerland",
+      "folder": "multi-country/switzerland",
+      "cities": [
+        "Lucerne",
+        "Montreux",
+        "Interlaken",
+        "Zurich"
+      ],
+      "duration": null,
+      "type": null,
+      "season": "all-year",
+      "price_twin": 1273,
+      "currency": "€",
+      "valid_till": null,
+      "is_expired": false,
+      "description": "Trains, landmarks and local character through Lucerne, Montreux, Interlaken and Zurich.",
+      "tags": [
+        "Lucerne",
+        "Montreux",
+        "Interlaken",
+        "Zurich"
+      ]
+    },
+    {
+      "id": "4-2-trains",
+      "name": "4.2-trains",
+      "filename": "4.2-trains.pdf",
+      "region": "Switzerland",
+      "folder": "multi-country/switzerland",
+      "cities": [
+        "Lucerne",
+        "Montreux",
+        "Interlaken",
+        "Zurich"
+      ],
+      "duration": null,
+      "type": null,
+      "season": "all-year",
+      "price_twin": 1098,
+      "currency": "€",
+      "valid_till": null,
+      "is_expired": false,
+      "description": "Trains, landmarks and local character through Lucerne, Montreux, Interlaken and Zurich.",
+      "tags": [
+        "Lucerne",
+        "Montreux",
+        "Interlaken",
+        "Zurich"
+      ]
+    },
+    {
+      "id": "1-1-private",
+      "name": "1.1-private",
+      "filename": "1.1-private.pdf",
+      "region": "UK & Ireland",
+      "folder": "multi-country/uk-ireland",
+      "cities": [
+        "London"
+      ],
+      "duration": null,
+      "type": null,
+      "season": "all-year",
+      "price_twin": 503,
+      "currency": "£",
+      "valid_till": null,
+      "is_expired": false,
+      "description": "Three days in London — iconic sights, local food and a city tour included.",
+      "tags": [
+        "London"
+      ]
+    },
+    {
+      "id": "1-2-private",
+      "name": "1.2-private",
+      "filename": "1.2-private.pdf",
+      "region": "UK & Ireland",
+      "folder": "multi-country/uk-ireland",
+      "cities": [
+        "London",
+        "Edinburgh",
+        "Inverness",
+        "Manchester",
+        "Glasgow"
+      ],
+      "duration": null,
+      "type": null,
+      "season": "all-year",
+      "price_twin": 1507,
+      "currency": "£",
+      "valid_till": null,
+      "is_expired": false,
+      "description": "Trains, landmarks and local character through London, Edinburgh, Inverness, Manchester and Glasgow.",
+      "tags": [
+        "London",
+        "Edinburgh",
+        "Inverness",
+        "Manchester",
+        "Glasgow"
+      ]
+    },
+    {
+      "id": "1-2-trains",
+      "name": "1.2-trains",
+      "filename": "1.2-trains.pdf",
+      "region": "UK & Ireland",
+      "folder": "multi-country/uk-ireland",
+      "cities": [
+        "London",
+        "Edinburgh",
+        "Inverness",
+        "Manchester",
+        "Glasgow"
+      ],
+      "duration": null,
+      "type": null,
+      "season": "all-year",
+      "price_twin": 1189,
+      "currency": "£",
+      "valid_till": null,
+      "is_expired": false,
+      "description": "Trains, landmarks and local character through London, Edinburgh, Inverness, Manchester and Glasgow.",
+      "tags": [
+        "London",
+        "Edinburgh",
+        "Inverness",
+        "Manchester",
+        "Glasgow"
+      ]
+    },
+    {
+      "id": "1-3-trains",
+      "name": "1.3-trains",
+      "filename": "1.3-trains.pdf",
+      "region": "UK & Ireland",
+      "folder": "multi-country/uk-ireland",
+      "cities": [
+        "London",
+        "Inverness",
+        "Edinburgh",
+        "Glasgow"
+      ],
+      "duration": null,
+      "type": null,
+      "season": "all-year",
+      "price_twin": 1021,
+      "currency": "£",
+      "valid_till": null,
+      "is_expired": false,
+      "description": "Trains, landmarks and local character through London, Inverness, Edinburgh and Glasgow.",
+      "tags": [
+        "London",
+        "Inverness",
+        "Edinburgh",
+        "Glasgow"
+      ]
+    },
+    {
+      "id": "1-4-private",
+      "name": "1.4-private",
+      "filename": "1.4-private.pdf",
+      "region": "UK & Ireland",
+      "folder": "multi-country/uk-ireland",
+      "cities": [
+        "Edinburgh",
+        "Inverness",
+        "Fort William",
+        "Glasgow"
+      ],
+      "duration": null,
+      "type": null,
+      "season": "all-year",
+      "price_twin": 1090,
+      "currency": "£",
+      "valid_till": null,
+      "is_expired": false,
+      "description": "Trains, landmarks and local character through Edinburgh, Inverness, Fort William and Glasgow.",
+      "tags": [
+        "Edinburgh",
+        "Inverness",
+        "Fort William",
+        "Glasgow"
+      ]
+    },
+    {
+      "id": "1-4-selfdrive",
+      "name": "1.4-selfdrive",
+      "filename": "1.4-selfdrive.pdf",
+      "region": "UK & Ireland",
+      "folder": "multi-country/uk-ireland",
+      "cities": [
+        "Edinburgh",
+        "Inverness",
+        "Fort William",
+        "Glasgow"
+      ],
+      "duration": null,
+      "type": null,
+      "season": "all-year",
+      "price_twin": 789,
+      "currency": "£",
+      "valid_till": null,
+      "is_expired": false,
+      "description": "Trains, landmarks and local character through Edinburgh, Inverness, Fort William and Glasgow.",
+      "tags": [
+        "Edinburgh",
+        "Inverness",
+        "Fort William",
+        "Glasgow"
+      ]
+    },
+    {
+      "id": "1-4-trains",
+      "name": "1.4-trains",
+      "filename": "1.4-trains.pdf",
+      "region": "UK & Ireland",
+      "folder": "multi-country/uk-ireland",
+      "cities": [
+        "Edinburgh",
+        "Inverness",
+        "Fort William",
+        "Glasgow"
+      ],
+      "duration": null,
+      "type": null,
+      "season": "all-year",
+      "price_twin": 791,
+      "currency": "£",
+      "valid_till": null,
+      "is_expired": false,
+      "description": "Trains, landmarks and local character through Edinburgh, Inverness, Fort William and Glasgow.",
+      "tags": [
+        "Edinburgh",
+        "Inverness",
+        "Fort William",
+        "Glasgow"
+      ]
+    },
+    {
+      "id": "cotswolds-devon-cornwall-selfd",
+      "name": "cotswolds-devon-cornwall-selfdrive",
+      "filename": "cotswolds-devon-cornwall-selfdrive.pdf",
+      "region": "UK & Ireland",
+      "folder": "multi-country/uk-ireland",
+      "cities": [
+        "London",
+        "Cheltenham",
+        "Barnstaple",
+        "Plymouth",
+        "Bournemouth",
+        "Truro"
+      ],
+      "duration": null,
+      "type": null,
+      "season": "all-year",
+      "price_twin": 1258,
+      "currency": "£",
+      "valid_till": null,
+      "is_expired": false,
+      "description": "Trains, landmarks and local character through London, Cheltenham, Barnstaple, Plymouth, Bournemouth and Truro.",
+      "tags": [
+        "London",
+        "Cheltenham",
+        "Barnstaple",
+        "Plymouth",
+        "Bournemouth",
+        "Truro"
+      ]
+    },
+    {
+      "id": "ireland-discovery-private",
+      "name": "ireland-discovery-private",
+      "filename": "ireland-discovery-private.pdf",
+      "region": "UK & Ireland",
+      "folder": "multi-country/uk-ireland",
+      "cities": [
+        "Dublin",
+        "Limerick"
+      ],
+      "duration": null,
+      "type": null,
+      "season": "all-year",
+      "price_twin": 1094,
+      "currency": "€",
+      "valid_till": null,
+      "is_expired": false,
+      "description": "From Dublin to Limerick — landmarks, local character and curated transfers.",
+      "tags": [
+        "Dublin",
+        "Limerick"
+      ]
+    },
+    {
+      "id": "ireland-discovery-selfdrive",
+      "name": "ireland-discovery-selfdrive",
+      "filename": "ireland-discovery-selfdrive.pdf",
+      "region": "UK & Ireland",
+      "folder": "multi-country/uk-ireland",
+      "cities": [
+        "Dublin",
+        "Limerick"
+      ],
+      "duration": null,
+      "type": null,
+      "season": "all-year",
+      "price_twin": 901,
+      "currency": "€",
+      "valid_till": null,
+      "is_expired": false,
+      "description": "From Dublin to Limerick — landmarks, local character and curated transfers.",
+      "tags": [
+        "Dublin",
+        "Limerick"
+      ]
+    },
+    {
+      "id": "ireland-discovery-trains",
+      "name": "ireland-discovery-trains",
+      "filename": "ireland-discovery-trains.pdf",
+      "region": "UK & Ireland",
+      "folder": "multi-country/uk-ireland",
+      "cities": [
+        "Dublin",
+        "Limerick"
+      ],
+      "duration": null,
+      "type": null,
+      "season": "all-year",
+      "price_twin": 801,
+      "currency": "€",
+      "valid_till": null,
+      "is_expired": false,
+      "description": "From Dublin to Limerick — landmarks, local character and curated transfers.",
+      "tags": [
+        "Dublin",
+        "Limerick"
+      ]
+    },
+    {
+      "id": "11-1-trains",
+      "name": "11.1-trains",
+      "filename": "11.1-trains.pdf",
+      "region": "Western & Central Europe",
+      "folder": "multi-country/western-central-europe",
+      "cities": [
+        "Nuremberg",
+        "Munich"
+      ],
+      "duration": null,
+      "type": null,
+      "season": "all-year",
+      "price_twin": 244,
+      "currency": "€",
+      "valid_till": null,
+      "is_expired": false,
+      "description": "From Nuremberg to Munich — landmarks, local character and curated transfers.",
+      "tags": [
+        "Nuremberg",
+        "Munich"
+      ]
+    },
+    {
+      "id": "11-2-trains",
+      "name": "11.2-trains",
+      "filename": "11.2-trains.pdf",
+      "region": "Western & Central Europe",
+      "folder": "multi-country/western-central-europe",
+      "cities": [
+        "Salzburg",
+        "Munich"
+      ],
+      "duration": null,
+      "type": null,
+      "season": "all-year",
+      "price_twin": 272,
+      "currency": "€",
+      "valid_till": null,
+      "is_expired": false,
+      "description": "From Salzburg to Munich — landmarks, local character and curated transfers.",
+      "tags": [
+        "Salzburg",
+        "Munich"
+      ]
+    },
+    {
+      "id": "2-1-private",
+      "name": "2.1-private",
+      "filename": "2.1-private.pdf",
+      "region": "Western & Central Europe",
+      "folder": "multi-country/western-central-europe",
+      "cities": [
+        "Paris",
+        "Lucerne",
+        "Zurich"
+      ],
+      "duration": null,
+      "type": null,
+      "season": "all-year",
+      "price_twin": 1441,
+      "currency": "€",
+      "valid_till": null,
+      "is_expired": false,
+      "description": "Trains, landmarks and local character through Paris, Lucerne and Zurich.",
+      "tags": [
+        "Paris",
+        "Lucerne",
+        "Zurich"
+      ]
+    },
+    {
+      "id": "2-1-trains",
+      "name": "2.1-trains",
+      "filename": "2.1-trains.pdf",
+      "region": "Western & Central Europe",
+      "folder": "multi-country/western-central-europe",
+      "cities": [
+        "Paris",
+        "Lucerne",
+        "Zurich"
+      ],
+      "duration": null,
+      "type": null,
+      "season": "all-year",
+      "price_twin": 1498,
+      "currency": "€",
+      "valid_till": null,
+      "is_expired": false,
+      "description": "Trains, landmarks and local character through Paris, Lucerne and Zurich.",
+      "tags": [
+        "Paris",
+        "Lucerne",
+        "Zurich"
+      ]
+    },
+    {
+      "id": "2-2-private",
+      "name": "2.2-private",
+      "filename": "2.2-private.pdf",
+      "region": "Western & Central Europe",
+      "folder": "multi-country/western-central-europe",
+      "cities": [
+        "Paris",
+        "Innsbruck",
+        "Lucerne",
+        "Vienna"
+      ],
+      "duration": null,
+      "type": null,
+      "season": "all-year",
+      "price_twin": 1461,
+      "currency": "€",
+      "valid_till": null,
+      "is_expired": false,
+      "description": "Trains, landmarks and local character through Paris, Innsbruck, Lucerne and Vienna.",
+      "tags": [
+        "Paris",
+        "Innsbruck",
+        "Lucerne",
+        "Vienna"
+      ]
+    },
+    {
+      "id": "2-2-trains",
+      "name": "2.2-trains",
+      "filename": "2.2-trains.pdf",
+      "region": "Western & Central Europe",
+      "folder": "multi-country/western-central-europe",
+      "cities": [
+        "Paris",
+        "Innsbruck",
+        "Vienna",
+        "Lucerne"
+      ],
+      "duration": null,
+      "type": null,
+      "season": "all-year",
+      "price_twin": 1726,
+      "currency": "€",
+      "valid_till": null,
+      "is_expired": false,
+      "description": "Trains, landmarks and local character through Paris, Innsbruck, Vienna and Lucerne.",
+      "tags": [
+        "Paris",
+        "Innsbruck",
+        "Vienna",
+        "Lucerne"
+      ]
+    },
+    {
+      "id": "2-3-private",
+      "name": "2.3-private",
+      "filename": "2.3-private.pdf",
+      "region": "Western & Central Europe",
+      "folder": "multi-country/western-central-europe",
+      "cities": [
+        "Paris",
+        "Lucerne",
+        "Rome"
+      ],
+      "duration": null,
+      "type": null,
+      "season": "all-year",
+      "price_twin": 1593,
+      "currency": "€",
+      "valid_till": null,
+      "is_expired": false,
+      "description": "Trains, landmarks and local character through Paris, Lucerne and Rome.",
+      "tags": [
+        "Paris",
+        "Lucerne",
+        "Rome"
+      ]
+    },
+    {
+      "id": "2-3-trains",
+      "name": "2.3-trains",
+      "filename": "2.3-trains.pdf",
+      "region": "Western & Central Europe",
+      "folder": "multi-country/western-central-europe",
+      "cities": [
+        "Paris",
+        "Lucerne",
+        "Rome"
+      ],
+      "duration": null,
+      "type": null,
+      "season": "all-year",
+      "price_twin": 1845,
+      "currency": "€",
+      "valid_till": null,
+      "is_expired": false,
+      "description": "Trains, landmarks and local character through Paris, Lucerne and Rome.",
+      "tags": [
+        "Paris",
+        "Lucerne",
+        "Rome"
+      ]
+    },
+    {
+      "id": "2-4-private",
+      "name": "2.4-private",
+      "filename": "2.4-private.pdf",
+      "region": "Western & Central Europe",
+      "folder": "multi-country/western-central-europe",
+      "cities": [
+        "Lucerne"
+      ],
+      "duration": null,
+      "type": null,
+      "season": "all-year",
+      "price_twin": 1422,
+      "currency": "€",
+      "valid_till": null,
+      "is_expired": false,
+      "description": "Three days in Lucerne — iconic sights, local food and a city tour included.",
+      "tags": [
+        "Lucerne"
+      ]
+    },
+    {
+      "id": "2-4-trains",
+      "name": "2.4-trains",
+      "filename": "2.4-trains.pdf",
+      "region": "Western & Central Europe",
+      "folder": "multi-country/western-central-europe",
+      "cities": [
+        "Lucerne"
+      ],
+      "duration": null,
+      "type": null,
+      "season": "all-year",
+      "price_twin": 1544,
+      "currency": "€",
+      "valid_till": null,
+      "is_expired": false,
+      "description": "Three days in Lucerne — iconic sights, local food and a city tour included.",
+      "tags": [
+        "Lucerne"
+      ]
+    },
+    {
       "id": "product-3.1",
       "name": "Classic Italy",
       "filename": "3.1_brochure.html",

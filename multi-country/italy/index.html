@@ -113,6 +113,61 @@ if(['US','CA','AU','NZ'].includes(d.country)){document.body.innerHTML='<div styl
     <div class="metro-tile-validity">Valid till Nov 2027</div>
   </div>
   <div class="metro-tile-map-col"><div id="map_3_3" class="metro-tile-map"></div></div>
+</a>
+<a href="3.1-private.pdf" class="metro-tile navy" target="_blank">
+  <div class="metro-tile-body">
+    <div class="metro-tile-meta">All Year Round</div>
+    <div class="metro-tile-title">3.1-private</div>
+    <p class="metro-tile-blurb">Trains, landmarks and local character through Venice Mestre, Florence and Rome.</p>
+    <div class="metro-tile-route">Venice Mestre · Florence · Rome</div>
+    <div class="metro-tile-price-row"><span class="metro-tile-from">From</span><span class="metro-tile-amount">€858</span><span class="metro-tile-note">pp (twin)</span></div>
+    
+  </div>
+  <div class="metro-tile-map-col"><div id="map_3_1_private_pdf_0" class="metro-tile-map"></div></div>
+</a>
+<a href="3.1-trains.pdf" class="metro-tile gold" target="_blank">
+  <div class="metro-tile-body">
+    <div class="metro-tile-meta">All Year Round</div>
+    <div class="metro-tile-title">3.1-trains</div>
+    <p class="metro-tile-blurb">Trains, landmarks and local character through Venice Mestre, Florence and Rome.</p>
+    <div class="metro-tile-route">Venice Mestre · Florence · Rome</div>
+    <div class="metro-tile-price-row"><span class="metro-tile-from">From</span><span class="metro-tile-amount">€790</span><span class="metro-tile-note">pp (twin)</span></div>
+    
+  </div>
+  <div class="metro-tile-map-col"><div id="map_3_1_trains_pdf_1" class="metro-tile-map"></div></div>
+</a>
+<a href="3.2-private.pdf" class="metro-tile navy" target="_blank">
+  <div class="metro-tile-body">
+    <div class="metro-tile-meta">All Year Round</div>
+    <div class="metro-tile-title">3.2-private</div>
+    <p class="metro-tile-blurb">Trains, landmarks and local character through Rome, Naples, Florence, Venice Mestre and Milan.</p>
+    <div class="metro-tile-route">Rome · Naples · Florence · Venice Mestre · Milan</div>
+    <div class="metro-tile-price-row"><span class="metro-tile-from">From</span><span class="metro-tile-amount">€1,423</span><span class="metro-tile-note">pp (twin)</span></div>
+    
+  </div>
+  <div class="metro-tile-map-col"><div id="map_3_2_private_pdf_2" class="metro-tile-map"></div></div>
+</a>
+<a href="3.2-trains.pdf" class="metro-tile navy" target="_blank">
+  <div class="metro-tile-body">
+    <div class="metro-tile-meta">All Year Round</div>
+    <div class="metro-tile-title">3.2-trains</div>
+    <p class="metro-tile-blurb">Trains, landmarks and local character through Rome, Florence, Venice Mestre, Naples and Milan.</p>
+    <div class="metro-tile-route">Rome · Florence · Venice Mestre · Naples · Milan</div>
+    <div class="metro-tile-price-row"><span class="metro-tile-from">From</span><span class="metro-tile-amount">€1,326</span><span class="metro-tile-note">pp (twin)</span></div>
+    
+  </div>
+  <div class="metro-tile-map-col"><div id="map_3_2_trains_pdf_3" class="metro-tile-map"></div></div>
+</a>
+<a href="3.3-selfdrive.pdf" class="metro-tile gold" target="_blank">
+  <div class="metro-tile-body">
+    <div class="metro-tile-meta">All Year Round</div>
+    <div class="metro-tile-title">3.3-selfdrive</div>
+    <p class="metro-tile-blurb">Trains, landmarks and local character through Cagliari, Cala, Alghero, Olbia and Cala Gonone.</p>
+    <div class="metro-tile-route">Cagliari · Cala · Alghero · Olbia · Cala Gonone</div>
+    <div class="metro-tile-price-row"><span class="metro-tile-from">From</span><span class="metro-tile-amount">€912</span><span class="metro-tile-note">pp (twin)</span></div>
+    
+  </div>
+  <div class="metro-tile-map-col"><div id="map_3_3_selfdrive_pdf_4" class="metro-tile-map"></div></div>
 </a></div>
   <div class="metro-empty" id="metroEmpty" style="display:none">No packages match this search yet.</div>
 </div>
@@ -136,6 +191,136 @@ if(['US','CA','AU','NZ'].includes(d.country)){document.body.innerHTML='<div styl
   });
 })();
 window.addEventListener('load',function(){(function(){
+  var pts=[{"lat": 45.4847, "lng": 12.2386, "label": "Venice Mestre", "nights": null}, {"lat": 43.7696, "lng": 11.2558, "label": "Florence", "nights": null}, {"lat": 41.9028, "lng": 12.4964, "label": "Rome", "nights": null}];
+  if(!pts.length) return;
+  var lats=pts.map(function(p){return p.lat;}), lngs=pts.map(function(p){return p.lng;});
+  var latSpread=Math.max.apply(null,lats)-Math.min.apply(null,lats);
+  var lngSpread=Math.max.apply(null,lngs)-Math.min.apply(null,lngs);
+  var spread=Math.max(latSpread,lngSpread);
+  var pad=spread>5?1.2:(spread>1?0.6:0.35);
+  var map=L.map('map_3_1_private_pdf_0',{zoomControl:false,scrollWheelZoom:false,dragging:false,touchZoom:false,doubleClickZoom:false,boxZoom:false,keyboard:false,attributionControl:false});
+  L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}',{maxZoom:16,attribution:''}).addTo(map);
+  map.fitBounds([[Math.min.apply(null,lats)-pad,Math.min.apply(null,lngs)-pad],[Math.max.apply(null,lats)+pad,Math.max.apply(null,lngs)+pad]],{padding:[10,10]});
+  var route=pts.map(function(p){return [p.lat,p.lng];});
+  if(false && route.length>1) route.push(route[0]);
+  if(route.length>1) L.polyline(route,{color:'#0B1733',weight:1.5,dashArray:'4,4'}).addTo(map);
+  pts.forEach(function(p){
+    if(p.nights){
+      L.marker([p.lat,p.lng],{icon:L.divIcon({className:'',iconSize:[18,18],iconAnchor:[9,9],
+        html:'<div style="width:18px;height:18px;background:#F2B91D;color:#0B1733;font-size:9px;font-weight:700;line-height:18px;text-align:center;box-sizing:border-box">'+p.nights+'N</div>'})}).addTo(map)
+       .bindTooltip(p.label,{permanent:true,direction:'top',className:'city-tip',offset:[0,-10]});
+    } else {
+      L.marker([p.lat,p.lng],{icon:L.divIcon({className:'',iconSize:[10,10],iconAnchor:[5,5],
+        html:'<div style="width:10px;height:10px;background:#0B1733;box-sizing:border-box"></div>'})}).addTo(map)
+       .bindTooltip(p.label,{permanent:true,direction:'top',className:'city-tip',offset:[0,-6]});
+    }
+  });
+})();
+(function(){
+  var pts=[{"lat": 45.4847, "lng": 12.2386, "label": "Venice Mestre", "nights": null}, {"lat": 43.7696, "lng": 11.2558, "label": "Florence", "nights": null}, {"lat": 41.9028, "lng": 12.4964, "label": "Rome", "nights": null}];
+  if(!pts.length) return;
+  var lats=pts.map(function(p){return p.lat;}), lngs=pts.map(function(p){return p.lng;});
+  var latSpread=Math.max.apply(null,lats)-Math.min.apply(null,lats);
+  var lngSpread=Math.max.apply(null,lngs)-Math.min.apply(null,lngs);
+  var spread=Math.max(latSpread,lngSpread);
+  var pad=spread>5?1.2:(spread>1?0.6:0.35);
+  var map=L.map('map_3_1_trains_pdf_1',{zoomControl:false,scrollWheelZoom:false,dragging:false,touchZoom:false,doubleClickZoom:false,boxZoom:false,keyboard:false,attributionControl:false});
+  L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}',{maxZoom:16,attribution:''}).addTo(map);
+  map.fitBounds([[Math.min.apply(null,lats)-pad,Math.min.apply(null,lngs)-pad],[Math.max.apply(null,lats)+pad,Math.max.apply(null,lngs)+pad]],{padding:[10,10]});
+  var route=pts.map(function(p){return [p.lat,p.lng];});
+  if(false && route.length>1) route.push(route[0]);
+  if(route.length>1) L.polyline(route,{color:'#0B1733',weight:1.5,dashArray:'4,4'}).addTo(map);
+  pts.forEach(function(p){
+    if(p.nights){
+      L.marker([p.lat,p.lng],{icon:L.divIcon({className:'',iconSize:[18,18],iconAnchor:[9,9],
+        html:'<div style="width:18px;height:18px;background:#F2B91D;color:#0B1733;font-size:9px;font-weight:700;line-height:18px;text-align:center;box-sizing:border-box">'+p.nights+'N</div>'})}).addTo(map)
+       .bindTooltip(p.label,{permanent:true,direction:'top',className:'city-tip',offset:[0,-10]});
+    } else {
+      L.marker([p.lat,p.lng],{icon:L.divIcon({className:'',iconSize:[10,10],iconAnchor:[5,5],
+        html:'<div style="width:10px;height:10px;background:#0B1733;box-sizing:border-box"></div>'})}).addTo(map)
+       .bindTooltip(p.label,{permanent:true,direction:'top',className:'city-tip',offset:[0,-6]});
+    }
+  });
+})();
+(function(){
+  var pts=[{"lat": 41.9028, "lng": 12.4964, "label": "Rome", "nights": null}, {"lat": 40.8518, "lng": 14.2681, "label": "Naples", "nights": null}, {"lat": 43.7696, "lng": 11.2558, "label": "Florence", "nights": null}, {"lat": 45.4847, "lng": 12.2386, "label": "Venice Mestre", "nights": null}, {"lat": 45.4654, "lng": 9.1859, "label": "Milan", "nights": null}];
+  if(!pts.length) return;
+  var lats=pts.map(function(p){return p.lat;}), lngs=pts.map(function(p){return p.lng;});
+  var latSpread=Math.max.apply(null,lats)-Math.min.apply(null,lats);
+  var lngSpread=Math.max.apply(null,lngs)-Math.min.apply(null,lngs);
+  var spread=Math.max(latSpread,lngSpread);
+  var pad=spread>5?1.2:(spread>1?0.6:0.35);
+  var map=L.map('map_3_2_private_pdf_2',{zoomControl:false,scrollWheelZoom:false,dragging:false,touchZoom:false,doubleClickZoom:false,boxZoom:false,keyboard:false,attributionControl:false});
+  L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}',{maxZoom:16,attribution:''}).addTo(map);
+  map.fitBounds([[Math.min.apply(null,lats)-pad,Math.min.apply(null,lngs)-pad],[Math.max.apply(null,lats)+pad,Math.max.apply(null,lngs)+pad]],{padding:[10,10]});
+  var route=pts.map(function(p){return [p.lat,p.lng];});
+  if(false && route.length>1) route.push(route[0]);
+  if(route.length>1) L.polyline(route,{color:'#0B1733',weight:1.5,dashArray:'4,4'}).addTo(map);
+  pts.forEach(function(p){
+    if(p.nights){
+      L.marker([p.lat,p.lng],{icon:L.divIcon({className:'',iconSize:[18,18],iconAnchor:[9,9],
+        html:'<div style="width:18px;height:18px;background:#F2B91D;color:#0B1733;font-size:9px;font-weight:700;line-height:18px;text-align:center;box-sizing:border-box">'+p.nights+'N</div>'})}).addTo(map)
+       .bindTooltip(p.label,{permanent:true,direction:'top',className:'city-tip',offset:[0,-10]});
+    } else {
+      L.marker([p.lat,p.lng],{icon:L.divIcon({className:'',iconSize:[10,10],iconAnchor:[5,5],
+        html:'<div style="width:10px;height:10px;background:#0B1733;box-sizing:border-box"></div>'})}).addTo(map)
+       .bindTooltip(p.label,{permanent:true,direction:'top',className:'city-tip',offset:[0,-6]});
+    }
+  });
+})();
+(function(){
+  var pts=[{"lat": 41.9028, "lng": 12.4964, "label": "Rome", "nights": null}, {"lat": 43.7696, "lng": 11.2558, "label": "Florence", "nights": null}, {"lat": 45.4847, "lng": 12.2386, "label": "Venice Mestre", "nights": null}, {"lat": 40.8518, "lng": 14.2681, "label": "Naples", "nights": null}, {"lat": 45.4654, "lng": 9.1859, "label": "Milan", "nights": null}];
+  if(!pts.length) return;
+  var lats=pts.map(function(p){return p.lat;}), lngs=pts.map(function(p){return p.lng;});
+  var latSpread=Math.max.apply(null,lats)-Math.min.apply(null,lats);
+  var lngSpread=Math.max.apply(null,lngs)-Math.min.apply(null,lngs);
+  var spread=Math.max(latSpread,lngSpread);
+  var pad=spread>5?1.2:(spread>1?0.6:0.35);
+  var map=L.map('map_3_2_trains_pdf_3',{zoomControl:false,scrollWheelZoom:false,dragging:false,touchZoom:false,doubleClickZoom:false,boxZoom:false,keyboard:false,attributionControl:false});
+  L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}',{maxZoom:16,attribution:''}).addTo(map);
+  map.fitBounds([[Math.min.apply(null,lats)-pad,Math.min.apply(null,lngs)-pad],[Math.max.apply(null,lats)+pad,Math.max.apply(null,lngs)+pad]],{padding:[10,10]});
+  var route=pts.map(function(p){return [p.lat,p.lng];});
+  if(false && route.length>1) route.push(route[0]);
+  if(route.length>1) L.polyline(route,{color:'#0B1733',weight:1.5,dashArray:'4,4'}).addTo(map);
+  pts.forEach(function(p){
+    if(p.nights){
+      L.marker([p.lat,p.lng],{icon:L.divIcon({className:'',iconSize:[18,18],iconAnchor:[9,9],
+        html:'<div style="width:18px;height:18px;background:#F2B91D;color:#0B1733;font-size:9px;font-weight:700;line-height:18px;text-align:center;box-sizing:border-box">'+p.nights+'N</div>'})}).addTo(map)
+       .bindTooltip(p.label,{permanent:true,direction:'top',className:'city-tip',offset:[0,-10]});
+    } else {
+      L.marker([p.lat,p.lng],{icon:L.divIcon({className:'',iconSize:[10,10],iconAnchor:[5,5],
+        html:'<div style="width:10px;height:10px;background:#0B1733;box-sizing:border-box"></div>'})}).addTo(map)
+       .bindTooltip(p.label,{permanent:true,direction:'top',className:'city-tip',offset:[0,-6]});
+    }
+  });
+})();
+(function(){
+  var pts=[{"lat": 39.2238, "lng": 9.1217, "label": "Cagliari", "nights": null}, {"lat": 40.2833, "lng": 9.6167, "label": "Cala", "nights": null}, {"lat": 40.5594, "lng": 8.3197, "label": "Alghero", "nights": null}, {"lat": 40.9167, "lng": 9.5, "label": "Olbia", "nights": null}, {"lat": 40.2833, "lng": 9.6167, "label": "Cala Gonone", "nights": null}];
+  if(!pts.length) return;
+  var lats=pts.map(function(p){return p.lat;}), lngs=pts.map(function(p){return p.lng;});
+  var latSpread=Math.max.apply(null,lats)-Math.min.apply(null,lats);
+  var lngSpread=Math.max.apply(null,lngs)-Math.min.apply(null,lngs);
+  var spread=Math.max(latSpread,lngSpread);
+  var pad=spread>5?1.2:(spread>1?0.6:0.35);
+  var map=L.map('map_3_3_selfdrive_pdf_4',{zoomControl:false,scrollWheelZoom:false,dragging:false,touchZoom:false,doubleClickZoom:false,boxZoom:false,keyboard:false,attributionControl:false});
+  L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}',{maxZoom:16,attribution:''}).addTo(map);
+  map.fitBounds([[Math.min.apply(null,lats)-pad,Math.min.apply(null,lngs)-pad],[Math.max.apply(null,lats)+pad,Math.max.apply(null,lngs)+pad]],{padding:[10,10]});
+  var route=pts.map(function(p){return [p.lat,p.lng];});
+  if(false && route.length>1) route.push(route[0]);
+  if(route.length>1) L.polyline(route,{color:'#0B1733',weight:1.5,dashArray:'4,4'}).addTo(map);
+  pts.forEach(function(p){
+    if(p.nights){
+      L.marker([p.lat,p.lng],{icon:L.divIcon({className:'',iconSize:[18,18],iconAnchor:[9,9],
+        html:'<div style="width:18px;height:18px;background:#F2B91D;color:#0B1733;font-size:9px;font-weight:700;line-height:18px;text-align:center;box-sizing:border-box">'+p.nights+'N</div>'})}).addTo(map)
+       .bindTooltip(p.label,{permanent:true,direction:'top',className:'city-tip',offset:[0,-10]});
+    } else {
+      L.marker([p.lat,p.lng],{icon:L.divIcon({className:'',iconSize:[10,10],iconAnchor:[5,5],
+        html:'<div style="width:10px;height:10px;background:#0B1733;box-sizing:border-box"></div>'})}).addTo(map)
+       .bindTooltip(p.label,{permanent:true,direction:'top',className:'city-tip',offset:[0,-6]});
+    }
+  });
+})();
+(function(){
   var pts=[{"lat": 45.4903, "lng": 12.2424, "label": "Mestre", "nights": 2}, {"lat": 43.7696, "lng": 11.2558, "label": "Florence", "nights": 2}, {"lat": 41.9028, "lng": 12.4964, "label": "Rome", "nights": 2}];
   if(!pts.length) return;
   var lats=pts.map(function(p){return p.lat;}), lngs=pts.map(function(p){return p.lng;});

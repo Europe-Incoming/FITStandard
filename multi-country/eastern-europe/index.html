@@ -91,6 +91,28 @@ if(['US','CA','AU','NZ'].includes(d.country)){document.body.innerHTML='<div styl
     <div class="metro-tile-validity">Valid till Nov 2027</div>
   </div>
   <div class="metro-tile-map-col"><div id="map_7_1" class="metro-tile-map"></div></div>
+</a>
+<a href="7.1-private.pdf" class="metro-tile gold" target="_blank">
+  <div class="metro-tile-body">
+    <div class="metro-tile-meta">All Year Round</div>
+    <div class="metro-tile-title">7.1-private</div>
+    <p class="metro-tile-blurb">Trains, landmarks and local character through Prague, Vienna and Budapest.</p>
+    <div class="metro-tile-route">Prague · Vienna · Budapest</div>
+    <div class="metro-tile-price-row"><span class="metro-tile-from">From</span><span class="metro-tile-amount">€704</span><span class="metro-tile-note">pp (twin)</span></div>
+    
+  </div>
+  <div class="metro-tile-map-col"><div id="map_7_1_private_pdf_0" class="metro-tile-map"></div></div>
+</a>
+<a href="7.1-trains.pdf" class="metro-tile navy" target="_blank">
+  <div class="metro-tile-body">
+    <div class="metro-tile-meta">All Year Round</div>
+    <div class="metro-tile-title">7.1-trains</div>
+    <p class="metro-tile-blurb">Trains, landmarks and local character through Prague, Vienna and Budapest.</p>
+    <div class="metro-tile-route">Prague · Vienna · Budapest</div>
+    <div class="metro-tile-price-row"><span class="metro-tile-from">From</span><span class="metro-tile-amount">€722</span><span class="metro-tile-note">pp (twin)</span></div>
+    
+  </div>
+  <div class="metro-tile-map-col"><div id="map_7_1_trains_pdf_1" class="metro-tile-map"></div></div>
 </a></div>
   <div class="metro-empty" id="metroEmpty" style="display:none">No packages match this search yet.</div>
 </div>
@@ -114,6 +136,58 @@ if(['US','CA','AU','NZ'].includes(d.country)){document.body.innerHTML='<div styl
   });
 })();
 window.addEventListener('load',function(){(function(){
+  var pts=[{"lat": 50.0755, "lng": 14.4378, "label": "Prague", "nights": null}, {"lat": 48.2082, "lng": 16.3738, "label": "Vienna", "nights": null}, {"lat": 47.4979, "lng": 19.0402, "label": "Budapest", "nights": null}];
+  if(!pts.length) return;
+  var lats=pts.map(function(p){return p.lat;}), lngs=pts.map(function(p){return p.lng;});
+  var latSpread=Math.max.apply(null,lats)-Math.min.apply(null,lats);
+  var lngSpread=Math.max.apply(null,lngs)-Math.min.apply(null,lngs);
+  var spread=Math.max(latSpread,lngSpread);
+  var pad=spread>5?1.2:(spread>1?0.6:0.35);
+  var map=L.map('map_7_1_private_pdf_0',{zoomControl:false,scrollWheelZoom:false,dragging:false,touchZoom:false,doubleClickZoom:false,boxZoom:false,keyboard:false,attributionControl:false});
+  L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}',{maxZoom:16,attribution:''}).addTo(map);
+  map.fitBounds([[Math.min.apply(null,lats)-pad,Math.min.apply(null,lngs)-pad],[Math.max.apply(null,lats)+pad,Math.max.apply(null,lngs)+pad]],{padding:[10,10]});
+  var route=pts.map(function(p){return [p.lat,p.lng];});
+  if(false && route.length>1) route.push(route[0]);
+  if(route.length>1) L.polyline(route,{color:'#0B1733',weight:1.5,dashArray:'4,4'}).addTo(map);
+  pts.forEach(function(p){
+    if(p.nights){
+      L.marker([p.lat,p.lng],{icon:L.divIcon({className:'',iconSize:[18,18],iconAnchor:[9,9],
+        html:'<div style="width:18px;height:18px;background:#F2B91D;color:#0B1733;font-size:9px;font-weight:700;line-height:18px;text-align:center;box-sizing:border-box">'+p.nights+'N</div>'})}).addTo(map)
+       .bindTooltip(p.label,{permanent:true,direction:'top',className:'city-tip',offset:[0,-10]});
+    } else {
+      L.marker([p.lat,p.lng],{icon:L.divIcon({className:'',iconSize:[10,10],iconAnchor:[5,5],
+        html:'<div style="width:10px;height:10px;background:#0B1733;box-sizing:border-box"></div>'})}).addTo(map)
+       .bindTooltip(p.label,{permanent:true,direction:'top',className:'city-tip',offset:[0,-6]});
+    }
+  });
+})();
+(function(){
+  var pts=[{"lat": 50.0755, "lng": 14.4378, "label": "Prague", "nights": null}, {"lat": 48.2082, "lng": 16.3738, "label": "Vienna", "nights": null}, {"lat": 47.4979, "lng": 19.0402, "label": "Budapest", "nights": null}];
+  if(!pts.length) return;
+  var lats=pts.map(function(p){return p.lat;}), lngs=pts.map(function(p){return p.lng;});
+  var latSpread=Math.max.apply(null,lats)-Math.min.apply(null,lats);
+  var lngSpread=Math.max.apply(null,lngs)-Math.min.apply(null,lngs);
+  var spread=Math.max(latSpread,lngSpread);
+  var pad=spread>5?1.2:(spread>1?0.6:0.35);
+  var map=L.map('map_7_1_trains_pdf_1',{zoomControl:false,scrollWheelZoom:false,dragging:false,touchZoom:false,doubleClickZoom:false,boxZoom:false,keyboard:false,attributionControl:false});
+  L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}',{maxZoom:16,attribution:''}).addTo(map);
+  map.fitBounds([[Math.min.apply(null,lats)-pad,Math.min.apply(null,lngs)-pad],[Math.max.apply(null,lats)+pad,Math.max.apply(null,lngs)+pad]],{padding:[10,10]});
+  var route=pts.map(function(p){return [p.lat,p.lng];});
+  if(false && route.length>1) route.push(route[0]);
+  if(route.length>1) L.polyline(route,{color:'#0B1733',weight:1.5,dashArray:'4,4'}).addTo(map);
+  pts.forEach(function(p){
+    if(p.nights){
+      L.marker([p.lat,p.lng],{icon:L.divIcon({className:'',iconSize:[18,18],iconAnchor:[9,9],
+        html:'<div style="width:18px;height:18px;background:#F2B91D;color:#0B1733;font-size:9px;font-weight:700;line-height:18px;text-align:center;box-sizing:border-box">'+p.nights+'N</div>'})}).addTo(map)
+       .bindTooltip(p.label,{permanent:true,direction:'top',className:'city-tip',offset:[0,-10]});
+    } else {
+      L.marker([p.lat,p.lng],{icon:L.divIcon({className:'',iconSize:[10,10],iconAnchor:[5,5],
+        html:'<div style="width:10px;height:10px;background:#0B1733;box-sizing:border-box"></div>'})}).addTo(map)
+       .bindTooltip(p.label,{permanent:true,direction:'top',className:'city-tip',offset:[0,-6]});
+    }
+  });
+})();
+(function(){
   var pts=[{"lat": 50.0755, "lng": 14.4378, "label": "Prague", "nights": 2}, {"lat": 48.2082, "lng": 16.3738, "label": "Vienna", "nights": 2}, {"lat": 47.4979, "lng": 19.0402, "label": "Budapest", "nights": 2}];
   if(!pts.length) return;
   var lats=pts.map(function(p){return p.lat;}), lngs=pts.map(function(p){return p.lng;});
