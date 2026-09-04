@@ -1,6 +1,6 @@
 {
   "validFrom": "1 Nov 2026",
-  "validTo": "31 Mar 2027",
+  "validTo": "30 Nov 2027",
   "currency": "€",
   "variants": {
     "trains": {
@@ -9,6 +9,11 @@
           "single": 2246,
           "twin": 1498,
           "child": 629
+        },
+        "summer": {
+          "single": 2348,
+          "twin": 1567,
+          "child": 658
         }
       },
       "4": {
@@ -16,12 +21,21 @@
           "single": 2745,
           "twin": 1748,
           "child": 727
+        },
+        "summer": {
+          "single": 2869,
+          "twin": 1827,
+          "child": 760
         }
       },
       "validity": {
         "winter": {
           "from": "1 Nov 2026",
           "to": "31 Mar 2027"
+        },
+        "summer": {
+          "from": "1 Apr 2027",
+          "to": "30 Nov 2027"
         }
       }
     },
@@ -53,7 +67,44 @@
             "4star": 1690,
             "pax": 16
           }
+        ],
+        "summer": [
+          {
+            "3star": 2032,
+            "4star": 2293,
+            "pax": 8
+          },
+          {
+            "3star": 1822,
+            "4star": 2082,
+            "pax": 10
+          },
+          {
+            "3star": 1682,
+            "4star": 1942,
+            "pax": 12
+          },
+          {
+            "3star": 1581,
+            "4star": 1842,
+            "pax": 14
+          },
+          {
+            "3star": 1506,
+            "4star": 1767,
+            "pax": 16
+          }
         ]
+      },
+      "validity": {
+        "winter": {
+          "from": "1 Nov 2026",
+          "to": "31 Mar 2027"
+        },
+        "summer": {
+          "from": "1 Apr 2027",
+          "to": "30 Nov 2027"
+        }
       }
     }
   },
