@@ -1500,8 +1500,8 @@ h1,h2,h3{margin:0;font-family:'Montserrat',sans-serif;}
 .pdf-fact-label{font-family:'Montserrat',sans-serif;font-weight:800;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);opacity:.6;margin-bottom:4px;}
 .pdf-fact-value{font-size:11px;font-weight:700;color:var(--ink);}
 .pdf-section-label{font-family:'Montserrat',sans-serif;font-weight:800;font-size:16px;text-transform:uppercase;color:var(--navy);border-left:4px solid var(--gold);padding-left:12px;margin:0 0 16px;}
-.pdf-section-label.pdf-break{page-break-before:always;break-before:page;padding-top:8px;}
 .pdf-subhead{font-family:'Montserrat',sans-serif;font-weight:800;font-size:13px;text-transform:uppercase;color:var(--navy);margin:0 0 12px;}
+.pdf-includes-head{page-break-inside:avoid;break-inside:avoid;}
 .pdf-card{background:#fff;border:1px solid var(--line);border-radius:6px;box-shadow:0 1px 2px rgba(11,23,51,.06),0 4px 10px rgba(11,23,51,.08);}
 .pdf-day-columns{display:flex;gap:16px;margin-bottom:8px;}
 .pdf-day-col{flex:1;display:flex;flex-direction:column;gap:16px;min-width:0;}
@@ -1757,9 +1757,11 @@ def build_pdf_html(product, prices, style_key, logo_data_uri):
 <div class="pdf-section-label">Day by Day</div>
 {_pdf_days_columns_html(product, style)}
 
-<div class="pdf-section-label pdf-break">Package Includes — {_pdf_esc(style.get('name', '').upper())}</div>
+<div class="pdf-includes-head">
+<div class="pdf-section-label">Package Includes — {_pdf_esc(style.get('name', '').upper())}</div>
 <div class="pdf-subhead">Sample Hotels</div>
 <div class="pdf-hotels-grid">{_pdf_hotels_grid_html(product, variant)}</div>
+</div>
 
 <div class="pdf-subhead">Package Rates</div>
 {_pdf_rates_html(prices, style, variant)}
