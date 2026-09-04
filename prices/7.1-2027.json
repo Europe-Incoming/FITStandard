@@ -29,29 +29,29 @@
       "paxTiers": {
         "winter": [
           {
-            "minPax": 8,
             "3star": 1001,
-            "4star": 1072
+            "4star": 1072,
+            "pax": 8
           },
           {
-            "minPax": 10,
             "3star": 882,
-            "4star": 953
+            "4star": 953,
+            "pax": 10
           },
           {
-            "minPax": 12,
             "3star": 803,
-            "4star": 874
+            "4star": 874,
+            "pax": 12
           },
           {
-            "minPax": 14,
             "3star": 746,
-            "4star": 817
+            "4star": 817,
+            "pax": 14
           },
           {
-            "minPax": 16,
             "3star": 704,
-            "4star": 774
+            "4star": 774,
+            "pax": 16
           }
         ]
       }

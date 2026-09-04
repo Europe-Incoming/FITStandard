@@ -7,29 +7,29 @@
       "paxTiers": {
         "summer": [
           {
-            "minPax": 8,
             "3star": 2638,
-            "4star": 2721
+            "4star": 2721,
+            "pax": 8
           },
           {
-            "minPax": 10,
             "3star": 2413,
-            "4star": 2495
+            "4star": 2495,
+            "pax": 10
           },
           {
-            "minPax": 12,
             "3star": 2262,
-            "4star": 2344
+            "4star": 2344,
+            "pax": 12
           },
           {
-            "minPax": 14,
             "3star": 2155,
-            "4star": 2237
+            "4star": 2237,
+            "pax": 14
           },
           {
-            "minPax": 16,
             "3star": 2074,
-            "4star": 2156
+            "4star": 2156,
+            "pax": 16
           }
         ]
       }
