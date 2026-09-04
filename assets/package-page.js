@@ -459,10 +459,11 @@
   function onMapEsc(e) { if (e.key === "Escape") closeMapModal(); }
 
   // ───────────────────────────── PDF / PRINT ─────────────────────────
+  // Each style has its own build-time-rendered PDF (scripts/rebuild_site.py
+  // generate_pdfs()) sitting next to this brochure page as "<id>-<style>.pdf" -
+  // link straight to it rather than relying on the browser's print dialog.
   function downloadPDF() {
-    state.tcOpen = true;
-    renderTerms();
-    setTimeout(function () { window.print(); }, 150);
+    window.location.href = PRODUCT.id + "-" + state.style + ".pdf";
   }
 
   // ───────────────────────────── FULL RENDER ─────────────────────────
