@@ -10,7 +10,7 @@ Fixes from v11:
 - Generic fallback descriptions improved per tour type
 """
 
-import os, re, json, urllib.request, urllib.parse, time
+import os, re, json, urllib.request, urllib.parse, time, base64, html
 from datetime import datetime
 import fitz
 
@@ -1475,12 +1475,350 @@ def match_pdf_to_product(pdf_data, match_index):
     return best
 
 
+# ── PDF EXPORT (products/*.json + prices/*.json → one Playwright-rendered
+# PDF per travel style, matching DESIGN.md's brand spec) ─────────────────────
+
+PDF_FOOTER_ADDRESS = "11 Turnham Green Terrace Mews, London W4 1QU, England"
+
+PDF_SEASON_LABEL = {"summer": "APR–OCT", "winter": "NOV–MAR"}
+
+PDF_CSS = """
+:root{--navy:#0B1733;--gold:#F2B91D;--gold-50:#FEF7DC;--ink:#1A1D2E;--line:#E5E7EC;}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;background:#fff;color:var(--ink);}
+body{font-family:'Open Sans',sans-serif;font-size:10px;line-height:1.5;}
+h1,h2,h3{margin:0;font-family:'Montserrat',sans-serif;}
+.pdf-logo-band{width:100%;height:78px;background:var(--navy);display:flex;align-items:center;padding:0 32px;}
+.pdf-logo-band img{height:56px;width:auto;display:block;}
+.pdf-content{padding:24px 32px 32px;}
+.pdf-masthead{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;}
+.pdf-eyebrow{font-family:'Montserrat',sans-serif;font-weight:800;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);margin-bottom:4px;}
+.pdf-title{font-weight:900;font-size:26px;letter-spacing:-0.01em;text-transform:uppercase;color:var(--navy);}
+.pdf-chip{font-family:'Montserrat',sans-serif;font-weight:700;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:#fff;background:var(--navy);padding:8px 16px;border-radius:4px;white-space:nowrap;}
+.pdf-gold-rule{height:3px;background:var(--gold);margin:12px 0 16px;}
+.pdf-facts{display:flex;gap:32px;margin-bottom:24px;}
+.pdf-fact-label{font-family:'Montserrat',sans-serif;font-weight:800;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);opacity:.6;margin-bottom:4px;}
+.pdf-fact-value{font-size:11px;font-weight:700;color:var(--ink);}
+.pdf-section-label{font-family:'Montserrat',sans-serif;font-weight:800;font-size:16px;text-transform:uppercase;color:var(--navy);border-left:4px solid var(--gold);padding-left:12px;margin:0 0 16px;}
+.pdf-section-label.pdf-break{page-break-before:always;break-before:page;padding-top:8px;}
+.pdf-subhead{font-family:'Montserrat',sans-serif;font-weight:800;font-size:13px;text-transform:uppercase;color:var(--navy);margin:0 0 12px;}
+.pdf-card{background:#fff;border:1px solid var(--line);border-radius:6px;box-shadow:0 1px 2px rgba(11,23,51,.06),0 4px 10px rgba(11,23,51,.08);}
+.pdf-day-columns{display:flex;gap:16px;margin-bottom:8px;}
+.pdf-day-col{flex:1;display:flex;flex-direction:column;gap:16px;min-width:0;}
+.pdf-day-card{padding:16px;page-break-inside:avoid;break-inside:avoid;}
+.pdf-day-head{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;margin-bottom:8px;}
+.pdf-day-badge{font-family:'Montserrat',sans-serif;font-weight:800;font-size:14px;letter-spacing:.04em;color:var(--gold);text-transform:uppercase;white-space:nowrap;}
+.pdf-day-title{font-family:'Montserrat',sans-serif;font-weight:700;font-size:14px;color:var(--navy);}
+.pdf-day-overnight{display:inline-block;font-family:'Montserrat',sans-serif;font-weight:700;font-size:9px;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:var(--navy);padding:4px 8px;border-radius:4px;margin-bottom:8px;}
+.pdf-day-desc{font-size:10px;line-height:1.5;margin-bottom:8px;}
+.pdf-callout{background:var(--gold-50);border-radius:4px;padding:8px 12px;font-size:10px;line-height:1.4;margin-bottom:8px;}
+.pdf-callout:last-child{margin-bottom:0;}
+.pdf-callout b{font-weight:700;}
+.pdf-hotels-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:24px;}
+.pdf-hotel-card{padding:12px;}
+.pdf-hotel-city{font-family:'Montserrat',sans-serif;font-weight:800;font-size:11px;text-transform:uppercase;color:var(--navy);margin-bottom:2px;}
+.pdf-hotel-nights{font-size:9px;color:var(--ink);opacity:.65;margin-bottom:8px;}
+.pdf-hotel-tier{display:flex;gap:6px;align-items:baseline;padding-top:8px;border-top:1px solid var(--line);margin-top:8px;}
+.pdf-hotel-tier:first-of-type{padding-top:0;border-top:none;margin-top:0;}
+.pdf-hotel-stars{color:var(--gold);font-size:9px;white-space:nowrap;}
+.pdf-hotel-name{font-weight:700;font-size:9.5px;color:var(--ink);}
+.pdf-rate-note{font-size:9px;color:var(--ink);opacity:.7;margin-bottom:8px;}
+.pdf-rate-table{width:100%;border-collapse:collapse;margin-bottom:16px;}
+.pdf-rate-table th{background:var(--navy);color:#fff;font-family:'Montserrat',sans-serif;font-weight:700;font-size:9px;letter-spacing:.08em;text-transform:uppercase;text-align:left;padding:10px 14px;}
+.pdf-rate-table td{font-size:10px;padding:10px 14px;border-bottom:1px solid var(--line);}
+.pdf-rate-table tbody tr:nth-child(even){background:#FAFAFB;}
+.pdf-pax-wrap{display:flex;gap:16px;}
+.pdf-pax-col{flex:1;min-width:0;}
+.pdf-pax-season{font-family:'Montserrat',sans-serif;font-weight:800;font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--navy);margin-bottom:8px;}
+.pdf-inc-row{display:flex;flex-wrap:wrap;gap:8px 32px;margin-bottom:24px;font-size:10px;}
+.pdf-extras-card{padding:16px;display:flex;gap:24px;margin-bottom:24px;}
+.pdf-extra-col{flex:1;min-width:0;display:flex;flex-direction:column;gap:16px;}
+.pdf-extra-item{font-size:11px;line-height:1.4;}
+.pdf-extra-item b{font-weight:700;}
+.pdf-terms-grid{display:flex;gap:32px;margin-bottom:16px;}
+.pdf-terms-col{flex:1;min-width:0;margin:0;padding-left:14px;font-size:9px;line-height:1.5;}
+.pdf-terms-col li{margin-bottom:8px;page-break-inside:avoid;break-inside:avoid;}
+.pdf-footer{border-top:3px solid var(--gold);padding-top:12px;}
+.pdf-footer-row{display:flex;justify-content:space-between;font-size:9px;}
+.pdf-footer-row a{color:inherit;}
+.pdf-footer-address{text-align:center;font-size:9px;color:var(--ink);opacity:.65;margin-top:8px;}
+"""
+
+
+def _pdf_esc(s):
+    return html.escape(str(s if s is not None else ""), quote=False)
+
+
+def _pdf_split_half(items):
+    half = len(items) // 2
+    return items[:half], items[half:]
+
+
+def _pdf_available_cats(variant):
+    """Which of "3"/"4" star tiers have any real (non-null) rate anywhere -
+    mirrors assets/package-page.js's availableCats() so the PDF never shows
+    an unpriced tier."""
+    cats = []
+    for cat in ("3", "4"):
+        row = variant.get(cat) or {}
+        for season_row in row.values():
+            if isinstance(season_row, dict) and any(v is not None for v in season_row.values()):
+                cats.append(cat)
+                break
+    return cats
+
+
+def _pdf_available_seasons(cat_row):
+    return [s for s in ("summer", "winter")
+            if isinstance(cat_row.get(s), dict) and any(v is not None for v in cat_row[s].values())]
+
+
+def _pdf_priced_star_tiers(variant):
+    """Which of "3"/"4" star tiers are actually priced for this variant,
+    whichever shape it is (season/cat table, or Min-Pax paxTiers) - used to
+    decide which hotel-tier rows to show, since a Min-Pax style has no "3"/"4"
+    keys of its own."""
+    if "paxTiers" in variant:
+        all_tiers = [t for tiers in variant["paxTiers"].values() for t in tiers]
+        cats = []
+        if any(t.get("3star") is not None for t in all_tiers):
+            cats.append("3")
+        if any(t.get("4star") is not None for t in all_tiers):
+            cats.append("4")
+        return cats
+    return _pdf_available_cats(variant)
+
+
+def _pdf_validity_text(prices):
+    return f"{prices.get('validFrom', '')} – {prices.get('validTo', '')}"
+
+
+def _pdf_day_callouts(day, style):
+    callouts = []
+    transport = (style.get("transport") or {}).get(str(day.get("num")))
+    if transport:
+        callouts.append(("Included", transport))
+    if day.get("taste"):
+        callouts.append(("Local taste", day["taste"]))
+    if day.get("experience"):
+        callouts.append(("Local experience", day["experience"]))
+    return callouts
+
+
+def _pdf_day_card_html(day, style):
+    callouts_html = "".join(
+        f'<div class="pdf-callout"><b>{_pdf_esc(label)}</b> {_pdf_esc(text)}</div>'
+        for label, text in _pdf_day_callouts(day, style)
+    )
+    return f"""<div class="pdf-card pdf-day-card">
+<div class="pdf-day-head"><span class="pdf-day-badge">DAY {_pdf_esc(day.get('num'))}</span><span class="pdf-day-title">{_pdf_esc(day.get('title'))}</span></div>
+<div class="pdf-day-overnight">{_pdf_esc(day.get('overnight', ''))}</div>
+<div class="pdf-day-desc">{_pdf_esc(day.get('desc', ''))}</div>
+{callouts_html}</div>"""
+
+
+def _pdf_days_columns_html(product, style):
+    left, right = _pdf_split_half(product.get("days", []))
+    left_html = "".join(_pdf_day_card_html(d, style) for d in left)
+    right_html = "".join(_pdf_day_card_html(d, style) for d in right)
+    return f'<div class="pdf-day-columns"><div class="pdf-day-col">{left_html}</div><div class="pdf-day-col">{right_html}</div></div>'
+
+
+def _pdf_hotel_tiers(hotel, variant):
+    cats = _pdf_priced_star_tiers(variant)
+    tiers = []
+    if "3" in cats and hotel.get("h3"):
+        tiers.append(("★★★", hotel["h3"]))
+    if "4" in cats and hotel.get("h4"):
+        tiers.append(("★★★★", hotel["h4"]))
+    return tiers
+
+
+def _pdf_hotels_grid_html(product, variant):
+    cards = []
+    for hotel in product.get("hotels", []):
+        tiers = _pdf_hotel_tiers(hotel, variant)
+        if not tiers:
+            continue
+        rows = "".join(
+            f'<div class="pdf-hotel-tier"><span class="pdf-hotel-stars">{stars}</span><span class="pdf-hotel-name">{_pdf_esc(name)}</span></div>'
+            for stars, name in tiers
+        )
+        cards.append(f"""<div class="pdf-card pdf-hotel-card">
+<div class="pdf-hotel-city">{_pdf_esc(hotel.get('city', ''))}</div>
+<div class="pdf-hotel-nights">{_pdf_esc(hotel.get('nights', ''))}</div>
+{rows}</div>""")
+    return "".join(cards)
+
+
+def _pdf_season_rates_html(prices, style, variant):
+    currency = prices.get("currency", "€")
+    validity_text = _pdf_validity_text(prices)
+    tables = []
+    for cat in _pdf_available_cats(variant):
+        cat_row = variant.get(cat, {})
+        seasons = _pdf_available_seasons(cat_row)
+        stars = "★" * int(cat)
+        header_cols = "".join(f"<th>{PDF_SEASON_LABEL[s]}</th>" for s in seasons)
+
+        def cell(occ, seasons=seasons, cat_row=cat_row):
+            return "".join(f"<td>{_fmt_money(cat_row.get(s, {}).get(occ), currency)}</td>" for s in seasons)
+
+        tables.append(f"""<div class="pdf-rate-note">Per person · {_pdf_esc(style.get('name', ''))} · {stars} accommodation · Valid {validity_text}</div>
+<table class="pdf-rate-table">
+<thead><tr><th>Occupancy</th>{header_cols}</tr></thead>
+<tbody>
+<tr><td>Single</td>{cell('single')}</tr>
+<tr><td>Twin / Double</td>{cell('twin')}</tr>
+<tr><td>Child (2–11)</td>{cell('child')}</tr>
+</tbody></table>""")
+    return "".join(tables)
+
+
+def _pdf_paxtiers_rates_html(prices, style, variant):
+    currency = prices.get("currency", "€")
+    validity_text = _pdf_validity_text(prices)
+    pax_tiers = variant.get("paxTiers", {})
+    seasons = [s for s in ("winter", "summer") if pax_tiers.get(s)]
+    all_tiers = [t for s in seasons for t in pax_tiers.get(s, [])]
+    cols = [(key, label) for key, label in (("3star", "3★ per adult"), ("4star", "4★ per adult"))
+            if any(t.get(key) is not None for t in all_tiers)]
+
+    def season_table(season):
+        header = "".join(f"<th>{label}</th>" for _, label in cols)
+        rows = "".join(
+            "<tr><td>{}</td>{}</tr>".format(
+                t.get("pax"),
+                "".join(f"<td>{_fmt_money(t.get(key), currency)}</td>" for key, _ in cols)
+            )
+            for t in pax_tiers.get(season, [])
+        )
+        return f'<div class="pdf-pax-col"><div class="pdf-pax-season">{PDF_SEASON_LABEL[season]}</div><table class="pdf-rate-table"><thead><tr><th>Min Pax</th>{header}</tr></thead><tbody>{rows}</tbody></table></div>'
+
+    tables = "".join(season_table(s) for s in seasons)
+    return f'<div class="pdf-rate-note">Per person · {_pdf_esc(style.get("name", ""))} · Valid {validity_text}</div><div class="pdf-pax-wrap">{tables}</div>'
+
+
+def _pdf_rates_html(prices, style, variant):
+    if "paxTiers" in variant:
+        return _pdf_paxtiers_rates_html(prices, style, variant)
+    return _pdf_season_rates_html(prices, style, variant)
+
+
+def _load_logo_data_uri():
+    path = os.path.join(REPO_ROOT, "assets", "logo-print.png")
+    with open(path, "rb") as f:
+        return "data:image/png;base64," + base64.b64encode(f.read()).decode("ascii")
+
+
+def build_pdf_html(product, prices, style_key, logo_data_uri):
+    style = product["styles"][style_key]
+    variant = (prices.get("variants") or {}).get(style_key, {})
+    currency = prices.get("currency", "€")
+
+    extras = prices.get("optionalTours") or []
+    extras_section = ""
+    if extras:
+        left_extras, right_extras = _pdf_split_half(extras)
+
+        def extra_item(e):
+            return f'<div class="pdf-extra-item">{_pdf_esc(e.get("name", ""))} — <b>{_fmt_money(e.get("price"), currency)} pp</b></div>'
+
+        extras_section = f"""<div class="pdf-section-label">OPTIONAL TOURS &amp; EXTRAS</div>
+<div class="pdf-card pdf-extras-card">
+<div class="pdf-extra-col">{"".join(extra_item(e) for e in left_extras)}</div>
+<div class="pdf-extra-col">{"".join(extra_item(e) for e in right_extras)}</div>
+</div>"""
+
+    left_terms, right_terms = _pdf_split_half(product.get("terms") or [])
+    inclusions_html = "".join(
+        f'<div class="pdf-inc-item">✓ {_pdf_esc(t)}</div>' for t in style.get("inclusions", [])
+    )
+
+    return f"""<!doctype html>
+<html><head><meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+<style>{PDF_CSS}</style>
+</head><body>
+<div class="pdf-logo-band"><img src="{logo_data_uri}" alt="Europe Incoming"></div>
+<div class="pdf-content">
+<div class="pdf-masthead">
+<div><div class="pdf-eyebrow">{_pdf_esc((product.get('eyebrow') or '').upper())}</div><h1 class="pdf-title">{_pdf_esc(product.get('title', ''))}</h1></div>
+<div class="pdf-chip">{_pdf_esc(style.get('name', ''))}</div>
+</div>
+<div class="pdf-gold-rule"></div>
+<div class="pdf-facts">
+<div><div class="pdf-fact-label">Duration</div><div class="pdf-fact-value">{_pdf_esc(style.get('nights', ''))}</div></div>
+<div><div class="pdf-fact-label">Route</div><div class="pdf-fact-value">{_pdf_esc(style.get('route', ''))}</div></div>
+</div>
+
+<div class="pdf-section-label">Day by Day</div>
+{_pdf_days_columns_html(product, style)}
+
+<div class="pdf-section-label pdf-break">Package Includes — {_pdf_esc(style.get('name', '').upper())}</div>
+<div class="pdf-subhead">Sample Hotels</div>
+<div class="pdf-hotels-grid">{_pdf_hotels_grid_html(product, variant)}</div>
+
+<div class="pdf-subhead">Package Rates</div>
+{_pdf_rates_html(prices, style, variant)}
+<div class="pdf-inc-row">{inclusions_html}</div>
+
+{extras_section}
+<div class="pdf-section-label">Terms &amp; Conditions</div>
+<div class="pdf-terms-grid">
+<ul class="pdf-terms-col">{"".join(f"<li>{_pdf_esc(t)}</li>" for t in left_terms)}</ul>
+<ul class="pdf-terms-col">{"".join(f"<li>{_pdf_esc(t)}</li>" for t in right_terms)}</ul>
+</div>
+
+<div class="pdf-footer">
+<div class="pdf-footer-row"><div>Europe Incoming Holdings Ltd · Company Reg. England &amp; Wales 07053949</div><div><a href="mailto:fitsales@europeincoming.com">fitsales@europeincoming.com</a></div></div>
+<div class="pdf-footer-address">{PDF_FOOTER_ADDRESS}</div>
+</div>
+</div>
+</body></html>"""
+
+
+def generate_pdfs(jobs):
+    """jobs: [(product, prices, style_key, out_path), ...]. One headless-Chromium
+    launch shared across every package/style PDF for speed."""
+    if not jobs:
+        return
+    try:
+        from playwright.sync_api import sync_playwright
+    except ImportError:
+        print("\nSkipping PDF export: playwright not installed (pip install playwright && playwright install chromium)")
+        return
+
+    logo_data_uri = _load_logo_data_uri()
+    print(f"\nGenerating {len(jobs)} package PDFs...")
+    with sync_playwright() as p:
+        try:
+            browser = p.chromium.launch()
+        except Exception:
+            # Some sandboxes only ship the full "chromium" binary, not the
+            # headless_shell variant Playwright launches by default.
+            sandbox_chromium = "/opt/pw-browsers/chromium"
+            if not os.path.exists(sandbox_chromium):
+                raise
+            browser = p.chromium.launch(executable_path=sandbox_chromium)
+        page = browser.new_page()
+        for product, prices, style_key, out_path in jobs:
+            page.set_content(build_pdf_html(product, prices, style_key, logo_data_uri), wait_until="networkidle")
+            page.pdf(path=out_path, format="Letter", print_background=True,
+                     margin={"top": "0", "bottom": "0", "left": "0", "right": "0"})
+            print(f"  ✓ {os.path.relpath(out_path, REPO_ROOT)}")
+        browser.close()
+
+
 # ── MAIN ──────────────────────────────────────────────────────────────────────
 
 def main():
     packages_path = os.path.join(REPO_ROOT, "packages.json")
     all_found = []
     product_packages = []
+    pdf_jobs = []
     region_stats = {}
     desc_cache = {}
     coords_cache = load_coords_cache()
@@ -1583,6 +1921,10 @@ def main():
                 f.write(page_html)
             print(f"  ✓ {folder_rel}/{brochure_fname}")
 
+            for style_key in product.get("styles", {}):
+                pdf_out = os.path.join(folder_abs, f'{product.get("id")}-{style_key}.pdf')
+                pdf_jobs.append((product, prices, style_key, pdf_out))
+
             product_cards.append((product, prices, brochure_fname))
 
             product_map = product.get("map") or {}
@@ -1656,6 +1998,9 @@ def main():
 
     print(f"\nUpdating packages.json...")
     update_packages_json(packages_path, all_found, desc_cache, product_packages)
+
+    generate_pdfs(pdf_jobs)
+
     print("\nDone!")
 
 
