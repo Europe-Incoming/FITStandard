@@ -91,17 +91,6 @@ if(['US','CA','AU','NZ'].includes(d.country)){document.body.innerHTML='<div styl
     <div class="metro-tile-validity">Valid till Nov 2027</div>
   </div>
   <div class="metro-tile-map-col"><div id="map_6_1" class="metro-tile-map"></div></div>
-</a>
-<a href="madbcn_brochure.html" class="metro-tile gold">
-  <div class="metro-tile-body">
-    <div class="metro-tile-meta">6 nights · 7 days · Summer</div>
-    <div class="metro-tile-title">Madrid & Barcelona</div>
-    <p class="metro-tile-blurb">Madrid and Barcelona — by private coach.</p>
-    <div class="metro-tile-route">Madrid · Barcelona</div>
-    <div class="metro-tile-price-row"><span class="metro-tile-from">From</span><span class="metro-tile-amount">€924</span><span class="metro-tile-note">pp</span></div>
-    <div class="metro-tile-validity">Valid till Nov 2026</div>
-  </div>
-  <div class="metro-tile-map-col"><div id="map_madbcn" class="metro-tile-map"></div></div>
 </a></div>
   <div class="metro-empty" id="metroEmpty" style="display:none">No packages match this search yet.</div>
 </div>
@@ -133,32 +122,6 @@ window.addEventListener('load',function(){(function(){
   var spread=Math.max(latSpread,lngSpread);
   var pad=spread>5?1.2:(spread>1?0.6:0.35);
   var map=L.map('map_6_1',{zoomControl:false,scrollWheelZoom:false,dragging:false,touchZoom:false,doubleClickZoom:false,boxZoom:false,keyboard:false,attributionControl:false});
-  L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}',{maxZoom:16,attribution:''}).addTo(map);
-  map.fitBounds([[Math.min.apply(null,lats)-pad,Math.min.apply(null,lngs)-pad],[Math.max.apply(null,lats)+pad,Math.max.apply(null,lngs)+pad]],{padding:[10,10]});
-  var route=pts.map(function(p){return [p.lat,p.lng];});
-  if(false && route.length>1) route.push(route[0]);
-  if(route.length>1) L.polyline(route,{color:'#0B1733',weight:1.5,dashArray:'4,4'}).addTo(map);
-  pts.forEach(function(p){
-    if(p.nights){
-      L.marker([p.lat,p.lng],{icon:L.divIcon({className:'',iconSize:[18,18],iconAnchor:[9,9],
-        html:'<div style="width:18px;height:18px;background:#F2B91D;color:#0B1733;font-size:9px;font-weight:700;line-height:18px;text-align:center;box-sizing:border-box">'+p.nights+'N</div>'})}).addTo(map)
-       .bindTooltip(p.label,{permanent:true,direction:'top',className:'city-tip',offset:[0,-10]});
-    } else {
-      L.marker([p.lat,p.lng],{icon:L.divIcon({className:'',iconSize:[10,10],iconAnchor:[5,5],
-        html:'<div style="width:10px;height:10px;background:#0B1733;box-sizing:border-box"></div>'})}).addTo(map)
-       .bindTooltip(p.label,{permanent:true,direction:'top',className:'city-tip',offset:[0,-6]});
-    }
-  });
-})();
-(function(){
-  var pts=[{"lat": 40.4168, "lng": -3.7038, "label": "Madrid", "nights": 3}, {"lat": 41.3851, "lng": 2.1734, "label": "Barcelona", "nights": 3}];
-  if(!pts.length) return;
-  var lats=pts.map(function(p){return p.lat;}), lngs=pts.map(function(p){return p.lng;});
-  var latSpread=Math.max.apply(null,lats)-Math.min.apply(null,lats);
-  var lngSpread=Math.max.apply(null,lngs)-Math.min.apply(null,lngs);
-  var spread=Math.max(latSpread,lngSpread);
-  var pad=spread>5?1.2:(spread>1?0.6:0.35);
-  var map=L.map('map_madbcn',{zoomControl:false,scrollWheelZoom:false,dragging:false,touchZoom:false,doubleClickZoom:false,boxZoom:false,keyboard:false,attributionControl:false});
   L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}',{maxZoom:16,attribution:''}).addTo(map);
   map.fitBounds([[Math.min.apply(null,lats)-pad,Math.min.apply(null,lngs)-pad],[Math.max.apply(null,lats)+pad,Math.max.apply(null,lngs)+pad]],{padding:[10,10]});
   var route=pts.map(function(p){return [p.lat,p.lng];});

@@ -6,14 +6,14 @@
     "selfdrive": {
       "3": {
         "winter": {
-          "single": 1864,
-          "twin": 1116,
-          "child": 457
+          "single": null,
+          "twin": null,
+          "child": null
         },
         "summer": {
-          "single": 1949,
-          "twin": 1167,
-          "child": 478
+          "single": null,
+          "twin": null,
+          "child": null
         }
       },
       "4": {

@@ -1008,7 +1008,7 @@
       "duration": "8 nights · 9 days",
       "type": "Self Drive",
       "season": "All Year Round",
-      "price_twin": 1116,
+      "price_twin": 1150,
       "currency": "€",
       "valid_till": "Nov 2027",
       "is_expired": false,
@@ -1255,29 +1255,6 @@
         "Madrid",
         "Granada",
         "Seville",
-        "Barcelona"
-      ]
-    },
-    {
-      "id": "product-madbcn",
-      "name": "Madrid & Barcelona",
-      "filename": "madbcn_brochure.html",
-      "region": "Spain & Portugal",
-      "folder": "multi-country/spain-portugal",
-      "cities": [
-        "Madrid",
-        "Barcelona"
-      ],
-      "duration": "6 nights · 7 days",
-      "type": "Private Minicoach",
-      "season": "Summer",
-      "price_twin": 924,
-      "currency": "€",
-      "valid_till": "Nov 2026",
-      "is_expired": false,
-      "description": "Madrid and Barcelona — by private coach.",
-      "tags": [
-        "Madrid",
         "Barcelona"
       ]
     },
