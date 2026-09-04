@@ -9,6 +9,11 @@
           "single": 1786,
           "twin": 1122,
           "child": 465
+        },
+        "summer": {
+          "single": 1867,
+          "twin": 1173,
+          "child": 486
         }
       },
       "4": {
@@ -16,12 +21,21 @@
           "single": 1945,
           "twin": 1201,
           "child": 496
+        },
+        "summer": {
+          "single": 2033,
+          "twin": 1256,
+          "child": 518
         }
       },
       "validity": {
         "winter": {
           "from": "1 Nov 2026",
           "to": "31 Mar 2027"
+        },
+        "summer": {
+          "from": "1 Apr 2027",
+          "to": "30 Nov 2027"
         }
       }
     }

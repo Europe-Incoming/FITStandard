@@ -186,10 +186,24 @@
     return Object.keys(seasons);
   }
 
-  function renderRateToggles(seasons) {
+  // Some routes (e.g. a hotel only ever booked at 4-star) have no "3" rates
+  // at all - every value under "3" is null. A category only counts as
+  // "available" if at least one season has at least one non-null figure.
+  function availableCats(variant) {
+    return ["3", "4"].filter(function (cat) {
+      var seasonsForCat = variant[cat] || {};
+      return Object.keys(seasonsForCat).some(function (season) {
+        var row = seasonsForCat[season] || {};
+        return row.single != null || row.twin != null || row.child != null;
+      });
+    });
+  }
+
+  function renderRateToggles(cats, seasons) {
     var catWrap = $("pkgCatToggle");
     catWrap.innerHTML = "";
-    ["3", "4"].forEach(function (cat) {
+    catWrap.style.display = cats.length > 1 ? "" : "none";
+    cats.forEach(function (cat) {
       var btn = document.createElement("button");
       btn.type = "button";
       btn.className = "pkg-seg" + (state.cat === cat ? " active" : "");
@@ -285,7 +299,9 @@
 
     var seasons = availableSeasons(variant);
     if (seasons.indexOf(state.season) === -1) state.season = seasons.indexOf("winter") !== -1 ? "winter" : seasons[0];
-    renderRateToggles(seasons);
+    var cats = availableCats(variant);
+    if (cats.length && cats.indexOf(state.cat) === -1) state.cat = cats.indexOf("4") !== -1 ? "4" : cats[0];
+    renderRateToggles(cats, seasons);
     var seasonValidity = currentValidity(variant, [state.season]);
     $("pkgRateSub").textContent = "Per person · " + styleName + " · Valid " + seasonValidity.from + " – " + seasonValidity.to;
     $("pkgRateNote").textContent = "All rates net, per person, in " + (PRICES.currency || "€") +
