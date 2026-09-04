@@ -1,27 +1,41 @@
 {
-  "validFrom": "1 Apr 2026",
-  "validTo": "31 Oct 2026",
+  "validFrom": "1 Nov 2026",
+  "validTo": "30 Nov 2027",
   "currency": "£",
   "variants": {
     "selfdrive": {
       "3": {
+        "winter": {
+          "single": 2085,
+          "twin": 1258,
+          "child": 516
+        },
         "summer": {
-          "single": 2116,
-          "twin": 1277,
-          "child": 524
+          "single": 2179,
+          "twin": 1315,
+          "child": 540
         }
       },
       "4": {
+        "winter": {
+          "single": 2640,
+          "twin": 1535,
+          "child": 625
+        },
         "summer": {
-          "single": 2530,
-          "twin": 1484,
-          "child": 605
+          "single": 2760,
+          "twin": 1605,
+          "child": 653
         }
       },
       "validity": {
+        "winter": {
+          "from": "1 Nov 2026",
+          "to": "31 Mar 2027"
+        },
         "summer": {
-          "from": "1 Apr 2026",
-          "to": "31 Oct 2026"
+          "from": "1 Apr 2027",
+          "to": "30 Nov 2027"
         }
       }
     }
