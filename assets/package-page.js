@@ -460,10 +460,12 @@
 
   // ───────────────────────────── PDF / PRINT ─────────────────────────
   // Each style has its own build-time-rendered PDF (scripts/rebuild_site.py
-  // generate_pdfs()) sitting next to this brochure page as "<id>-<style>.pdf" -
-  // link straight to it rather than relying on the browser's print dialog.
+  // generate_pdfs()), saved under "pdf/<id>-<style>.pdf" - a subfolder so the
+  // legacy PDF-package auto-discovery in rebuild_site.py's folder scan never
+  // mistakes it for a standalone package. Link straight to it rather than
+  // relying on the browser's print dialog.
   function downloadPDF() {
-    window.location.href = PRODUCT.id + "-" + state.style + ".pdf";
+    window.location.href = "pdf/" + PRODUCT.id + "-" + state.style + ".pdf";
   }
 
   // ───────────────────────────── FULL RENDER ─────────────────────────

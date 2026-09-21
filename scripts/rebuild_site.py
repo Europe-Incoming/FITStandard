@@ -1923,8 +1923,16 @@ def main():
                 f.write(page_html)
             print(f"  ✓ {folder_rel}/{brochure_fname}")
 
+            # Written to a "pdf/" subfolder, not next to the brochure HTML -
+            # the legacy PDF-package auto-discovery below only scans folder_abs
+            # itself, so a generated download PDF sitting there directly would
+            # get mistaken for its own standalone PDF-brochure package (its
+            # duration/cities can't be parsed out of this styled layout, so it
+            # never matches back to the product it belongs to).
+            pdf_dir = os.path.join(folder_abs, "pdf")
+            os.makedirs(pdf_dir, exist_ok=True)
             for style_key in product.get("styles", {}):
-                pdf_out = os.path.join(folder_abs, f'{product.get("id")}-{style_key}.pdf')
+                pdf_out = os.path.join(pdf_dir, f'{product.get("id")}-{style_key}.pdf')
                 pdf_jobs.append((product, prices, style_key, pdf_out))
 
             product_cards.append((product, prices, brochure_fname))
